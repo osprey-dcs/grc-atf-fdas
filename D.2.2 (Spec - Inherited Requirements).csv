@@ -1,0 +1,143 @@
+,ID,Requirements,Value,Accepted,
+System Facility Interface Requirements,F.1.1,"Electrical Power,",Single Phase 120 VAC,FALSE,
+,F.1.2,Operating Temperature,0° C to 40° C,FALSE,
+,F.1.3,Operating Humidity,Less than 90% non-condensing,FALSE,
+,F.1.4,External UTC Time Source,IRIG-B or GPS,FALSE,
+,F.1.5,Form Factor,"Standard 19"" wide rack mount",FALSE,
+,F.1.6,Max Width,Less than 3 standard racks (total),FALSE,
+,F.1.7,Max Height,Less than 44U rack height (each),FALSE,
+,F.1.8,Analog Input Connector,"DB37 connector, 16 differential voltage input channels per DB37 connector, and follow the pin-out per NASA spec",FALSE,
+,F.1.9,System Component Distributability,All data processing components shall be able to be distributed via standard ethernet,FALSE,
+,,,,,
+Digitizing Electronics,F.2.1,Number of Channels,"≥ 1,024 channels",FALSE,
+,F.2.2,Data Sample Rates,"Include but not limited to: 
+1 kSPS
+5 kSPS
+25 kSPS 
+50 kSPS 
+250 kSPS",FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,F.2.3,Data Sample Rate Selectibility,User selectable from DAS software application,FALSE,
+,F.2.4,Input Type,Direct Voltage Input Pre-conditioned signals,FALSE,
+,F.2.5,Channel Input Range,± 10 V,FALSE,
+,F.2.6,ADC Resolution,≥ 24-bit,FALSE,
+,F.2.7,Channel-to-Channel Synchronization,± 0.1 μs,FALSE,
+,F.2.8,Crosstalk Rejection,≥ 80 dB DC to 2 kHz,FALSE,
+,F.2.9,AC/DC input coupling,Per-channel selectable,FALSE,
+,F.2.10,AC/DC input coupling state selectability,User selectable from the DAS software application,FALSE,
+,F.2.11,Input Impedance,≥ 100 kΩ,FALSE,
+,F.2.12,Gain Accuracy,≥ ± 0.5% DC,FALSE,
+,F.2.13,Measurement Bandwidth,"Alias free measurements from DC to: 
+100 kHz @250kSPS
+20 kHz @50kSPS
+10 kHz @10kSPS
+2 kHz @5kSPS
+400 Hz @1kSPS",FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,F.2.14,Passband Ripple,≤ 0.1 dB,FALSE,
+,F.2.15,Digitizer On-board FMC ,"Yes, User Programmable",FALSE,
+,F.2.16,Digitizer On-board FMC Firmware Source Code Availability,Provided,FALSE,
+,F.2.17,Digitizer On-board FMC Firmware Source Code Licensing,"Open-Sourceable, BSD or similar",FALSE,
+,F.2.18,Digitizer Timing System Interface,"Event-based, 100% mRF* protocol compatible",FALSE,
+,F.2.19,Digitizer DAS Application Interface,100% Open-Standards-based,FALSE,
+,F.2.20,Digitizer DAS Application Interface Driver Licensing,"Open-Sourceable, BSD or similar",FALSE,
+,,,,,
+,,,* The mRF timing spec is published at: http://mrf.fi/fw/DCManual-191127.pdf,,
+,,,,,
+Data Recording ,F.3.1,Storage Reliability,≥ RAID 5,FALSE,
+,F.3.2,"1,024 Channel Individual Recording Duration","≥ 15 minutes for full 1,024 channels all acquiring at 50 kHz Sample Rate",FALSE,
+,F.3.3,256 Channel Individual Recording Duration,≥ 15 minutes for partial 256 channels acquiring at 250 kHz Sample Rate,FALSE,
+,F.3.4,Number of consecutive recordings prior to system offload,≥ 15 recordings each case,FALSE,
+,F.3.5,Recording timestamping vs UTC,± 0.1 μs,FALSE,
+,F.3.6,Per Recording Meta-Data Capture,"The following (at a min):
+1. Customer Name
+2. Project ID
+3. Test Facility
+4. Recording ID
+5. Recording Start Time
+6. Operator Name",FALSE,
+,F.3.7,Per channel Calibration Data Capture,"The following (at a min):
+1. Channel ID
+2. Digitizer ID
+3. Cal. Slope
+4. Cal. Offset
+5. EU Slope
+6. EU Offset
+7. EU Unit
+8. Calibration Date",FALSE,
+,F.3.8,Calibration Settings,"The following (at a min):
+1. Calibration Slope
+2. Calibration Offset",FALSE,
+,F.3.9,EU Conversion Configuration,"The following (at a min):
+1. EU conversion Slope
+2. EU conversion offset",FALSE,
+,,,,,
+Real-Time Monitoring (RTM),F.4.1,Channel Availability for RTM,All,FALSE,
+,F.4.2,Number of RTM PCs,≥ 2,FALSE,
+,F.4.3,Simultaneous RTM channels,≥ 16 per RTM PC,FALSE,
+,F.4.4,RTM FFT Analysis Option,All channels fully selectable,FALSE,
+,F.4.5,RTM Power Spectral Density (PSD) Analysis Option,All channels as selected,FALSE,
+,F.4.6,RTM Time Domain Analysis Option,All channels as selected,FALSE,  
+,F.4.7,RTM Peak Detection Feature,All channels as selected,FALSE,
+,F.4.8,RTM Display Measurement to Display Latency,≤ 0.5 seconds,FALSE,
+,,,,,
+Software Application,F.5.1,"Software Architecture conforms to the Neil A. Armstrong Test Facility Common DAC System System Architecture Specification v72260 dated August 14, 2023",N/A,FALSE,
+,F.5.2,GUI interface for all specified functions,N/A,FALSE,
+,F.5.3,Alarm and Limit Summary Display and Monitoring capability,N/A,FALSE,
+,F.5.4,Whole system configuration Save and Restore capability,N/A,FALSE,
+,F.5.5,The DAS system will be able to define all User-defined Per-Test Channel configuration using a CSV Import capability ,"CSV will have the following columns: Signal, Chassis, Channel, Connector, Use, Custnam, Desc, Idlines, Respnode, Respdir, Specdatatyp, EGU, Custmeasloc, ESLO, EOFF, Maxeulvl, Samplpersec, HiLim, Lolim, HIHIlim, LOLOlim, Coupling, and ConfigTimestamp
+",FALSE,
+,F.5.6,Current User-defined Per-Test channel configuration CSV export capability,CSV export (fields same as import),FALSE,
+,F.5.7,Electronic Logbook capability,N/A,FALSE,
+,F.5.8,General/Universal Screenshot capability,"Automatic filenaming with timestamps
+Automatic filename included in the screenshots",FALSE,
+,,,,,
+Configuration by CSV,F.6.1,The DAC system shall be able to support per-test user-defined channel labels,Length ≥ 40 characters,FALSE,
+,F.6.2,The DAC system shall be able to utilize characters as valid in the per-test user-defined channel labels,"Valid characters:
+Uppercase Letters (A-Z)
+Lowercase Letters (a-z)
+Numbers (0-9)
+Parentheses ""("" and "")""
+Minus and Plus sign ( - ) and ( + )
+Asterisk ( * )
+Periods ( . )
+Underscores ( _ )",FALSE,
+,,,,,
+Data Export,F.7.1,From user selectable recordings,N/A,FALSE,
+,F.7.2,From user selectable channels,N/A,FALSE,
+,F.7.3,From user selectable time ranges,N/A,FALSE,
+,F.7.4,In user selectable formats,N/A,FALSE,
+,F.7.5,In the CSV format,N/A,FALSE,
+,F.7.6,In the UFF58 format,UFF58b,FALSE,
+,,,,,
+UFF58 Export Header,F.8.1,Exported UFF58 files shall contain numeric values in the Response Direction Field (field 7),"Following Numeric Values:
+CSV String       Value                                 CSV String                Value
+blank                     0                                     scalar                             0
+X+                         1                                     X-                                  -1
+Y+                         2                                     Y-                                  -2
+Z+                         3                                     Z-                                  -3
+XR+                      4                                     XR-                               -4
+YR+                      5                                     YR-                               -5
+ZR+                      6                                     ZR-                               -6
+",FALSE,
+,F.8.2,Exported UFF58 files shall contain numeric values in the Specific Data Type (field 1),"Following Numeric Values:
+CSV String       Value           CSV String                Value              CSV String                Value
+blank                     0               displacement                 8                  mass                             16
+unknown               0               reaction force                9                   time                               17
+general                 1                velocity                         11                 frequency                      18
+stress                    2                acceleration                 12                 rpm                                19
+strain                     3               excitation force             13                 order                              20
+temp                      5               pressure                       15      
+heat flux                 6              sound pressure             15       
+",FALSE,
+,,,,,
+Secure Web-Based Data Export,F.9.1,The DAC system shall include a local open-source web-server that facilitates secure data export by making a specific folder (and any subfolders) accessible to remote network clients from a standard web-browser,N/A,FALSE,
+,F.9.2,The DAC system export web server will not expose any files or folders on the system that contain any OS system or DAC application processes or configuration data,N/A,FALSE,
+,F.9.3,The DAC system's web server shall run using a self-signed certificate that enables the remote browser-based client to obtain data from the system using the https protocol on port 443,N/A,FALSE,
+,F.9.4,The DAC system's data export webserver shall be capable of switching fro a self-signed certificate to a NASA provided certificate without changing the webserver configuration. The DAC operator will be able to simply replace the self-signed certification with the NASA certification and restart the webserver service.,N/A,FALSE,

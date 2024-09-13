@@ -1,0 +1,11 @@
+BOM Item,Quantity,Vendor,Part#,Description,Quote,Link
+E1,1,Dell,R660,PowerEdge R660 Rack Server - DAQS ,https://github.com/osprey-dcs/grc-atf-fdas/blob/main/doc/quote-DAQS.pdf,https://www.dell.com/en-us/shop/dell-poweredge-servers/poweredge-r660-rack-server/spd/poweredge-r660/pe_r660_15878_vi_vp?configurationid=c754c23e-177a-4a0f-96f9-d54af2895e8b
+E2,1,Dell,R350,PowerEdge R350 Rack Server - MISCS,https://github.com/osprey-dcs/grc-atf-fdas/blob/main/doc/quote-MISC.pdf,https://www.dell.com/en-us/shop/servers-storage-and-networking/poweredge-r350-rack-server/spd/poweredge-r350/pe_r350_tm_vi_vp_sb?view=configurations&configurationid=eb05bd55-e699-458a-8dcf-7380e29cf324
+E3,2,Ace Computers,PWKS1AA15PWTR CLIN: ATP-70638,Ace Computers Rack-Mounted Server - DISWS1 and DISWS2,https://github.com/osprey-dcs/grc-atf-fdas/blob/main/doc/quote-DISWS.pdf,https://secureservercdn.net/198.71.233.33/r76.394.myftpupload.com/wp-content/uploads/2021/03/Ace_Powerworks_Server_1AA15PWR.pdf
+E4,1,RUCKUS,ICX7550-48-E2,"DAQ Switch:  48-port 10/100/1000 Mbps with 2-ports 40 Gbps Uplink/Stack QSFP+, module slot, three fans, two ICX7550 400W NO-POE AC power supplies with exhaust airflow installed. ",,https://www.ruckusnetworks.com/products/ethernet-switches/icx7550/
+E5,1,RUCKUS,ICX7550-24-E2,"Control Room Switch:  24-port 10/100/1000 Mbps with 2-ports 40 Gbps Uplink/Stack QSFP+, module slot, three fans, two two ICX7550 400W NO-POE AC power supplies with exhaust airflow installed.",,https://www.ruckusnetworks.com/products/ethernet-switches/icx7550/
+E6,2,RUCKUS,10G-SFPP-LR-SA,"10GBASE-LR, SFP+ optic (LC), for up to 10km over SMF, standard temperature (0 C to 70 C), TAA compliant",,https://www.ruckusnetworks.com/products/optical-transceivers/
+E7,2,RUCKUS,ICX7650-4X10GF,ICX 7650 4PT 1/10GBE SFP+ Module,,https://www.ruckusnetworks.com/products/ethernet-switches/icx7550/
+E8,1,RUCKUS,10G-SFPP-TX-LP-A,10G-BASE-TX RJ-45 up to 30M over CAT 6a/7 cable TAA Applicable Low Power,,https://www.ruckusnetworks.com/products/optical-transceivers/
+E9,32,Osprey,DAQ-32-250-24,Quartz ADC,,https://docs.google.com/document/d/17fF_MWox-ifM2LzhPZZrqRA--Nl4hyob/edit
+E10,1,ESE,ES-295/GPS/NTP6,IRIG/NTP Server,,https://www.ese-web.com/295gn.htm
