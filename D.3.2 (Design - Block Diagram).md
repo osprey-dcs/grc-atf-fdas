@@ -1,6 +1,6 @@
 ## Interconnect Diagram
 
-![Interconnect Diagram][image/system.png]
+![Interconnect Diagram](image/system.png)
 
 ## Timing Network
 
