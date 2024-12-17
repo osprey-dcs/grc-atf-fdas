@@ -1,0 +1,200 @@
+Power Cables,Description,Manufacturer,Part Number,From,To,Cable ID,Notes
+Power Cables,From device vendor,,,IR8-PS2,IR8-NTPS,NTPS PS,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 1,IR8-DAQ1,DAQM1,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 2,IR8-DAQ2,DAQM2,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 1,IR8-DAQ3,DAQM3,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 2,IR8-DAQ4,DAQM4,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 1,IR8-DAQ5,DAQM5,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 2,IR8-DAQ6,DAQM6,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 2,IR8-DAQ7,DAQM7,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 2,IR8-DAQ8,DAQM8,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 2,IR8-DAQ9,DAQM9,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 2,IR8-DAQ10,DAQM10,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 1,IR8-DAQ11,DAQM11,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 1,IR8-DAQ12,DAQM12,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 1,IR8-DAQ13,DAQM13,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 1,IR8-DAQ14,DAQM14,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 1,IR8-DAQ15,DAQM15,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR8-PS 1,IR8-DAQ16,DAQM16,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 1,IR9-DAQ17,DAQM17,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 1,IR9-DAQ18,DAQM18,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 2,IR9-DAQ19,DAQM19,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 2,IR9-DAQ20,DAQM20,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 2,IR9-DAQ21,DAQM21,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 1,IR9-DAQ22,DAQM22,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 2,IR9-DAQ23,DAQM23,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 2,IR9-DAQ24,DAQM24,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 2,IR9-DAQ25,DAQM25,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 1,IR9-DAQ26,DAQM26,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 1,IR9-DAQ27,DAQM27,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 2,IR9-DAQ28,DAQM28,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 2,IR9-DAQ29,DAQM29,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 1,IR9-DAQ30,DAQM30,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 1,IR9-DAQ31,DAQM31,
+Power Cables,,Mean Well USA,GSM60U12-P1J,IR9-PS 1,IR9-DAQ32,DAQM32,
+Power Cables,From device vendor,,,IR9-PS 1,IR9-NETSW AC1,DAQSW AC1,
+Power Cables,From device vendor,,,IR9-PS 2,IR9-NETSW AC2,DAQSW AC2,
+Power Cables,From device vendor,,,IR9-PS 1,IR9-DAQS AC1,DAQS AC1,
+Power Cables,From device vendor,,,IR9-PS 2,IR9-DAQS AC2,DAQS AC2,
+Power Cables,From device vendor,,,C1-AC 1,C1-DISWS 1,DISWS1,
+Power Cables,From device vendor,,,C1-AC 2,C1-DISWS 2,DISWS2,
+Power Cables,From device vendor,,,C1-AC 1,C1-CRMSW,CRMSW AC1,
+Power Cables,From device vendor,,,C1-AC 2,C1-CRMSW,CRMSW AC2,
+Power Cables,From device vendor,,,C1-AC 1,C1-MISCS,MISCS AC1,
+Power Cables,From device vendor,,,C1-AC 2,C1-MISCS,MISCS AC2,
+Timing Cables,RG58 BNC,,,IR8-IRIG-PPS TTL,IR8-DAQ1-BNC,"IR8-IRIG-PPS TTL
+IR8-DAQ1-BNC",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ1-EVR,IR8-DAQ2-EVFO2,"IR8-DAQ1-EVR
+IR8-DAQ2-EVFO2",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ1-EVFO1,IR8-DAQ11-EVFI,"IR8-DAQ1-EVFO1
+IR8-DAQ11-EVFI",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ1-EVFO2,IR8-DAQ5-EVFI,"IR8-DAQ1-EVFO2
+IR8-DAQ5-EVFI",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ1-EVFO3,IR9-DAQ27-EVFI,"IR8-DAQ1-EVFO3
+IR9-DAQ27-EVFI",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ1-EVFO4,IR9-DAQ21-EVFI,"IR8-DAQ1-EVFO4
+IR9-DAQ21-EVFI",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ1-EVFO5,IR8-DAQ3-EVFI,"IR8-DAQ1-EVFO5
+IR8-DAQ3-EVFI",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ1-EVFO6,IR8-DAQ2-EVFI,"IR8-DAQ1-EVFO6
+IR8-DAQ2-EVFI",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ2-EVR,IR8-DAQ2-EVFO1,"IR8-DAQ2-EVR
+IR8-DAQ2-EVFO1",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ3-EVR,IR8-DAQ3-EVFO1,"IR8-DAQ3-EVR
+IR8-DAQ3-EVFO1",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ3-EVFO2,IR8-DAQ4-EVR,"IR8-DAQ3-EVFO2
+IR8-DAQ4-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ3-EVFO3,IR9-DAQ17-EVR,"IR8-DAQ3-EVFO3
+IR9-DAQ17-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ3-EVFO4,IR9-DAQ18-EVR,"IR8-DAQ3-EVFO4
+IR9-DAQ18-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ3-EVFO5,IR9-DAQ19-EVR,"IR8-DAQ3-EVFO5
+IR9-DAQ19-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ3-EVFO6,IR9-DAQ20-EVR,"IR8-DAQ3-EVFO6
+IR9-DAQ20-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ5-EVR,IR8-DAQ5-EVFO1,"IR8-DAQ5-EVR
+IR8-DAQ5-EVFO1",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ5-EVFO2,IR8-DAQ6-EVR,"IR8-DAQ5-EVFO2
+IR8-DAQ6-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ5-EVFO3,IR8-DAQ7-EVR,"IR8-DAQ5-EVFO3
+IR8-DAQ7-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ5-EVFO4,IR8-DAQ8-EVR,"IR8-DAQ5-EVFO4
+IR8-DAQ8-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ5-EVFO5,IR8-DAQ9-EVR,"IR8-DAQ5-EVFO5
+IR8-DAQ9-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ5-EVFO6,IR8-DAQ10-EVR,"IR8-DAQ5-EVFO6
+IR8-DAQ10-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ11-EVR,IR8-DAQ11-EVFO1,"IR8-DAQ11-EVR
+IR8-DAQ11-EVFO1",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ11-EVFO2,IR8-DAQ12-EVR,"IR8-DAQ11-EVFO2
+IR8-DAQ12-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ11-EVFO3,IR8-DAQ13-EVR,"IR8-DAQ11-EVFO3
+IR8-DAQ13-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ11-EVFO4,IR8-DAQ14-EVR,"IR8-DAQ11-EVFO4
+IR8-DAQ14-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ11-EVFO5,IR8-DAQ15-EVR,"IR8-DAQ11-EVFO5
+IR8-DAQ15-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR8-DAQ11-EVFO6,IR8-DAQ16-EVR,"IR8-DAQ11-EVFO6
+IR8-DAQ16-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR9-DAQ21-EVR,IR9-DAQ21-EVFO1,"IR9-DAQ21-EVR
+IR9-DAQ21-EVFO1",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR9-DAQ21-EVFO2,IR9-DAQ22-EVR,"IR9-DAQ21-EVFO2
+IR9-DAQ22-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR9-DAQ21-EVFO3,IR9-DAQ23-EVR,"IR9-DAQ21-EVFO3
+IR9-DAQ23-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR9-DAQ21-EVFO4,IR9-DAQ24-EVR,"IR9-DAQ21-EVFO4
+IR9-DAQ24-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR9-DAQ21-EVFO5,IR9-DAQ25-EVR,"IR9-DAQ21-EVFO5
+IR9-DAQ25-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR9-DAQ21-EVFO6,IR9-DAQ26-EVR,"IR9-DAQ21-EVFO6
+IR9-DAQ26-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR9-DAQ27-EVR,IR9-DAQ27-EVFO1,"IR9-DAQ27-EVR
+IR9-DAQ27-EVFO1",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR9-DAQ27-EVFO2,IR9-DAQ28-EVR,"IR9-DAQ27-EVFO2
+IR9-DAQ28-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR9-DAQ27-EVFO3,IR9-DAQ29-EVR,"IR9-DAQ27-EVFO3
+IR9-DAQ29-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR9-DAQ27-EVFO4,IR9-DAQ30-EVR,"IR9-DAQ27-EVFO4
+IR9-DAQ30-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR9-DAQ27-EVFO5,IR9-DAQ31-EVR,"IR9-DAQ27-EVFO5
+IR9-DAQ31-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Timing Cables,OM4 50/125 LC Duplex,FS,OM4LCDX,IR9-DAQ27-EVFO6,IR9-DAQ32-EVR,"IR9-DAQ27-EVFO6
+IR9-DAQ32-EVR",Cable ID was generated based on figures referenced in D.3.1 section A2 Timing and A6 Chassis
+Network Cables,CAT6,,,IR9-DAQSW-1/1/1,IR8-DAQ1,"IR9-DAQSW-P1
+IR8- DAQM1",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/2,IR8-DAQ2,"IR9-DAQSW-P2
+IR8- DAQM2",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/3,IR8-DAQ3,"IR9-DAQSW-P3
+IR8- DAQM3",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/4,IR8-DAQ4,"IR9-DAQSW-P4
+IR8- DAQM4",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/5,IR8-DAQ5,"IR9-DAQSW-P5
+IR8- DAQM5",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/6,IR8-DAQ6,"IR9-DAQSW-P6
+IR8- DAQM6",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/7,IR8-DAQ7,"IR9-DAQSW-P7
+IR8- DAQM7",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/8,IR8-DAQ8,"IR9-DAQSW-P8
+IR8- DAQM8",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/9,IR8-DAQ9,"IR9-DAQSW-P9
+IR8- DAQM9",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/10,IR8-DAQ10,"IR9-DAQSW-P10
+IR8- DAQM10",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/11,IR8-DAQ11,"IR9-DAQSW-P11
+IR8- DAQM11",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/12,IR8-DAQ12,"IR9-DAQSW-P12
+IR8- DAQM12",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/13,IR8-DAQ13,"IR9-DAQSW-P13
+IR8- DAQM13",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/14,IR8-DAQ14,"IR9-DAQSW-P14
+IR8- DAQM14",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/15,IR8-DAQ15,"IR9-DAQSW-P15
+IR8- DAQM15",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/16,IR8-DAQ16,"IR9-DAQSW-P16
+IR8- DAQM16",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/17,IR8-DAQ17,"IR9-DAQSW-P17
+IR9- DAQM17",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/18,IR9-DAQ18,"IR9-DAQSW-P18
+IR9- DAQM18",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/19,IR9-DAQ19,"IR9-DAQSW-P19
+IR9- DAQM19",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/20,IR9-DAQ20,"IR9-DAQSW-P20
+IR9- DAQM20",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/21,IR9-DAQ21,"IR9-DAQSW-P21
+IR9- DAQM21",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/22,IR9-DAQ22,"IR9-DAQSW-P22
+IR9- DAQM22",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/23,IR9-DAQ23,"IR9-DAQSW-P23
+IR9- DAQM23",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/24,IR9-DAQ24,"IR9-DAQSW-P24
+IR9- DAQM24",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/25,IR9-DAQ25,"IR9-DAQSW-P25
+IR9- DAQM25",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/26,IR9-DAQ26,"IR9-DAQSW-P26
+IR9- DAQM26",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/27,IR9-DAQ27,"IR9-DAQSW-P27
+IR9- DAQM27",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/28,IR9-DAQ28,"IR9-DAQSW-P28
+IR9- DAQM28",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/29,IR9-DAQ29,"IR9-DAQSW-P29
+IR9- DAQM29",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/30,IR9-DAQ30,"IR9-DAQSW-P30
+IR9- DAQM30",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/31,IR9-DAQ31,"IR9-DAQSW-P31
+IR9- DAQM31",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/32,IR9-DAQ32,"IR9-DAQSW-P32
+IR9- DAQM32",
+Network Cables,CAT6,,,IR9-DAQSW-1/1/41,IR8-NTPS,"IR9-DAQSW-P41
+IR8- NTPS",
+Network Cables,CAT6,,,IR9-DAQSW-1/3/1,IR9-DAQS P3/1,"IR9-DAQSW-P3/1
+IR9- DAQS",
+Network Cables,OS2 9/125 LC LC Plenum Duplex,Fiber Cables Direct,FCDUS141v1125,IR9-DAQSW-1/3/4,C1-CRMSW-1/3/4,"IR9-DAQSW
+C1-CRMSW",Through the patch panel
+Network Cables,CAT6,,,C1-CRMSW-1/1/1,C1-MISCS,"CRMSW-P1
+MISCS",
+Network Cables,CAT6,,,C1-CRMSW-1/1/2,C1-DISWS 1,"CRMSW-P2
+DISWS1",
+Network Cables,CAT6,,,C1-CRMSW-1/1/3,C1-DISWS 2,"CRMSW-P3
+DISWS2",
+Network Cables,OS2 9/125 LC LC Plenum Duplex,Fiber Cables Direct,FCDUS141v1125,C1-CRMSW-1/3/4,IR9-DAQSW-1/3/4,"IR9-DAQSW
+C1-CRMSW",Through the patch panel
