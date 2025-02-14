@@ -1,0 +1,38 @@
+BOM Item,Quantity,Manufacturer,Description,Software Version,Software License Type,Download Link / Repo
+S1,2,Debian Project,Debian Linux Operating System,12.5,GNU General Public License,https://www.debian.org/releases/bookworm/
+S2,2,Kubuntu Team,Kubuntu Linux Operating System,LTS 24.04,GNU General Public License,https://kubuntu.org/getkubuntu/
+S3,4,EPICS Collaboration,EPICS Base,7.0.8,EPICS Open License,https://epics-controls.org/resources-and-support/base/epics-7/7-0-8/
+S4,4,EPICS Collaboration,Autosave,5.11,EPICS Open License,https://github.com/epics-modules/autosave
+S5,4,EPICS Collaboration,Asyn,4.44.2,EPICS Open License,https://github.com/epics-modules/asyn
+S6,4,EPICS Collaboration,Busy,1.7.4,EPICS Open License,https://github.com/epics-modules/busy
+S7,4,EPICS Collaboration,Cagateway,2.1.3,EPICS Open License,https://github.com/epics-extensions/ca-gateway
+S8,4,EPICS Collaboration,Calc,3.7.5,EPICS Open License,https://github.com/epics-modules/calc
+S9,4,EPICS Collaboration,Caputlog,4,EPICS Open License,https://github.com/epics-modules/caPutLog
+S10,4,EPICS Collaboration,IocStats,3.2.0,EPICS Open License,https://github.com/epics-modules/iocStats
+S11,4,EPICS Collaboration,Modbus,3.3,EPICS Open License,https://github.com/epics-modules/modbus
+S12,4,EPICS Collaboration,P4P,4.1.12,EPICS Open License,https://github.com/mdavidsaver/p4p
+S13,4,EPICS Collaboration,PCAS,4.13.3,EPICS Open License,https://github.com/epics-modules/pcas
+S14,4,EPICS Collaboration,PVXS,1.3.1,EPICS Open License,https://github.com/mdavidsaver/pvxs
+S15,4,EPICS Collaboration,RecSync,1.5,EPICS Open License,https://github.com/ChannelFinder/recsync
+S16,4,EPICS Collaboration,Seq,R2-2-9,EPICS Open License,https://github.com/epics-modules/sequencer
+S17,4,EPICS Collaboration,Sscan,2.11.6,EPICS Open License,https://github.com/epics-modules/sscan
+S18,4,EPICS Collaboration,Stream,2.8.24,EPICS Open License,https://github.com/paulscherrerinstitute/StreamDevice
+S19,1,Osprey,PSCDRV - Marble Board Data Stream,atf-20240529,BSD-3,https://github.com/osprey-dcs/pscdrv
+S20,1,Osprey,FEED - Marble Board Configuration,atf-20240715,BSD-3,https://github.com/osprey-dcs/feed-core
+S21,1,Osprey,Acquisition Orchestrator,atf-20240531,BSD-3,https://github.com/osprey-dcs/atf-engine
+S22,1,Osprey,Quartz User Configuration Loader,atf-20240531,BSD-3,https://github.com/osprey-dcs/quartz-config-loader
+S23,2,Osprey,DAQ Data Viewer/Exporter,atf-20240828,GPL-3,https://github.com/osprey-dcs/atf-previewer
+S24,32,Osprey,Quartz firmware,20241121,BSD-3,https://github.com/osprey-dcs/nasa-fpga-fw
+S25,32,Osprey,Quartz IOC,atf-20241018,BSD-3,https://github.com/osprey-dcs/atf-acq-ioc
+S26,2,Osprey,System Monitoring IOCs,atf-20240718,BSD-3,https://github.com/osprey-dcs/atf-sysmon
+S27,1,Osprey,Quartz Calibration,atf-20240717,BSD-3,https://github.com/osprey-dcs/quartz-calib
+S28,2,CS-Studio/Phoebus,Client_Phoebus,4.7.3,EPL 1.0,https://github.com/ControlSystemStudio/phoebus
+S29,2,CS-Studio/Phoebus,Client_ArchiveAppliance,0.0.10,EPL 1.0,https://github.com/ControlSystemStudio/epicsarchiverap_pbrawclient
+S30,2,CS-Studio/Phoebus,Client_AlarmServer,4.7.3,EPL 1.0,https://github.com/ControlSystemStudio/phoebus/tree/master/app/alarm
+S31,2,CS-Studio/Phoebus,Client_ChannelFinder,4.7.3,EPL 1.0,https://github.com/ControlSystemStudio/phoebus/tree/master/app/channel
+S32,,CS-Studio/Phoebus,save_restore,4.7.3,EPL 1.0,https://github.com/ControlSystemStudio/phoebus/tree/master/app/save-and-restore
+S33,1,EPICS Collaboration,Archive Appliance Server,1.1.0,EPICS Open License,https://github.com/slacmshankar/epicsarchiverap
+S34,1,CS-Studio/Phoebus,Beast Alarm Server,4.7.3,EPL 1.0,https://github.com/ControlSystemStudio/phoebus/tree/master/services/alarm-server
+S35,1,EPICS Collaboration,Channel FinderServer,4.7.2,EPL 1.0,https://github.com/ChannelFinder/ChannelFinderService
+S36,1,EPICS Collaboration,Olog,f5022c44be5d7acbd663be81714e689601754c33,EPL 1.0,https://github.com/Olog/phoebus-olog
+S37,1,Elastic,Elastic Search,8.2.3,Elastic License 2.0,https://www.elastic.co
