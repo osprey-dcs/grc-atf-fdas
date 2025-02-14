@@ -1,7 +1,7 @@
 ## Interconnect Diagram
 
-![Interconnect Diagram](image/system.png)
+![Interconnect Diagram](image/D.3.2%20System%20Block%20Diagram.png.png)
 
 ## Timing Network
 
-![Timing Network](image/NASA-timing-topology.svg)
+![Timing Network](image/D.3.2%20Timing%20Topology.svg.svg)
