@@ -2,22 +2,38 @@
 ## Debian
 * Connect the IDRAC network interface, start the virtual console, mount Debian 12 ISO using the virtual media button, and boot from the virtual cd
 * Select Advanced Options -> Graphical Expert Install
-![img1](image/D.3.7%20Ch1_1.png)
-![img2](image/D.3.7%20Ch1_2.png)
+
+![img1](image/D-3-7_Ch1_1.png)
+
+![img2](image/D-3-7_Ch1_2.png)
+
 * Select all default options until the Users and Accounts Screen, configure as follows:
-![img3](image/D.3.7%20Ch1_3.png)
+
+![img3](image/D-3-7_Ch1_3.png)
+
 * Set a password for the root account and skip the normal account creation for now:
-![img4](image/D.3.7%20Ch1_4.png)
+
+![img4](image/D-3-7_Ch1_4.png)
+
 * In the disk partition options, choose manual:
-![img5](image/D.3.7%20Ch1_5.png)
+
+![img5](image/D-3-7_Ch1_5.png)
+
 * Configure the disk LVM as follows (MISC server does not have /autosave):
-![img6](image/D.3.7%20Ch1_6.png)
+
+![img6](image/D-3-7_Ch1_6.png)
+
 * Add the following mount points (MISC server does not have /autosave):
-![img7](image/D.3.7%20Ch1_7.png)
+
+![img7](image/D-3-7_Ch1_7.png)
+
 * Continue with the default options until the software selection screen is presented:
-![img8](image/D.3.7%20Ch1_8.png)
+
+![img8](image/D-3-7_Ch1_8.png)
+
 * Continue with the default options until the installation is concluded:
-![img9](image/D.3.7%20Ch1_8.png)
+
+![img9](image/D-3-7_Ch1_9.png)
 
 ## DISWS, Kubuntu
 * Kubuntu LTS 24.04 default LVM atf/atf
