@@ -1,5 +1,7 @@
-# Chapter 1 - OS Installation
-## Debian
+# NASA GRC-ATF FDAS D.3.7 - Detailed System Configuration
+
+## Chapter 1 - OS Installation
+### Debian
 * Connect the IDRAC network interface, start the virtual console, mount Debian 12 ISO using the virtual media button, and boot from the virtual cd
 * Select Advanced Options -> Graphical Expert Install
 
@@ -35,7 +37,7 @@
 
 ![img9](image/D-3-7_Ch1_9.png)
 
-## DISWS, Kubuntu
+### DISWS, Kubuntu
 * Kubuntu LTS 24.04 default LVM atf/atf
 * Firefox —safe-mode -> settings-> general -> disable ‘Use recommended performance settings’ and ‘use hardware acceleration’
 * Follow DAQS for EPICS
@@ -63,9 +65,9 @@
 * remove pro ads: sudo rm /etc/apt/apt.conf.d/20apt-esm-hook.conf
 * change /etc/default/grub: add “GRUB_RECORDFAIL_TIMEOUT=3” and do update-grub
 
-# Chapter 2 - Initial Setup and Network Config
-## DAQs
-### Initial Setup
+## Chapter 2 - Initial Setup and Network Config
+### DAQs
+#### Initial Setup
 * Login as root
 * Change the hostname with the following command:
 ``hostnamectl set-hostname DAQS``
@@ -95,7 +97,7 @@ deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware
     * ```adduser atf sudo```
     * ```su atf```
 
-### Network Configuration
+#### Network Configuration
 * ```sudo apt install vlan tcpdump```
 *   
     ```
@@ -198,8 +200,8 @@ deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware
 * ```sudo update-initramfs -u```
 * ```sudo reboot```
 
-## MISCS
-### Initial Setup
+### MISCS
+#### Initial Setup
 * Login as root
 * Change the hostname with the following command:
     * hostnamectl set-hostname MISCS
@@ -228,7 +230,7 @@ deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware
 * ```adduser atf```
 * ```adduser atf sudo```
 
-### Network Configuration
+#### Network Configuration
 * ```sudo apt install vlan tcpdump```
 *
     ```
@@ -270,7 +272,7 @@ deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware
 * ```sudo update-initramfs -u```
 * ```sudo reboot```
 
-# Chapter 3 - EPICS base and modules installation
+## Chapter 3 - EPICS base and modules installation
 * ```su atf```
 * ```cd ~```
 * ```git clone https://github.com/domitto/build-epics.git --recursive```
@@ -293,11 +295,11 @@ deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware
     export PATH=\$PATH:/usr/local/epics/epics-base/bin/linux-x86_64
     EOF
     ```
-# Chapter 4 - EPICS Tools and Services
-## MISCS
+## Chapter 4 - EPICS Tools and Services
+### MISCS
 * Follow the guide available on osprey-dcs github about deploying EPICS services: https://github.com/osprey-dcs/epics-services-deployment
 
-# Chapter 5 - Phoebus Client
+## Chapter 5 - Phoebus Client
 * Make sure the host has openjdk-17 installed (sudo apt install openjdk-17-jdk)
 * Download Phoebus latest tag from https://github.com/ControlSystemStudio/phoebus/tags
 * Extract the tar.gz and move the project to /usr/local/epics/
@@ -339,7 +341,7 @@ org.phoebus.applications.alarm.logging.ui/service_uri=http://192.168.83.101:8080
 * Modify /usr/local/epics/phoebus/phoebus.sh:
     * comment OPT=“-server 4918” line and add OPT="-settings /usr/local/epics/phoebus/settings.ini" below it.
 
-# Chapter 6 - Quartz IOC
+## Chapter 6 - Quartz IOC
 ```
 apt-get update
 apt-get install -y build-essential git libevent-dev libz-dev libfftw3-dev libreadline-dev python3 python-is-python3
@@ -366,20 +368,20 @@ EPICS_BASE=\$(TOP)/../epics-base
 EOF
 ```
 
-# Chapter 7 - System Monitoring IOCs
+## Chapter 7 - System Monitoring IOCs
 See ATF System Monitor [README](https://github.com/osprey-dcs/atf-sysmon/blob/master/README.md).
 
-# Chapter 8 - Sequencing Engine
+## Chapter 8 - Sequencing Engine
 See ATF DAQ Sequencing Engine [README](https://github.com/osprey-dcs/atf-engine/blob/master/README.md)
 
-# Chapter 9 - Elastic Search
+## Chapter 9 - Elastic Search
 See Elastic Search [README](https://github.com/elastic/elasticsearch/blob/main/README.asciidoc)
 
-# Chapter 10 - Quartz Calibration
+## Chapter 10 - Quartz Calibration
 See [Quartz Calibration Procedure](https://github.com/osprey-dcs/quartz-calib/blob/main/Quartz_Calibration_Procedure.md)
 
-# Chapter 11 - DAQ Data Viewer/Exporter
+## Chapter 11 - DAQ Data Viewer/Exporter
 See ATF Previewer [README](https://github.com/osprey-dcs/atf-previewer/blob/main/README.md)
 
-# Chapter 12 - Quartz User Configuration Loader
+## Chapter 12 - Quartz User Configuration Loader
 See Quartz Config Loader [README](https://github.com/osprey-dcs/quartz-config-loader/blob/main/README.md)

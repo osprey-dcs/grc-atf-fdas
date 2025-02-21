@@ -13,11 +13,11 @@ D.3.3,TRUE,System Design: Detailed Hardware List,,,"A CSV table containing a det
 D.3.4,TRUE,System Design: Detailed Software List,,,"A CSV table containing a detailed list of each instance of each installed piece of software and firmware listed in the Software/ Firmware BOM (D.1.4). Where the BOM is a summary list of software item types and their quantities, the System Detailed Software List provides a list that enumerates each instance of each piece of software listed in the BOM along with a reference to where it is installed and a reference to how it is configured."
 D.3.5,TRUE,System Design: System Interconnection Drawing,,,"An electrical drawing that comprehensively captures exactly how all connections to all components are made referencing cable IDs, HW Reference Designators (D.3.3). The Detailed System Interconnection Drawing shall make it possible to identify any miswirings of the system as well as to restore proper connectivity of any component to any other based entirely from the drawing."
 D.3.6,TRUE,System Design: Network Topology Diagram,,,A simplified block diagram of the network devices in the sytem and their connections
-D.3.7,TRUE,System Design: Detailed System Configuration,,,???
+D.3.7,TRUE,System Design: Detailed System Configuration,,,A document containing instructions on configuring necessary software
 D.3.8,TRUE,System Design: System OT Security Information List,,,A document containing a dedicated section for each instance of each device listed in the System Detailed Hardware List (D.3.3).
-D.4.1,TRUE,System Operating Procedures: Start-up and Shut-down procedure,,https://github.com/osprey-dcs/sec-procedure/blob/master/powerupdown.md,Step-by-step procedure detailing how to verify that all aspects of the system are functional and the system is ready for use by the user.
-D.4.2,FALSE,System Operating Procedures: Functional Checkout Procedures,,,Step-by-step procedure detailing how to calibrate any analog input channels using a NIST tracible calibration reference
-D.4.3,FALSE,System Operating Procedures: Measurement Device Calibration Procedure,,,"Step-by-step procedure detailing how to:
+D.4.1,FALSE,System Operating Procedures: Functional Checkout Procedures,,,Step-by-step procedure detailing how to verify that all aspects of the system are functional and the system is ready for use by the user.
+D.4.2,TRUE,System Operating Procedures: Start-up and Shut-down procedure,,https://github.com/osprey-dcs/sec-procedure/blob/master/powerupdown.md, Step-by-step procedures detailing how to power-up and power-down system
+D.4.3,FALSE,System Operating Procedures: Measurement Device Calibration Procedure,,,"Step-by-step procedure detailing how to calibrate any analog input channels using a NIST tracible calibration reference / Step-by-step procedure detailing how to:
 * Enable/Disable specific channels
 * Assign EU values to Channels
 * Assign Warning and Limit thresholds to channels
@@ -49,3 +49,4 @@ D.4.8,TRUE,System Operating Procedures: Export Data from the System,,https://git
 * Select a specific segment of time from specific data on the system for export
 * Export data as a CSV file
 * Export data as a UFF58 file"
+D.4.9,FALSE,Export Data from the System,,,
