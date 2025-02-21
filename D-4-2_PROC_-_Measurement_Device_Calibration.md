@@ -7,7 +7,7 @@ This procedure is to be followed when it is deemed necessary to establish a new 
 In this procedure, one person (the operator) will be responsible for all tasks described. The operator will connect the calibration source (function generator and precision DVM) to the Quartz ADC chassis (up to two at a time) and run a calibration script via the command-line interface. This will be repeated for each ADC chassis as required.
 
 ## 3 - Preparing for Calibration: Hardware
-- [3.1] Locate the calibration cable set typically stored <where?> (see Figures 1a-c). This assembly distributes the calibration voltage to (up to) two Quartz ADC chassis. On one side there are qty 4 DB-37(M) connectors for attaching to the ADC chassis, and on the other side there is a single BNC connector for attaching the excitation voltage source.  
+- [3.1] Locate the calibration cable set [D.1.5 P1](D-1-5_BOM_-_List_of_Supporting_Equipment.csv) (see Figures 1a-c). This assembly distributes the calibration voltage to (up to) two Quartz ADC chassis. On one side there are qty 4 DB-37(M) connectors for attaching to the ADC chassis, and on the other side there is a single BNC connector for attaching the excitation voltage source.  
 
 <figure style="text-align: center;">
     <div style="background-color: white; display: inline-block; padding: 10px;">
