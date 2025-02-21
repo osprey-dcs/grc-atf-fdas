@@ -61,11 +61,11 @@ The purpose of this document is to provide the top-level engineering design of t
 
 The scope of this system design document is to fulfill the documentation requirements of "D.3.1 - System Design" as defined in the ATF Common DAC System Documentation (CDD) Requirements \[3\]. Per the NASA GRC-ATF CDD, this document is intended to be used within the larger set of overall SEC-FDAS system documentation. As such, it has a limited scope by design as it is not intended to describe all aspects of each element at every level of design. Rather, the scope of this document is to limit itself to communicating the high-level design and design concepts and will avoid re-documenting the technical details of components and sub-components whose technical documentation is more appropriately contained in other system documentation or is provided by their respective developers/ manufacturers. The list of documents that comprise the full set of documentation for this system are provided as document "D.1.1 -  Bill of Materials - List of Documents" \[4\].
 
-_\[1\] NASA GRC-ATF SEC-FDAS Functional Specification v1.1, Oct. 2023 - Link **TBD**_
+_\[1\] NASA GRC-ATF SEC-FDAS Functional Specification v1.1, Oct. 2023 - [Link](doc/NASA%20GRC-ATF%20SEC-FDAS%20Functional%20Specification%20(v.1.1).pdf)_
 
-_\[2\] NASA GRC-ATF Common DAC System Architecture (CDA) Specification v1.1, Oct. 2023 - Link **TBD**_
+_\[2\] NASA GRC-ATF Common DAC System Architecture (CDA) Specification v1.1, Oct. 2023 - [Link](doc/NASA%20GRC-ATF%20Common%20DAC%20System%20Architecture%20(CDA)%20Specification%20(v1.1).pdf)_
 
-_\[3\] NASA GRC-ATF Common DAC System Documentation (CDD) Specification v1.1, Oct. 2023 - Link **TBD**_
+_\[3\] NASA GRC-ATF Common DAC System Documentation (CDD) Specification v1.1, Oct. 2023 - [Link](doc/NASA%20GRC-ATF%20Common%20DAC%20System%20Documentation%20(CDD)%20Specification%20(v1.1).pdf)_
 
 _\[4\] SEC-FDAS-D.1.1 Bill of Materials - List of Documents, v1.0 Jan. 2025 - [Link](D-1-1_BOM_-_List_of_Documents.csv)_
 
@@ -215,7 +215,7 @@ Table 1 below lists the six major hardware functions used in the design of the s
         <tr>
             <td>3</td>
             <td>Application</td>
-            <td>TBD-Port Managed Ethernet Switches</td>
+            <td>24- and 48-Port Managed Ethernet Switches</td>
             <td>x2</td>
             <td>1U</td>
             <td>One switch in each location (Control Room and FDAS Instrument Room)</td>
@@ -606,7 +606,7 @@ A Quartz and a Marble are bundled together in a chassis making up a single deplo
 
 The timing system is used to provide timestamped message data and synchronization to the system. It also provides precision and synchronization to each digitizer chassis. There are two types of data in the timing. The first type is produced by a hardware event and time of day distribution system. The second is Network Time Protocol for providing a 100 µsec time stamp to all other instrumentation.
 
-The hardware timing system distributes timing events at a precision of 8 nsecs with jitter that is under 10 psecs. (**IS THIS TRUE TBD - Eric Norum**) As part of the Marble PCB, the digitizers all have embedded timing receivers. Events can be used to synchronize data collection, distribute data acquisition events and system state. The distribution of events such as violation of abort limits allows synchronized control of mitigation strategies.
+The hardware timing system distributes timing events at a precision of 8 nsecs with jitter that is under 10 nsecs. As part of the Marble PCB, the digitizers all have embedded timing receivers. Events can be used to synchronize data collection, distribute data acquisition events and system state. The distribution of events such as violation of abort limits allows synchronized control of mitigation strategies.
 
 #### 3.7.1 - Timing Layer Design Diagram
 
@@ -619,7 +619,7 @@ The hardware timing system distributes timing events at a precision of 8 nsecs w
 
 #### 3.7.2 - IRIG Timeserver
 
-The system utilizes one (1) Timeserver designed hereafter as the "GPS Receiver."
+The system utilizes one (1) Timeserver designed hereafter as the "GPS Receiver." These features are needed to provide time stamps for data correlation and triggers for synchronized control to the distributed instruments.
 
 In order to fulfil the system's Timeserver designed functions, a Timeserver with the following minimum capabilities was selected:
 
@@ -635,10 +635,34 @@ In order to fulfil the system's Timeserver designed functions, a Timeserver with
             <th>Rationale</th>
         </tr>
         <tr>
-            <td>TBD - Davidsaver</td>
-            <td>TBD</td>
-            <td>TBD</td>
-            <td>Must have a GPS receiver, 1 Hz output, NTP server and an IRIG output.</td>
+            <td>Network Connectivity</td>
+            <td>Must support IPv4</td>
+            <td>IPv6 compatible</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Network Time Protocol Support</td>
+            <td>Must act as NTPv3 server</td>
+            <td>NTP server port</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Pulse Per Second (PPS) Output</td>
+            <td>Must provide PPS with the following:<li>5V TTL, active high (rising edge is start of second)</li><li>Minimum pulse duration 16ns</li><li>Pulse-to-pulse jitter ≤ 20ns RMS</li></td>
+            <td>BNC Output, BNC TTL Time Code Outputs</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>IRIG Time Signal Support</td>
+            <td>Must act as IRIG receiver/ decoder<li>IRIG-B with AM modulation protocol variant</li><li>BNC connector</li></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>GPS Time Synchronization</td>
+            <td>Must act as GPS receiver with type-N connector</td>
+            <td></td>
+            <td></td>
         </tr>
     </tbody>
 </table>
@@ -1101,7 +1125,7 @@ This section describes the EPICS IOCs developed specifically for this system. Tw
 The first IOC class is the DAQ IOC. The purpose of the DAQ IOC is to provide the EPICS interface and device support for the Osprey-DCS Quartz Digitizer Chassis.
 
 ##### 4.2.4.1.1 - Functional Description of the DAQ IOC
-
+[link]()
 An EPICS IOC is required for EPICS to communicate with an Osprey-DCS Quartz Digitizer Chassis. The DAQ IOC provides EPICS device support to:
 
 *   Define the PVs that command and control a single Osprey-DCS Quartz Digitizer
@@ -6535,23 +6559,23 @@ The FDAS System Status Monitoring IOC Software design consists of the following 
 
 From Wikipedia, https://en.wikipedia.org/wiki/EPICS
 
-"_The Experimental Physics and Industrial Control System (EPICS) is a set of software tools and applications used to develop and implement distributed control systems to operate devices such as particle accelerators, telescopes and other large scientific facilities. The tools are designed to help develop systems which often feature large numbers of networked computers delivering control and feedback. They also provide SCADA capabilities._"
+>The Experimental Physics and Industrial Control System (EPICS) is a set of software tools and applications used to develop and implement distributed control systems to operate devices such as particle accelerators, telescopes and other large scientific facilities. The tools are designed to help develop systems which often feature large numbers of networked computers delivering control and feedback. They also provide SCADA capabilities.
 
 #### 4.3.1 - EPICS Client/Server Framework
 
 From Wikipedia, https://en.wikipedia.org/wiki/EPICS#Architecture
 
-"_EPICS uses client–server and publish–subscribe techniques to communicate between computers. Servers, the “input/output controllers” (IOCs), collect experiment and control data in real time, using the measurement instruments attached to them. This information is then provided to clients, using the high-bandwidth Channel Access (CA) or the recently added pvAccess\[5\]\[6\] networking protocols that are designed to suit real-time applications such as scientific experiments._
-
-_IOCs hold and interact with a database of "records", which represent either devices or aspects of the devices to be controlled. IOCs can be hosted by stock-standard servers or PCs or by VME, MicroTCA, and other standard embedded system processors. For "hard real-time" applications the RTEMS or VxWorks operating systems are normally used, whereas "soft real-time" applications typically run on Linux or Microsoft Windows._
-
-_Data held in the records are represented by unique identifiers known as Process Variables (PVs). These PVs are accessible over the network channels provided by the CA/pvAccess protocol._
-
-_Many record types are available for various types of input and output (e.g., analog or binary) and to provide functional behaviour such as calculations. It is also possible to create custom record types. Each record consists of a set of fields, which hold the record's static and dynamic data and specify behaviour when various functions are requested locally or remotely. Most record types are listed in the EPICS record reference manual._
-
-_Graphical user interface packages are available, allowing users to view and interact with PV data through typical display widgets such as dials and text boxes. Examples include EDM (Extensible Display Manager), MEDM (Motif/EDM), and CSS._
-
-_Any software that implements the CA/pvAccess protocol can read and write PV values. Extension packages are available to provide support for MATLAB, LabVIEW, Perl, Python, Tcl, ActiveX, etc. These can be used to write scripts to interact with EPICS-controlled equipment."_
+>EPICS uses client–server and publish–subscribe techniques to communicate between computers. Servers, the “input/output controllers” (IOCs), collect experiment and control data in real time, using the measurement instruments attached to them. This information is then provided to clients, using the high-bandwidth Channel Access (CA) or the recently added pvAccess\[5\]\[6\] networking protocols that are designed to suit real-time applications such as scientific experiments.
+>
+>IOCs hold and interact with a database of "records", which represent either devices or aspects of the devices to be controlled. IOCs can be hosted by stock-standard servers or PCs or by VME, MicroTCA, and other standard embedded system processors. For "hard real-time" applications the RTEMS or VxWorks operating systems are normally used, whereas "soft real-time" applications typically run on Linux or Microsoft Windows.
+>
+>Data held in the records are represented by unique identifiers known as Process Variables (PVs). These PVs are accessible over the network channels provided by the CA/pvAccess protocol.
+>
+>Many record types are available for various types of input and output (e.g., analog or binary) and to provide functional behaviour such as calculations. It is also possible to create custom record types. Each record consists of a set of fields, which hold the record's static and dynamic data and specify behaviour when various functions are requested locally or remotely. Most record types are listed in the EPICS record reference manual.
+>
+>Graphical user interface packages are available, allowing users to view and interact with PV data through typical display widgets such as dials and text boxes. Examples include EDM (Extensible Display Manager), MEDM (Motif/EDM), and CSS.
+>
+>Any software that implements the CA/pvAccess protocol can read and write PV values. Extension packages are available to provide support for MATLAB, LabVIEW, Perl, Python, Tcl, ActiveX, etc. These can be used to write scripts to interact with EPICS-controlled equipment.
 
 Ref: https://docs.epics-controls.org/en/latest/getting-started/EPICS\_Intro.html
 
@@ -6559,7 +6583,7 @@ Ref: https://docs.epics-controls.org/en/latest/getting-started/EPICS\_Intro.html
 
 From: https://epicsarchiver.readthedocs.io/en/latest/user/userguide.html
 
-"_The EPICS Archiver Appliance offers a web UI for typical configuration tasks. This UI works best with a recent version of Firefox or Chrome._"
+>The EPICS Archiver Appliance offers a web UI for typical configuration tasks. This UI works best with a recent version of Firefox or Chrome.
 
 The archiving of all PVs available from the DAQ Server is done through an EPICS Archive Appliance instance running on the MISC server. 
 
@@ -6576,15 +6600,17 @@ The Archive Appliance is designed to archive up to 1 million scalar Process Vari
 
 #### 4.3.7 - Alarm Management Functionality
 
-From: Kasemir, K., Chen, X., & Danilova, E. (2009). THE BEST EVER ALARM SYSTEM TOOLKIT. Proceedings of ICALEPCS2009, Kobe, Japan. https://accelconf.web.cern.ch/icalepcs2009/papers/tua001.pdf
+From: https://github.com/ControlSystemStudio/phoebus/blob/master/services/alarm-server/README.md
 
-"_\[T\]he Best Ever Alarm System Toolkit (BEAST). It is based on Java and Eclipse on the Control System Studio (CSS) platform, using a relational database (RDB) to store the configuration and to log actions. It employs the Java Message Service (JMS) for communication between the modular pieces of the toolkit, which include an Alarm Server to maintain the current alarm state, an arbitrary number of Alarm Client user interfaces (GUI), and tools to annunciate alarms or log alarm related actions. Webreports allow us to monitor the alarm system performance and spot deficiencies in the alarm configuration. The Alarm Client GUI not only gives the end users various ways to view alarms in tree and table format, but also makes it easy to access guidance information, related operator displays and other CSS tools. It also allows the alarm configuration to be modified online from the GUI._"
+>An alarm server for the epics control system which monitors and processes the states of hundreds or thousands of pv's and produces well described, manageable, and actionable alarms for users.
+>
+>It was developed based on experience with the original EPICS alarm systems like ALH and BEAST combined with ideas from the book Alarm Management: Seven Effective Methods for Optimum Performance by B. Hollifield and E. Habibi, published by ISA in 2007.
 
 #### 4.3.8 - Channel Management - EPICS ChannelFinder – Enhanced Directory Service
 
 From: https://channelfinder.readthedocs.io/en/latest/
 
-"_ChannelFinder is a simple directory services which allows for searching for channels names and associated meta-data. Designed for use as part of an EPICS distributed control system._"
+>ChannelFinder is a simple directory services which allows for searching for channels names and associated meta-data. Designed for use as part of an EPICS distributed control system.
 
 The ChannelFinder directory service is installed on the MISC server to provide a listing of all Process Variable (PV) names published by IOCs in the system.
 
@@ -6601,23 +6627,30 @@ An screenshot of the ChannelFinder service on the MISC is provided in Figure 9 b
 
 #### 4.3.9 - System Save and Restore Functionality
 
+From: https://github.com/ControlSystemStudio/phoebus/blob/master/services/save-and-restore/README.md
+
+
+>The save-and-restore service implements the MASAR (MAchine Save And Restore) service as a collection of REST endpoints. These can be used by clients to manage save sets (aka configurations) and snapshots, to compare snapshots and to restore settings from snapshots.
+>
+>The service depends on the app-save-and-restore-model module.
+>
+>"Data is persisted by a relational database engine. The service has been verified on Postgresql and Mysql.
+
 #### 4.3.10 - Electronic Logbook - EPICS Olog Service and Client
 
 From: https://control-system-studio.readthedocs.io/en/latest/app/logbook/olog/ui/doc/index.html
 
-"Olog is an electronic logbook client for the logbook service maintained here: https://github.com/Olog/olog-es.
-
-Features:
-
-*   Arbitrary number of “logbooks”, configured in the service. A logbook entry is contained in one or several logbooks.
-*   Arbitrary number of “tags”, configured in the service. A logbook entry may be associated with zero or several tags.
-*   Arbitrary number of “properties”, configured on the service. A property is a named list of key/value pairs. The user may define values for the items in a property. A logbook entry is associated with zero or several properties.
-*   Arbitrary number of attachments, i.e. images or other file types.
-*   Markup as defined by the Commonmark specification https://commonmark.org.
-*   Log entry editor invocation from context menu whereby context specific attachments or data are automatically appended to the log entry.
-*   Log entry viewers offer search capabilities based on meta data and content."
-
-* * *
+>Olog is an electronic logbook client for the logbook service maintained here: https://github.com/Olog/olog-es._
+>
+>Features:
+>
+>*   Arbitrary number of “logbooks”, configured in the service. A logbook entry is contained in one or several logbooks.
+>*   Arbitrary number of “tags”, configured in the service. A logbook entry may be associated with zero or several tags.
+>*   Arbitrary number of “properties”, configured on the service. A property is a named list of key/value pairs. The user may define values for the items in a property. A logbook entry is associated with zero or several properties.
+>*   Arbitrary number of attachments, i.e. images or other file types.
+>*   Markup as defined by the Commonmark specification https://commonmark.org.
+>*   Log entry editor invocation from context menu whereby context specific attachments or data are automatically appended to the log entry.
+>*   Log entry viewers offer search capabilities based on meta data and content."
 
 The electronic logbook delivered with the SEC-FDAS system is the Phoebus Application OLog.
 <figure style="text-align: center;">
@@ -6636,15 +6669,18 @@ The electronic logbook delivered with the SEC-FDAS system is the Phoebus Applica
 
 #### 4.3.11 - HMI/Operator Interface
 
-Control System Studio Phoebus edition
+From: https://github.com/ControlSystemStudio/phoebus/blob/master/README.md
+>Phoebus is a framework and a collections of tools to monitor and operate large scale control systems, such as the ones in the accelerator community. Phoebus is an update of the Control System Studio toolset that removes dependencies on Eclipse RCP and SWT.Control System Studio Phoebus edition
 
 #### 4.3.12 - IOC AutoSave Service
 
-AutoSave
+From: https://epics-modules.github.io/autosave/autoSaveRestore.html#overview
+>Autosave automatically saves the values of EPICS process variables (PVs) to files on a server, and restores those values when the IOC (Input-Output Controller — the business end of EPICS) is rebooted.
 
 #### 4.3.13 - IOC RecSync Service
 
-RecSync
+From: https://github.com/ChannelFinder/recsync/blob/master/README.md
+>The record synchronizer project includes two parts. A client (RecCaster) which runing as part of an EPICS IOC, and a server (RecCeiver) which is a stand alone daemon. Together they work to ensure the the server(s) have a complete list of all records currently provided by the client IOCs.
 
 ### 4.4 - Non-EPICS Software
 
@@ -6652,7 +6688,7 @@ RecSync
 
 From Wikipedia, https://en.wikipedia.org/wiki/Linux
 
-"_Linux (/ˈlɪnʊks/, LIN-uuks) is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged as a Linux distribution (distro), which includes the kernel and supporting system software and libraries—most of which are provided by third parties—to create a complete operating system, designed as a clone of Unix and released under the copyleft GPL license._"
+>Linux (/ˈlɪnʊks/, LIN-uuks) is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged as a Linux distribution (distro), which includes the kernel and supporting system software and libraries—most of which are provided by third parties—to create a complete operating system, designed as a clone of Unix and released under the copyleft GPL license.
 
 Linux is used as the operating system for the following hardware components:
 
@@ -6665,7 +6701,7 @@ Linux is used as the operating system for the following hardware components:
 
 From Wikipedia, https://en.wikipedia.org/wiki/Firefox
 
-"_Mozilla Firefox is a free and open source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. It uses the Gecko rendering engine to display web pages, which implements current and anticipated web standards. Firefox is available for Windows 10 and later versions of Windows, macOS, and Linux. Its unofficial ports are available for various Unix and Unix-like operating systems, including FreeBSD, OpenBSD, NetBSD, and other operating systems, such as reactOS. Firefox is also available for Android and iOS. However, as with all other iOS web browsers, the iOS version uses the WebKit layout engine instead of Gecko due to platform requirements. An optimized version is also available on the Amazon Fire TV as one of the two main browsers available with Amazon's Silk Browser._"
+>Mozilla Firefox is a free and open source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. It uses the Gecko rendering engine to display web pages, which implements current and anticipated web standards. Firefox is available for Windows 10 and later versions of Windows, macOS, and Linux. Its unofficial ports are available for various Unix and Unix-like operating systems, including FreeBSD, OpenBSD, NetBSD, and other operating systems, such as reactOS. Firefox is also available for Android and iOS. However, as with all other iOS web browsers, the iOS version uses the WebKit layout engine instead of Gecko due to platform requirements. An optimized version is also available on the Amazon Fire TV as one of the two main browsers available with Amazon's Silk Browser.
 
 Firefox is used on the Workstation PCs as the browser interface for the following services:
 
@@ -6677,7 +6713,7 @@ Firefox is used on the Workstation PCs as the browser interface for the followin
 
 From Wikipedia, https://en.wikipedia.org/wiki/Nginx
 
-"_Nginx (pronounced "engine x" /ˌɛndʒɪnˈɛks/ EN-jin-EKS, stylized as NGINX or nginx) is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. The software was created by Russian developer Igor Sysoev and publicly released in 2004. Nginx is free and open-source software, released under the terms of the 2-clause BSD license. A large fraction of web servers use Nginx, often as a load balancer._"
+>Nginx (pronounced "engine x" /ˌɛndʒɪnˈɛks/ EN-jin-EKS, stylized as NGINX or nginx) is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. The software was created by Russian developer Igor Sysoev and publicly released in 2004. Nginx is free and open-source software, released under the terms of the 2-clause BSD license. A large fraction of web servers use Nginx, often as a load balancer.
 
 Nginx is used as the web-service on the Support Services Systems (MISC) PC for the data export procedure.
 
@@ -6687,7 +6723,7 @@ Ref: [D.4.8 - Export Data from the System](D-4-8_PROC_-_Export_Data_from_the_Sys
 
 From Wikipedia, https://en.wikipedia.org/wiki/Elasticsearch
 
-"_Elasticsearch is a search engine based on Apache Lucene. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Official clients are available in Java, .NET (C#), PHP, Python, Ruby and many other languages. According to the DB-Engines ranking, Elasticsearch is the most popular enterprise search engine._"
+>Elasticsearch is a search engine based on Apache Lucene. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Official clients are available in Java, .NET (C#), PHP, Python, Ruby and many other languages. According to the DB-Engines ranking, Elasticsearch is the most popular enterprise search engine.
 
 Elasticsearch is required for the following higher-level EPICS software services:
 
@@ -6700,7 +6736,7 @@ Elasticsearch is required for the following higher-level EPICS software services
 
 From Wikipedia, https://en.wikipedia.org/wiki/OpenJDK
 
-"_OpenJDK (Open Java Development Kit) is a free and open-source implementation of the Java Platform, Standard Edition (Java SE). It is the result of an effort Sun Microsystems began in 2006, four years before the company was acquired by Oracle Corporation. The implementation is licensed under the GNU General Public License 2 with a linking exception, preventing components that linked to the Java Class Library becoming subject to the terms of the GPL license. OpenJDK is the official reference implementation of Java SE since version 7, and is the most popular distribution of the JDK._"
+>OpenJDK (Open Java Development Kit) is a free and open-source implementation of the Java Platform, Standard Edition (Java SE). It is the result of an effort Sun Microsystems began in 2006, four years before the company was acquired by Oracle Corporation. The implementation is licensed under the GNU General Public License 2 with a linking exception, preventing components that linked to the Java Class Library becoming subject to the terms of the GPL license. OpenJDK is the official reference implementation of Java SE since version 7, and is the most popular distribution of the JDK.
 
 Java is required for the following other software components:
 
@@ -6712,11 +6748,11 @@ Java is required for the following other software components:
 
 From https://www.controlsystemstudio.org/
 
-"_Control System Studio is a collection of tools and applications to monitor and operate large scale control systems, such as the ones in the accelerator community._
-
-_Phoebus is a pure java/javafx based implementation which uses java feature like SPI and modules to provide the same extensible and modular achitecture. This is the current implementation of CS-Studio. The original implementation of CS-Studio is based on the eclipse RCP framework which provided an extensible and pluggable architecture._
-
-_The Phoebus and CS-Studio products are developed and maintained by a collaboration between many laboratories and universities._"
+>Control System Studio is a collection of tools and applications to monitor and operate large scale control systems, such as the ones in the accelerator community.
+>
+>Phoebus is a pure java/javafx based implementation which uses java feature like SPI and modules to provide the same extensible and modular achitecture. This is the current implementation of CS-Studio. The original implementation of CS-Studio is based on the eclipse RCP framework which provided an extensible and pluggable architecture.
+>
+>The Phoebus and CS-Studio products are developed and maintained by a collaboration between many laboratories and universities.
 
 Features:
 
@@ -6826,7 +6862,7 @@ Each of the 32 ADC channels in each of the Osprey-DCS Quartz digitizer chassis m
 
 The Osprey-DCS Quartz digitizer chassis can be calibrated per the Calibration Procedure. Ref: [D.4.11 - Measurement Device Calibration](D-4-2_PROC_-_Measurement_Device_Calibration.md)
 
-Refer to section **TBD** for information about the design of the calibration software module.
+Refer to section [4.2.3.2](#4232---quartz-calibration-module) for information about the design of the calibration software module.
 
 ## **11 - Troubleshooting**
 

@@ -1,12 +1,8 @@
 # NASA GRC-ATF FDAS D.4.1 - Functional Checkout
 
-[Quartz QA Procedure](D-4-10_PROC_-_Quartz_QA.md)
-
-[Quartz Calibration Procedure](https://github.com/osprey-dcs/quartz-calib/blob/main/Quartz_Calibration_Procedure.md)
-
 Analysis (A) - the verification of a product or system using models, calculations and testing equipment.
 
-Inspection (I) - the non-desctructive examination of a product or system using one or more of the five senses.
+Inspection (I) - the non-destructive examination of a product or system using one or more of the five senses.
 
 Demonstration (D) - the manipulation of hte product or system as it is intended to be used to verify that the results are as planned or expected.
 
@@ -48,7 +44,7 @@ The NASA GRC-ATF SEC FDAS shall be designed to conform to the following overall 
         <td rowspan="3">F.1.4</td>
         <td rowspan="3">External UTC Time Source</td>
         <td>The following:</td>
-        <td></td>
+        <td><a href="D-3-1_DESIGN_-_Design_and_Architecture.md#372---irig-timeserver">D</a> </td>
     </tr>
         <tr>
             <td>IRIG-B</td>
@@ -95,13 +91,13 @@ The NASA GRC-ATF SEC FDAS shall be designed to conform to the following overall 
     <tr>
         <td>F.1.9</td>
         <td>System Component Distributability</td>
-        <td>All data processing components hsall be able to be distributed via standard Ethernet (IEEE-802.x)</td>
+        <td>All data processing components shall be able to be distributed via standard Ethernet (IEEE-802.x)</td>
         <td>I</td>
     </tr>
 </table>
 
 ## F.2 Digitizing Electronics
-The NASA GRC-ATF SEC FDAS Digitizing Electronics shall be design to digitize analog signals in accordance iwth the following Digitizing Electronics requirements:
+The NASA GRC-ATF SEC FDAS Digitizing Electronics shall be design to digitize analog signals in accordance with the following Digitizing Electronics requirements:
 <table border="1" style="border-collapse: collapse; width: 100%;">
     <style>
         td {
@@ -118,7 +114,7 @@ The NASA GRC-ATF SEC FDAS Digitizing Electronics shall be design to digitize ana
         <td>F.2.1</td>
         <td>Number of Channels</td>
         <td>≥ 1,024 Channels</td>
-        <td>I</td>
+        <td><a href="D-3-1_DESIGN_-_Design_and_Architecture.md#42411---functional-description-of-the-daq-ioc">I</a></td>
     </tr>
     <tr>
         <td rowspan="6">F.2.2</td>
@@ -149,7 +145,7 @@ The NASA GRC-ATF SEC FDAS Digitizing Electronics shall be design to digitize ana
         <td>F.2.3</td>
         <td>Data Sample Rate Selectability</td>
         <td>User selectable from the DAS software application</td>
-        <td>D</td>
+        <td><a href="D-4-5_PROC_-_Making_a_Recording_Procedure.md#preparation">D</a></td>
     <tr>
     <tr>
         <td>F.2.4</td>
@@ -191,7 +187,7 @@ The NASA GRC-ATF SEC FDAS Digitizing Electronics shall be design to digitize ana
         <td>F.2.10</td>
         <td>AC/DC Input</td>
         <td>User selectable from the DAS software application</td>
-        <td>D</td>
+        <td><a href="D-4-5_PROC_-_Making_a_Recording_Procedure.md">D</td>
     </tr>
     <tr>
         <td>F.2.11</td>
@@ -246,33 +242,33 @@ The NASA GRC-ATF SEC FDAS Digitizing Electronics shall be design to digitize ana
     </tr>
     <tr>
         <td>F.2.16</td>
-        <td>Digitzer On-board FMC Firmware Source Code Availability</td>
+        <td>Digitizer On-board FMC Firmware Source Code Availability</td>
         <td>Open-sourcable, BSD or similar</td>
-        <td>I</td>
+        <td><a href="D-1-4 BOM_-_List_of_Software_and_Firmware.csv">I</a></td>
     </tr>
     <tr>
         <td>F.2.17</td>
-        <td>Digitzer On-board FMC Firmware Source Code Licensing</td>
+        <td>Digitizer On-board FMC Firmware Source Code Licensing</td>
         <td>Open-sourcable, BSD or similar</td>
-        <td>I</td>
+        <td><a href="D-1-4 BOM_-_List_of_Software_and_Firmware.csv">I</a></td>
     </tr>
     <tr>
         <td>F.2.18</td>
         <td>Digitizer Timing System Interface</td>
         <td>Event-based, 100% mRF* protocol compatible</td>
-        <td>I</td>
+        <td><a href="D-1-4 BOM_-_List_of_Software_and_Firmware.csv">I</a></td>
     </tr>
     <tr>
         <td>F.2.19</td>
         <td>Digitizer DAS Application Interface</td>
         <td>100% Open-Standards-based</td>
-        <td>I</td>
+        <td><a href="D-1-4 BOM_-_List_of_Software_and_Firmware.csv">I</a></td>
     </tr>
     <tr>
         <td>F.2.20</td>
-        <td>Digizer DAS Application Interface Driver Licensing</td>
+        <td>Digitizer DAS Application Interface Driver Licensing</td>
         <td>Open-Sourcable, BSD or similar</td>
-        <td>I</td>
+        <td><a href="D-1-4 BOM_-_List_of_Software_and_Firmware.csv">I</a></td>
     </tr>
 </table>
 
@@ -285,151 +281,40 @@ The NASA GRC-ATF SEC FDAS Digitizing Electronics shall be design to digitize ana
             vertical-align: top;
         }
     </style>
-    <tr>
-        <th>ID</th>
-        <th>Requirement</th>
-        <th>Value</th>
-        <th>Verify</th>
-    </tr>
-    <tr>
-        <td>F.3.1</td>
-        <td>Storage Reliability</td>
-        <td>≥ RAID 5</td>
-        <td>I</td>
-    </tr>
-    <tr>
-        <td>F.3.2</td>
-        <td>1,024 Channel Individual Recording Duration</td>
-        <td>≥ 15 minutes for full 1,024 channels all acquiring at 50 kHz Sample Rate</td>
-        <td>T</td>
-    </tr>
-    <tr>
-        <td>F.3.3</td>
-        <td>256 Channel Individual Recording Duration</td>
-        <td>≥ 15 minutes for partial 256 channels acquiring at 250 kHz Sample Rate</td>
-        <td>T</td>
-    </tr>
-    <tr>
-        <td>F.3.4</td>
-        <td>Number of Consecutive Recordings Prior to System Offload</td>
-        <td>≥ 15 recordings each case</td>
-        <td>A</td>
-    </tr>
-    <tr>
-        <td>F.3.5</td>
-        <td>Recording Timestamping vs UTC</td>
-        <td>± 0.1 μs</td>
-        <td>T</td>
-    </tr>
-    <tr>
-        <td rowspan="7">F.3.6</td>
-        <td rowspan="7">Per Recording Meta-Data Capture</td>
-        <td>The following (at a min)</td>
-        <td></td>
-    </tr>
-        <tr>
-            <td>1. Customer Name</td>
-            <td>D</td>
-        <tr>
-            <td>2. Project ID</td>
-            <td>D</td>
-        </tr>
-        <tr>
-            <td>3. Test Facility</td>
-            <td>D</td>
-        </tr>
-        <tr>
-            <td>4. Recording ID</td>
-            <td>D</td>
-        </tr>
-        <tr>
-            <td>5. Recording Start Time</td>
-            <td>D</td>
-        </tr>
-        <tr>
-            <td>6. Operator Name</td>
-            <td>D</td>
-        </tr>
-    <tr>
-        <td rowspan="12">F.3.7</td>
-        <td rowspan="12">Per Channel Calibration Data Capture</td>
-        <td>The following (at a min)</td>
-        <td></td>
-    </tr>
-        <tr>
-            <td>1. Channel ID</td>
-            <td>D</td>
-        <tr>
-            <td>2. Digitizer ID</td>
-            <td>D</td>
-        </tr>
-        <tr>
-            <td>3. Cal. Slope</td>
-            <td>D</td>
-        </tr>
-        <tr>
-            <td>4. Cal. Offset</td>
-            <td>D</td>
-        </tr>
-        <tr>
-            <td>5. EU Slope</td>
-            <td>D</td>
-        </tr>
-        <tr>
-            <td>6. EU Offset</td>
-            <td>D</td>
-        </tr>
-        <tr>
-            <td>7. EU Unit</td>
-            <td>D</td>
-        </tr>
-        <tr>
-            <td>8. Calibration Date</td>
-            <td>D</td>
-        </tr>
-        <tr>
-            <td>9. DMM Make</td>
-            <td>D</td>
-        </tr>
-        <tr>
-            <td>10. DMM Model</td>
-            <td>D</td>
-        </tr>
-        <tr>
-            <td>11. DMM SN</td>
-            <td>D</td>
-        </tr>
-   <tr>
-        <td rowspan="3">F.3.8</td>
-        <td rowspan="3">Calibration Settings</td>
-        <td>The following (at a min)</td>
-        <td></td>
-    </tr>
-        <tr>
-            <td>1. Calibration Scope</td>
-            <td>I, D</td>
-        </tr>
-            </tr>
-        <tr>
-            <td>2. Calibration Offset</td>
-            <td>I, D</td>
-        </tr>
-   <tr>
-        <td rowspan="3">F.3.9</td>
-        <td rowspan="3">EU Conversion Configuration</td>
-        <td>The following (at a min)</td>
-        <td></td>
-    </tr>
-        <tr>
-            <td>1. EU conversion slope</td>
-            <td>I, D</td>
-        </tr>
-            </tr>
-        <tr>
-            <td>2. EU conversion offset</td>
-            <td>I, D</td>
-        </tr>
+    <tr><th>ID</th><th>Requirement</th><th>Value</th><th>Verify</th></tr>
+    <tr><td>F.3.1</td><td>Storage Reliability</td><td>≥ RAID 5</td><td>I</td></tr>
+    <tr><td>F.3.2</td><td>1,024 Channel Individual Recording Duration</td><td>≥ 15 minutes for full 1,024 channels all acquiring at 50 kHz Sample Rate</td><td>T</td></tr>
+    <tr><td>F.3.3</td><td>256 Channel Individual Recording Duration</td><td>≥ 15 minutes for partial 256 channels acquiring at 250 kHz Sample Rate</td><td>T</td></tr>
+    <tr><td>F.3.4</td><td>Number of Consecutive Recordings Prior to System Offload</td><td>≥ 15 recordings each case</td><td>A</td></tr>
+    <tr><td>F.3.5</td><td>Recording Timestamping vs UTC</td><td>± 0.1 μs</td><td>T</td></tr>
+    <tr><td rowspan="7">F.3.6</td><td rowspan="7">Per Recording Meta-Data Capture</td><td>The following (at a min)</td><td></td></tr>
+        <tr><td>1. Customer Name</td><td>D</td></tr>
+        <tr><td>2. Project ID</td><td>D</td></tr>
+        <tr><td>3. Test Facility</td><td>D</td></tr>
+        <tr><td>4. Recording ID</td><td>D</td></tr>
+        <tr><td>5. Recording Start Time</td><td>D</td></tr>
+        <tr><td>6. Operator Name</td><td>D</td></tr>
+    <tr><td rowspan="12">F.3.7</td><td rowspan="12">Per Channel Calibration Data Capture</td><td>The following (at a min)</td><td></td></tr>
+        <tr><td>1. Channel ID</td><td>D</td>
+        <tr><td>2. Digitizer ID</td><td>D</td></tr>
+        <tr><td>3. Cal. Slope</td><td>D</td></tr>
+        <tr><td>4. Cal. Offset</td><td>D</td></tr>
+        <tr><td>5. EU Slope</td><td>D</td></tr>
+        <tr><td>6. EU Offset</td><td>D</td></tr>
+        <tr><td>7. EU Unit</td><td>D</td></tr>
+        <tr><td>8. Calibration Date</td><td>D</td></tr>
+        <tr><td>9. DMM Make</td><td>D</td></tr>
+        <tr><td>10. DMM Model</td><td>D</td></tr>
+        <tr><td>11. DMM SN</td><td>D</td></tr>
+   <tr><td rowspan="3">F.3.8</td><td rowspan="3">Calibration Settings</td><td>The following (at a min)</td><td></td></tr>
+        <tr><td>1. Calibration Scope</td><td>I, D</td></tr></tr>
+        <tr><td>2. Calibration Offset</td><td>I, D</td></tr>
+   <tr><td rowspan="3">F.3.9</td><td rowspan="3">EU Conversion Configuration</td><td>The following (at a min)</td><td></td></tr>
+        <tr><td>1. EU conversion slope</td><td>I, D</td></tr>
+        <tr><td>2. EU conversion offset</td><td>I, D</td></tr>
 </table>
+
+[D.4.5 - Making a Recording](D-4-5_PROC_-_Making_a_Recording_Procedure.md)
 
 ## F.4 Real-Time Monitoring (RTM)
 The SEC-FDAS shall be capable of monitoring channel data in real-time in a manner that fulfills the following minimum real-time monitoring requirements:
@@ -450,6 +335,8 @@ The SEC-FDAS shall be capable of monitoring channel data in real-time in a manne
     <tr><td>F.4.7</td><td>RTM Peak Detection Feature</td><td>All channels as selected</td><td>D</td></tr>	
     <tr><td>F.4.8</td><td>RTM Display Measurement to Display Latency</td><td>≤ 0.5 seconds</td><td>T</td></tr>
 </table>
+
+[D.4.6 - Monitoring a Data Channel in Real Time](D-4-6_PROC_-_Monitoring_a_Data-Channel_in_Real_Time.md)
 
 ## F.5 Software Application
 The NASA GRC-ATF SEC FDAS Software Application shall be designed to meet or exceed the following minimum system software application requirements:
@@ -475,9 +362,9 @@ The NASA GRC-ATF SEC FDAS Software Application shall be designed to meet or exce
     <tr><th>ID</th><th>Requirement</th><th>Verify</th></tr>
     <tr><td>F.5.1</td><td>Software Architecture conforms to the Neil A. Armstrong Test Facility Common DAC System System Architecture Specification revision 72260 dated August 14, 2023</td><td>A</td></tr>
     <tr><td>F.5.2</td><td>GUI interface for all specified functions</td><td>I</td></tr>
-    <tr><td>F.5.3</td><td>Alarm and Limit Summary Display and Monitoring capability</td><td>D</td></tr>
-    <tr><td>F.5.4</td><td>Whole system configuration Save and Restore capability</td><td>T</td></tr>
-    <tr><td rowspan="2">F.5.5</td><td>The DAS system will be able to define all User-defined Per-Test channel configuration using a CSV Import capability where the CSV has the following columns:</td><td rowspan="2">D</td></tr>
+    <tr><td>F.5.3</td><td>Alarm and Limit Summary Display and Monitoring capability</td><td><a href="D-3-1_DESIGN_-_Design_and_Architecture.md#437---alarm-management-functionality">D</a></td></tr>
+    <tr><td>F.5.4</td><td>Whole system configuration Save and Restore capability</td><td><a href="D-3-1_DESIGN_-_Design_and_Architecture.md#439---system-save-and-restore-functionality">T</a></td></tr>
+    <tr><td rowspan="2">F.5.5</td><td>The DAS system will be able to define all User-defined Per-Test channel configuration using a CSV Import capability where the CSV has the following columns:</td><td rowspan="2"><a href="D-4-4_PROC_-_Per_Test_User_Configuration_Procedure.md">D</a></td></tr>
     <tr>
         <td class="split-cell">
             <div><table>
@@ -513,8 +400,8 @@ The NASA GRC-ATF SEC FDAS Software Application shall be designed to meet or exce
         </td>
     </tr>
     <tr><td rowspan="2">F.5.6</td><td>Current User-defined Per-Test channel configuration CSV export capability</td><td>T</td>
-    <tr><td>CSV export (fields same as import)</td><td>I</td></tr>
-    <tr><td>F.5.7</td><td>Electronic Logbook capability</td><td>D</td></tr>	
+    <tr><td>CSV export (fields same as import)</td><td><a href="D-4-8_PROC_-_Export_Data_from_the_System.md">I</a></td></tr>
+    <tr><td>F.5.7</td><td>Electronic Logbook capability</td><td><a href="D-3-1_DESIGN_-_Design_and_Architecture.md#4310---electronic-logbook---epics-olog-service-and-client">D</a></td></tr>	
     <tr><td rowspan="3">F.5.8</td><td>General/Universal Screenshot capability</td><td>D</td>
     <tr><td>automatic filenaming with timestamps</td><td>D</td></tr>
     <tr><td>automatic filename included in the screenshot</td><td>D</td></tr>
@@ -546,6 +433,8 @@ The NASA GRC-ATF SEC FDAS shall be able to import a single CSV file that configu
     <tr><td>Underscores ( _ )</td><td>D</td></tr>
 </table>
 
+[D.4.4 - User Configuration Procedure](D-4-4_PROC_-_Per_Test_User_Configuration_Procedure.md)
+
 ## F.7 Data Export
 The NASA GRC-ATF SEC FDAS shall be designed to export recorded data in accordance with the following data export requirements:
 
@@ -563,6 +452,8 @@ The NASA GRC-ATF SEC FDAS shall be designed to export recorded data in accordanc
     <tr><td>F.7.5</td><td>in the CSV format</td><td>D</td></tr>
     <tr><td>F.7.6</td><td>in the UFF58b format</td><td>D</td></tr>
 </table>
+
+[D.4.8 - Data Export Procedure](D-4-8_PROC_-_Export_Data_from_the_System.md)
 
 ## F.8 UFF58 Export Header Requirements
 The NASA GRC-ATF SEC FDAS shall be designed to export UFF58 recorded data in accordance with the following UFF58 data export format requirements:
@@ -653,6 +544,8 @@ The NASA GRC-ATF SEC FDAS shall be designed to export UFF58 recorded data in acc
     </tr>
 </table>
 
+[D.4.8 - Data Export Procedure](D-4-8_PROC_-_Export_Data_from_the_System.md)
+
 ## F.9 Secure Web-Based Data Export
 <table border="1" style="border-collapse: collapse; width: 100%;">
     <tr><th>ID</th><th>Requirement</th><th>Verify</th></tr>
@@ -675,3 +568,5 @@ The NASA GRC-ATF SEC FDAS shall be designed to export UFF58 recorded data in acc
         <td>F.9.4</td><td><b>The DAC system's data export webserver shall be capable of switching from a self-signed certificate to a NASA provided certificate without changing the webserver configuration. The DAC operator will be able to simply replace the self-signed cert with the NASA cert and restart the webserver service.</b></td>
         <td>D</td>
         </tr>
+
+[D.4.8 - Data Export Procedure](D-4-8_PROC_-_Export_Data_from_the_System.md)
