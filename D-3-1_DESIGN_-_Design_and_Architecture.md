@@ -33,7 +33,7 @@
     - [4.2.1 - Quartz Chassis Software](#421---quartz-chassis-software)
     - [4.2.2 - EPICS Drivers](#422---epics-drivers)
     - [4.2.3 - Osprey Developed EPICS Modules](#423---osprey-developed-epics-modules)
-    - [4.2.4 - Osprey Developed EPICS IOCS](#424---osprey-developed-epics-iocs)
+    - [4.2.4 - Osprey Developed EPICS IOCs](#424---osprey-developed-epics-iocs)
 
 ## List of Tables
 - [Table 1 - Hardware Elements by Type](#table-1---hardware-elements-by-type)
@@ -314,9 +314,9 @@ The system utilizes two (2) PCs as "Operator Workstations" designed hereafter as
 
 The Operator Workstations are designed and selected to effectively host the following software:
 
-*   Operating System --> Linux
-*   Web Browser --> Chrome
-*   Operator HMI Software --> Control System Studio, Phoebus Edition
+* Operating System --> Linux
+* Web Browser --> Chrome
+* Operator HMI Software --> Control System Studio, Phoebus Edition
 
 In order to fulfil the system's Operator Workstation designed functions, PC's with the following minimum capabilities were selected:
 <table style="width: 100%; border-collapse: collapse;" border="1">
@@ -594,11 +594,11 @@ For greater detail, full hardware schematics can be found in section [2.6](#26--
 
 #### 3.5.2 - The Quartz Chassis
 
-A Quartz and a Marble are bundled together in a chassis making up a single deployable hardware unit in the system. The Chassis provides needed power, cooling and external I/O for the interal PCBs to operate within the overall system.
+A Quartz and a Marble are bundled together in a chassis making up a single deployable hardware unit in the system. The Chassis provides needed power, cooling and external I/O for the internal PCBs to operate within the overall system.
 
 ### 3.6 - The Instrument Layer Design
 
-*   Quartz PCB (Already discussed in section 3.5.2)
+*   Quartz PCB (Already discussed in section [3.5.2](#352---the-quartz-chassis))
 *   SigGen
 *   DMM
 
@@ -1092,7 +1092,7 @@ This section describes the EPICS Modules used to handle key application function
     </tbody>
 </table>
 
-#### 4.2.4 - Osprey Developed EPICS IOCS
+#### 4.2.4 - Osprey Developed EPICS IOCs
 
 This section describes the EPICS IOCs developed specifically for this system. Two IOC Classes have been designed. Each class is used multiple times in the system.
 
@@ -2467,7 +2467,6 @@ Ref: https://epics.anl.gov/base/R7-0/4-docs/calcoutRecord.html
 The FDAS DAQ IOC design consists of the following records of this type:
 
 <table style="border-collapse: collapse;" border="1">
-<table class="wikitable zTblPVList" style="width: 100%;">
 	<tbody>
 		<tr>
             <th>List #</th>
@@ -4875,23 +4874,23 @@ An EPICS IOC is required for EPICS to monitor the health and status of the four 
 <table style="border-collapse: collapse;" border="1">
     <tbody>
         <tr>
-            <td><b>Language Written in</b></td>
+            <td>Language Written in</td>
             <td>EPICS 7 Core (i.e. Make File)</td>
         </tr>
         <tr>
-            <td><b>Repo Link</b></td>
+            <td>Repo Link</td>
             <td><i>See SW BOM</i></td>
         </tr>
         <tr>
-            <td><b>Version Used</b></td>
+            <td>Version Used</td>
             <td><i>See Software BOM</i></td>
         </tr>
         <tr>
-            <td><b>Installation Details</b></td>
+            <td>Installation Details</td>
             <td><i>See the Software Inventory Document</i></td>
         </tr>
         <tr>
-            <td><b>Configuration Details</b></td>
+            <td>Configuration Details</td>
             <td><i>See Software Configuration Management Document</i></td>
         </tr>
     </tbody>
@@ -6825,7 +6824,7 @@ The overall readiness of the system can be established using the Functional Syst
 
 Each of the 32 ADC channels in each of the Osprey-DCS Quartz digitizer chassis must be calibrated before use.
 
-The Osprey-DCS Quartz digitizer chassis can be calibrated per the Calibration Procedure. Ref: [D.4.11 - Quartz Calibration](D-4-11_PROC_-_Quartz_Calibration.md)
+The Osprey-DCS Quartz digitizer chassis can be calibrated per the Calibration Procedure. Ref: [D.4.11 - Measurement Device Calibration](D-4-2_PROC_-_Measurement_Device_Calibration.md)
 
 Refer to section **TBD** for information about the design of the calibration software module.
 
@@ -6979,13 +6978,14 @@ The Tech-talk archives are searchable. The archive search index is updated overn
 
 The main interface for searching the Tech-talk archives are the inputs fields as listed below:
 
-Search Tech-talk for:
-<table style="width: 100%; border-collapse: collapse;" border="1">
+<table style=border-collapse: collapse;" border="1">
     <tbody>
         <tr>
             <td>Match any word:</td>
+            <td>_____________</td>
         </tr>
         <tr>
+            <td>Search tech-talk for:</td>
             <td>_____________</td>
         </tr>
     </tbody>
@@ -7009,15 +7009,31 @@ You can also subscribe via email. To subscribe via email: **send a message to [t
 
 In general you should subscribe only if you intend to send messages to this list (note that you can subscribe but turn message delivery off if you normally read Tech-talk through the RSS feed). If you aren't subscribed, your message will have to be approved by a list moderator, which will delay its delivery. However it should eventually get through (unless it looks like spam), so a subscription is not essential.
 
+
 Address messages to [tech-talk@aps.anl.gov](mailto://tech-talk@aps.anl.gov), for example:
+<table style=border-collapse: collapse;" border="1">
+    <tbody>
+        <tr>
+            <td>Email To:</td>
+            <td>[tech-talk@aps.anl.gov](mailto://tech-talk@aps.anl.gov)</td>
+        </tr>
+        <tr>
+            <td>Email Subject Line:</td>
+            <td><i>&lt;please use a relevant subject line&gt;</i></td>
+        </tr>
+        <tr>
+            <td>Email Body Text:</td>
+            <td><i>&lt;ask your question&gt;</i></td>
+        </tr>
+    </tbody>
+</table>
 
-Email To:
 
-[tech-talk@aps.anl.gov](mailto://tech-talk@aps.anl.gov)
 
-Email Subject Line:
 
-_<please use a relevant subject line>_
+
+
+
 
 Email Body Text:
 

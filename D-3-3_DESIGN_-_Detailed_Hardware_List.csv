@@ -1,6 +1,6 @@
 BOM List,BOM Item,Device Name,Description,Serial Number
 D.1.3,E1,DAQS,Linux server responsible for data acquisition/export,BFMLW04
-D.1.3,E2,MISCS,"Linux server responsible for monitoring system health with miscellaneoues EPICS tools (Archiver, OLOG, Alarm)",FZKDX04
+D.1.3,E2,MISCS,"Linux server responsible for monitoring system health with miscellaneous EPICS tools (Archiver, OLOG, Alarm)",FZKDX04
 D.1.3,E3,DISWS1,Linux workstation for operations,1386990010001
 D.1.3,E3,DISWS2,Linux workstation for operations,1386990010002
 D.1.3,E4,DAQSW,24 port network switch for the control room area,FMK4438T00F
