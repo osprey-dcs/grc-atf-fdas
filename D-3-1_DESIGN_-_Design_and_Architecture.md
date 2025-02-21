@@ -2433,7 +2433,7 @@ The FDAS DAQ IOC design consists of the following records of this type:
             <td>1</td>
             <td>32</td>
             <td>Per Chassis</td>
-            <td>Expert.&#160; Clear Short  Acqusition monitoring buffer</td>
+            <td>Expert.&#160; Clear Short  Acquisition monitoring buffer</td>
         </tr>
         <tr>
             <td>21</td>
@@ -6680,7 +6680,7 @@ From: https://epics-modules.github.io/autosave/autoSaveRestore.html#overview
 #### 4.3.13 - IOC RecSync Service
 
 From: https://github.com/ChannelFinder/recsync/blob/master/README.md
->The record synchronizer project includes two parts. A client (RecCaster) which runing as part of an EPICS IOC, and a server (RecCeiver) which is a stand alone daemon. Together they work to ensure the the server(s) have a complete list of all records currently provided by the client IOCs.
+>The record synchronizer project includes two parts. A client (RecCaster) which running as part of an EPICS IOC, and a server (RecCeiver) which is a stand alone daemon. Together they work to ensure the the server(s) have a complete list of all records currently provided by the client IOCs.
 
 ### 4.4 - Non-EPICS Software
 
@@ -6750,7 +6750,7 @@ From https://www.controlsystemstudio.org/
 
 >Control System Studio is a collection of tools and applications to monitor and operate large scale control systems, such as the ones in the accelerator community.
 >
->Phoebus is a pure java/javafx based implementation which uses java feature like SPI and modules to provide the same extensible and modular achitecture. This is the current implementation of CS-Studio. The original implementation of CS-Studio is based on the eclipse RCP framework which provided an extensible and pluggable architecture.
+>Phoebus is a pure java/javafx based implementation which uses java feature like SPI and modules to provide the same extensible and modular architecture. This is the current implementation of CS-Studio. The original implementation of CS-Studio is based on the eclipse RCP framework which provided an extensible and pluggable architecture.
 >
 >The Phoebus and CS-Studio products are developed and maintained by a collaboration between many laboratories and universities.
 

@@ -4,7 +4,7 @@ Analysis (A) - the verification of a product or system using models, calculation
 
 Inspection (I) - the non-destructive examination of a product or system using one or more of the five senses.
 
-Demonstration (D) - the manipulation of hte product or system as it is intended to be used to verify that the results are as planned or expected.
+Demonstration (D) - the manipulation of the product or system as it is intended to be used to verify that the results are as planned or expected.
 
 Test (T) - the verification of a product or system using a controlled and predefined series of inputs, data, or stimuli to ensure that the product or system will produce a very specific and predefined output as specified by the requirements.
 

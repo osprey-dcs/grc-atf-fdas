@@ -53,7 +53,7 @@
 * download phoebus latest tag, move and add link to /usr/local/epics/phoebus
 * copy logos and wallpaper
 * copy phoebus desktop shortcut, comment the “-f resource” argument and fix permissions
-* modify /usr/local/epics/phoebus/phoebus.sh -> comment OPT=“-server 4918” line add settings.ini and TOP at the beggining
+* modify /usr/local/epics/phoebus/phoebus.sh -> comment OPT=“-server 4918” line add settings.ini and TOP at the beginning
 * ``sudo ln -s /usr/local/epics/phoebus/phoebus.sh /usr/local/bin/phoebus``
 * copy settings.ini file (for archiver url/etc)
 * change desktop and add user admin for service
