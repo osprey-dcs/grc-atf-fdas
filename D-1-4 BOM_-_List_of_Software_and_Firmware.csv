@@ -10,9 +10,9 @@ S8,4,EPICS Collaboration,Calc,3.7.5,EPICS Open License,https://github.com/epics-
 S9,4,EPICS Collaboration,Caputlog,4,EPICS Open License,https://github.com/epics-modules/caPutLog
 S10,4,EPICS Collaboration,IocStats,3.2.0,EPICS Open License,https://github.com/epics-modules/iocStats
 S11,4,EPICS Collaboration,Modbus,3.3,EPICS Open License,https://github.com/epics-modules/modbus
-S12,4,EPICS Collaboration,P4P,4.1.12,EPICS Open License,https://github.com/mdavidsaver/p4p
+S12,4,EPICS Collaboration,P4P,4.1.12,EPICS Open License,https://github.com/epics-base/p4p
 S13,4,EPICS Collaboration,PCAS,4.13.3,EPICS Open License,https://github.com/epics-modules/pcas
-S14,4,EPICS Collaboration,PVXS,1.3.1,EPICS Open License,https://github.com/mdavidsaver/pvxs
+S14,4,EPICS Collaboration,PVXS,1.3.1,EPICS Open License,https://github.com/epics-base/pvxs
 S15,4,EPICS Collaboration,RecSync,1.5,EPICS Open License,https://github.com/ChannelFinder/recsync
 S16,4,EPICS Collaboration,Seq,R2-2-9,EPICS Open License,https://github.com/epics-modules/sequencer
 S17,4,EPICS Collaboration,Sscan,2.11.6,EPICS Open License,https://github.com/epics-modules/sscan

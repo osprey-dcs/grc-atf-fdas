@@ -275,7 +275,7 @@ deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware
 ## Chapter 3 - EPICS base and modules installation
 * ```su atf```
 * ```cd ~```
-* ```git clone https://github.com/domitto/build-epics.git --recursive```
+* ```git clone https://github.com/osprey-dcs/build-epics.git --branch atf-20240320 --recursive```
 * ```cd build-epics```
 * ```./prepare.sh```
 * ```. eactivate```
