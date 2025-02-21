@@ -12,10 +12,6 @@ For each digitizer chassis, computer and switch:
 
 For each computer (DAQS, MISCS, DISWS1, DISWS2):
 * Check Redundant Array of Independent Disks (RAID) array status, monthly
-```
-$ sudo mdadm –detail /dev/md0
-```
-Should see [UU] for healthy, otherwise [U_] or [_U]
 
 * Check disk usage for each partition (whether use is 90% or higher)
 ```
