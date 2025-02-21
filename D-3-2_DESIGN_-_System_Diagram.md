@@ -6,4 +6,4 @@
 
 ## Timing Network
 
-![Timing Network](image/D-3-2_Timing_Topology.svg)
+![Timing Network](image/Timing_Topology.svg)
