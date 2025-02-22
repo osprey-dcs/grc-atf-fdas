@@ -339,8 +339,8 @@ The NASA GRC-ATF SEC FDAS Software Application shall be designed to meet or exce
                 <tr><td>USE</td><td>=</td><td>Channel Use (Yes/No)</td></tr>
                 <tr><td>CUSTNAM</td><td>=</td><td>Channel User Label</td></tr>
                 <tr><td>DESC</td><td>=</td><td>Channel Description</td></tr>
-                <tr><td>IDLINE5</td><td>=</td><td>tbd</td></tr>
-                <tr><td>RESPNODE</td><td>=</td><td>tbd</td></tr>
+                <tr><td>IDLINE5</td><td>=</td><td>UFF58 meta-data</td></tr>
+                <tr><td>RESPNODE</td><td>=</td><td>UFF58 meta-data</td></tr>
                 <tr><td>RESPDIR</td><td>=</td><td>Response Direction</td></tr>
                 <tr><td>SPECDATATYP</td><td>=</td><td>Specific Data Type field</td></tr>
                 <tr><td>EGU</td><td>=</td><td>engineering unit</td></tr>      
