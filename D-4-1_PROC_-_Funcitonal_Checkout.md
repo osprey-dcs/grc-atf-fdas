@@ -244,31 +244,31 @@ The NASA GRC-ATF SEC FDAS Digitizing Electronics shall be design to digitize ana
         <td>F.2.16</td>
         <td>Digitizer On-board FMC Firmware Source Code Availability</td>
         <td>Open-sourcable, BSD or similar</td>
-        <td><a href="D-1-4 BOM_-_List_of_Software_and_Firmware.csv">I</a></td>
+        <td><a href="D-1-4_BOM_-_List_of_Software_and_Firmware.csv">I</a></td>
     </tr>
     <tr>
         <td>F.2.17</td>
         <td>Digitizer On-board FMC Firmware Source Code Licensing</td>
         <td>Open-sourcable, BSD or similar</td>
-        <td><a href="D-1-4 BOM_-_List_of_Software_and_Firmware.csv">I</a></td>
+        <td><a href="D-1-4_BOM_-_List_of_Software_and_Firmware.csv">I</a></td>
     </tr>
     <tr>
         <td>F.2.18</td>
         <td>Digitizer Timing System Interface</td>
         <td>Event-based, 100% mRF* protocol compatible</td>
-        <td><a href="D-1-4 BOM_-_List_of_Software_and_Firmware.csv">I</a></td>
+        <td><a href="D-1-4_BOM_-_List_of_Software_and_Firmware.csv">I</a></td>
     </tr>
     <tr>
         <td>F.2.19</td>
         <td>Digitizer DAS Application Interface</td>
         <td>100% Open-Standards-based</td>
-        <td><a href="D-1-4 BOM_-_List_of_Software_and_Firmware.csv">I</a></td>
+        <td><a href="D-1-4_BOM_-_List_of_Software_and_Firmware.csv">I</a></td>
     </tr>
     <tr>
         <td>F.2.20</td>
         <td>Digitizer DAS Application Interface Driver Licensing</td>
         <td>Open-Sourcable, BSD or similar</td>
-        <td><a href="D-1-4 BOM_-_List_of_Software_and_Firmware.csv">I</a></td>
+        <td><a href="D-1-4_BOM_-_List_of_Software_and_Firmware.csv">I</a></td>
     </tr>
 </table>
 
