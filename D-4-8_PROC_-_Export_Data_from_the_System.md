@@ -28,8 +28,7 @@ Default.
 1. Copy the `.uff` file from under `/data` into `/export`.
 1. From the Data Export console, launch a web browser and navigate to `https://192.168.80.1/`.
     - The contents of `/export` should be listed.
-1. Download the new `.uff` file and save into ???
-1. TBD...
+1. Download the new `.uff` file and save to the desired location
 
 ##  Export via USB
 
