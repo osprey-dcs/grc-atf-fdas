@@ -11,11 +11,6 @@ Test (T) - the verification of a product or system using a controlled and predef
 ## F.1 System Facility Interface Requirements
 The NASA GRC-ATF SEC FDAS shall be designed to conform to the following overall system design requirements:
 <table border="1" style="border-collapse: collapse; width: 100%;">
-    <style>
-        td {
-            vertical-align: top;
-        }
-    </style>
     <tr>
         <th>ID</th>
         <th>Requirement</th>
@@ -99,11 +94,6 @@ The NASA GRC-ATF SEC FDAS shall be designed to conform to the following overall 
 ## F.2 Digitizing Electronics
 The NASA GRC-ATF SEC FDAS Digitizing Electronics shall be design to digitize analog signals in accordance with the following Digitizing Electronics requirements:
 <table border="1" style="border-collapse: collapse; width: 100%;">
-    <style>
-        td {
-            vertical-align: top;
-        }
-    </style>
     <tr>
         <th>ID</th>
         <th>Requirement</th>
@@ -276,11 +266,6 @@ The NASA GRC-ATF SEC FDAS Digitizing Electronics shall be design to digitize ana
 
 ## F.3 Data Recording
 <table border="1" style="border-collapse: collapse; width: 100%;">
-    <style>
-        td {
-            vertical-align: top;
-        }
-    </style>
     <tr><th>ID</th><th>Requirement</th><th>Value</th><th>Verify</th></tr>
     <tr><td>F.3.1</td><td>Storage Reliability</td><td>≥ RAID 5</td><td>I</td></tr>
     <tr><td>F.3.2</td><td>1,024 Channel Individual Recording Duration</td><td>≥ 15 minutes for full 1,024 channels all acquiring at 50 kHz Sample Rate</td><td>T</td></tr>
@@ -320,11 +305,6 @@ The NASA GRC-ATF SEC FDAS Digitizing Electronics shall be design to digitize ana
 The SEC-FDAS shall be capable of monitoring channel data in real-time in a manner that fulfills the following minimum real-time monitoring requirements:
 
 <table border="1" style="border-collapse: collapse; width: 100%;">
-    <style>
-        td {
-            vertical-align: top;
-        }
-    </style>
     <tr><th>ID</th><th>Requirement</th><th>Value</th><th>Verify</th></tr>
     <tr><td>F.4.1</td><td>Channel Availability for RTM</td><td>All</td><td>D</td></tr>
     <tr><td>F.4.2</td><td>Number of RTM PCs</td><td>≥ 2</td><td>I, D</td></tr>
@@ -342,23 +322,6 @@ The SEC-FDAS shall be capable of monitoring channel data in real-time in a manne
 The NASA GRC-ATF SEC FDAS Software Application shall be designed to meet or exceed the following minimum system software application requirements:
 
 <table border="1" style="border-collapse: collapse; width: 100%;">
-    <style>
-        td {
-            vertical-align: top;
-        }
-        .split-cell {
-            display: flex;
-            gap: 15px;
-        }
-        .split-cell div {
-            width: 50%; /* Adjust as needed */
-            border-right: 1px solid inherit; /* Simulated split */
-            padding: 10px;
-        }
-        .split-cell div:last-child {
-            border-right: none;
-        }
-    </style>
     <tr><th>ID</th><th>Requirement</th><th>Verify</th></tr>
     <tr><td>F.5.1</td><td>Software Architecture conforms to the Neil A. Armstrong Test Facility Common DAC System System Architecture Specification revision 72260 dated August 14, 2023</td><td>A</td></tr>
     <tr><td>F.5.2</td><td>GUI interface for all specified functions</td><td>I</td></tr>
@@ -411,11 +374,6 @@ The NASA GRC-ATF SEC FDAS Software Application shall be designed to meet or exce
 The NASA GRC-ATF SEC FDAS shall be able to import a single CSV file that configures the per-test channel configurations with the following features:
 
 <table border="1" style="border-collapse: collapse; width: 100%;">
-    <style>
-        td {
-            vertical-align: top;
-        }
-    </style>
     <tr><th>ID</th><th>Requirement</th><th>Value</th><th>Verify</th></tr>
     <tr><td>F.6.1</td><td>The DAC system shall be able to support per-test user-defined channel channel labels of the following length:</td><td>≥ 40 characters</td><td>D</td></tr>
     <tr>
@@ -439,11 +397,6 @@ The NASA GRC-ATF SEC FDAS shall be able to import a single CSV file that configu
 The NASA GRC-ATF SEC FDAS shall be designed to export recorded data in accordance with the following data export requirements:
 
 <table border="1" style="border-collapse: collapse; width: 100%;">
-    <style>
-        td {
-            vertical-align: top;
-        }
-    </style>
     <tr><th>ID</th><th>Requirement</th><th>Verify</th></tr>
     <tr><td>F.7.1</td><td>from user selectable recordings</td><td>D</td></tr>
     <tr><td>F.7.2</td><td>from user selectable channels</td><td>D</td></tr>
@@ -459,22 +412,6 @@ The NASA GRC-ATF SEC FDAS shall be designed to export recorded data in accordanc
 The NASA GRC-ATF SEC FDAS shall be designed to export UFF58 recorded data in accordance with the following UFF58 data export format requirements:
 
 <table border="1" style="border-collapse: collapse; width: 100%;">
-    <style>
-        td {
-            vertical-align: top;
-        }
-        .split-cell {
-            display: flex;
-        }
-        .split-cell div {
-            width: 30%; /* Adjust as needed */
-            border-right: 1px solid inherit; /* Simulated split */
-            padding: 5px;
-        }
-        .split-cell div:last-child {
-            border-right: none;
-        }
-    </style>
     <tr><th>ID</th><th>Requirement</th><th>Verify</th></tr>
        <tr><td rowspan="2">F.8.1</td><td>Exported UFF58 files shall contains the following numeric values in the Response Direction field (Field 7) based on the Response Direction column data in the input configuration CSV as follows:</td><td rowspan="2">T</td></tr>
     <tr>
