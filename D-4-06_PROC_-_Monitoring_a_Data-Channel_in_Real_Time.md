@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Previous completion of [Inspecting the Current State and Health](D-4-9_PROC_-_Inspecting_the_Current_State_and_Health.md).
+Previous completion of [Inspecting the Current State and Health](D-4-09_PROC_-_Inspecting_the_Current_State_and_Health.md).
 
 ## Selecting a channel to monitor
 

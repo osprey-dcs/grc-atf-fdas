@@ -2,26 +2,26 @@
 
 ## Prerequisites
 
-Successful completion of [Inspecting the Current State and Health](D-4-9_PROC_-_Inspecting_the_Current_State_and_Health.md) of the system.
+Successful completion of [Inspecting the Current State and Health](D-4-09_PROC_-_Inspecting_the_Current_State_and_Health.md) of the system.
 
 It is necessary to repeat Inspecting the Current State and Health after
 any chassis is power cycled or otherwise reset.
 
-It is recommended to repeat [Inspecting the Current State and Health](D-4-9_PROC_-_Inspecting_the_Current_State_and_Health.md) of the system
+It is recommended to repeat [Inspecting the Current State and Health](D-4-09_PROC_-_Inspecting_the_Current_State_and_Health.md) of the system
 at the start of each day on which records will be collected.
 
 ## Preparation
 
 1. Ensure that the desired `ADC Sample Rate` is selected.
    Found on `Main`, `ADC Status`, and other OPIs.
-    1. After changing the sampling rate, repeat [Inspecting the Current State and Health](D-4-9_PROC_-_Inspecting_the_Current_State_and_Health.md) of the system.
+    1. After changing the sampling rate, repeat [Inspecting the Current State and Health](D-4-09_PROC_-_Inspecting_the_Current_State_and_Health.md) of the system.
 1. Set the desired `Run Description` string.
 
 ## Start Acquisition
 
 1. Open the `Acq. Control` OPI (`Main` -> `Acq. Recording` -> `Control`).
 1. Ensure `System Ready?` shows `Ready`.
-    1. If not, repeat [Inspecting the Current State and Health](D-4-9_PROC_-_Inspecting_the_Current_State_and_Health.md) of the system and then re-load CCCR.
+    1. If not, repeat [Inspecting the Current State and Health](D-4-09_PROC_-_Inspecting_the_Current_State_and_Health.md) of the system and then re-load CCCR.
     1. If not successful, contact support.
 1. Disable `ADC Acquire`.
     1. ADC sampling must be disabled for a synchronized re-start.

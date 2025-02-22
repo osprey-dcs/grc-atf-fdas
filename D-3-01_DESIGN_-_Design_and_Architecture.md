@@ -67,7 +67,7 @@ _\[2\] NASA GRC-ATF Common DAC System Architecture (CDA) Specification v1.1, Oct
 
 _\[3\] NASA GRC-ATF Common DAC System Documentation (CDD) Specification v1.1, Oct. 2023 - [Link](doc/NASA%20GRC-ATF%20Common%20DAC%20System%20Documentation%20(CDD)%20Specification%20(v1.1).pdf)_
 
-_\[4\] SEC-FDAS-D.1.1 Bill of Materials - List of Documents, v1.0 Jan. 2025 - [Link](D-1-1_BOM_-_List_of_Documents.csv)_
+_\[4\] SEC-FDAS-D.1.1 Bill of Materials - List of Documents, v1.0 Jan. 2025 - [Link](D-1-01_BOM_-_List_of_Documents.csv)_
 
 ## 2 - Design Drivers and Key Design Choices
 
@@ -6707,7 +6707,7 @@ Firefox is used on the Workstation PCs as the browser interface for the followin
 
 *   The EPICS Electronic Logbook Service
 *   The EPICS Archive Appliance
-*   The data export procedure: [D.4.8 - Export Data from the System](D-4-8_PROC_-_Export_Data_from_the_System.md)
+*   The data export procedure: [D.4.8 - Export Data from the System](D-4-08_PROC_-_Export_Data_from_the_System.md)
 
 #### 4.4.3 - Web Server - Nginx
 
@@ -6717,7 +6717,7 @@ From Wikipedia, https://en.wikipedia.org/wiki/Nginx
 
 Nginx is used as the web-service on the Support Services Systems (MISC) PC for the data export procedure.
 
-Ref: [D.4.8 - Export Data from the System](D-4-8_PROC_-_Export_Data_from_the_System.md)
+Ref: [D.4.8 - Export Data from the System](D-4-08_PROC_-_Export_Data_from_the_System.md)
 
 #### 4.4.4 - Search Engine Service - Elasticsearch
 
@@ -6848,7 +6848,7 @@ _Note - Multi-factor Authentication (MFA), Data-at-Rest (DAR), and Data-In-Trans
 
 The overall system should be fully checked-out and verified prior to use.
 
-The overall readiness of the system can be established using the Functional System Checkout procedure. Ref: [D.4.1 - Functional Checkout](D-4-1_PROC_-_Funcitonal_Checkout.md).
+The overall readiness of the system can be established using the Functional System Checkout procedure. Ref: [D.4.1 - Functional Checkout](D-4-01_PROC_-_Funcitonal_Checkout.md).
 
 ## **9 - Software Assurance**
 
@@ -6860,7 +6860,7 @@ The overall readiness of the system can be established using the Functional Syst
 
 Each of the 32 ADC channels in each of the Osprey-DCS Quartz digitizer chassis must be calibrated before use.
 
-The Osprey-DCS Quartz digitizer chassis can be calibrated per the Calibration Procedure. Ref: [D.4.11 - Measurement Device Calibration](D-4-2_PROC_-_Measurement_Device_Calibration.md)
+The Osprey-DCS Quartz digitizer chassis can be calibrated per the Calibration Procedure. Ref: [D.4.11 - Measurement Device Calibration](D-4-02_PROC_-_Measurement_Device_Calibration.md)
 
 Refer to section [4.2.3.2](#4232---quartz-calibration-module) for information about the design of the calibration software module.
 
