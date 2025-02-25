@@ -16,12 +16,12 @@ D.3.6,System Design: Network Topology Diagram,A simplified block diagram of the 
 D.3.7,System Design: Detailed System Configuration,A document containing instructions on configuring necessary software
 D.3.8,System Design: System OT Security Information List,A document containing a dedicated section for each instance of each device listed in the System Detailed Hardware List (D.3.3).
 D.4.1,System Operating Procedures: Functional Checkout Procedures,Step-by-step procedure detailing how to verify that all aspects of the system are functional and the system is ready for use by the user.
-D.4.2,System Operating Procedures: Start-up and Shut-down procedure, Step-by-step procedures detailing how to power-up and power-down system
-D.4.3,System Operating Procedures: Measurement Device Calibration Procedure,"Step-by-step procedure detailing how to calibrate any analog input channels using a NIST tracible calibration reference / Step-by-step procedure detailing how to:
+D.4.2,System Operating Procedures: Measurement Device Calibration Procedure,"Step-by-step procedure detailing how to calibrate any analog input channels using a NIST tracible calibration reference / Step-by-step procedure detailing how to:
 * Enable/Disable specific channels
 * Assign EU values to Channels
 * Assign Warning and Limit thresholds to channels
 * Set the Sample Rate(s)"
+D.4.3,System Operating Procedures: Start-up and Shut-down procedure,Step-by-step procedures detailing how to power-up and power-down system
 D.4.4,System Operating Procedures: Per-Test User Configuration Procedure,"Step-by-step procedure detailing how to:
 * Enable/Disable specific channels.
 * Assign EU values to Channels.
@@ -49,4 +49,5 @@ D.4.8,System Operating Procedures: Export Data from the System,"Step-by-step pro
 * Select a specific segment of time from specific data on the system for export
 * Export data as a CSV file
 * Export data as a UFF58 file"
-D.4.9,Export Data from the System,
+D.4.9,Inspecting the Current State and Health,Step-by-step procedure detailing how to ascertain a chassis' health.
+D.4.10,Quartz Quality Assurance,Step-by-step procedure detailing how to test a Quartz board for quality assurance before deployment.
