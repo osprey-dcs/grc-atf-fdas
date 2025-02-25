@@ -21,19 +21,19 @@ The NASA GRC-ATF SEC FDAS shall be designed to conform to the following overall 
         <td>F.1.1</td>
         <td>Electrical Power</td>
         <td>Single Phase 120 VAC</td>
-        <td>I</td>
+        <td><a href="#QuartzDatasheet">I</a></td>
     </tr>
     <tr>
         <td>F.1.2</td>
         <td>Operating Temperature</td>
         <td>0° C to 40° C</td>
-        <td>A</td>
+        <td><a href="#QuartzDatasheet">A</a></td>
     <tr>
     <tr>
         <td>F.1.3</td>
         <td>Operating Humidity</td>
         <td>Less than 90%</td>
-        <td>I</td>
+        <td><a href="#QuartzDatasheet">I</a></td>
     </tr>
     <tr>
         <td rowspan="3">F.1.4</td>
@@ -52,19 +52,19 @@ The NASA GRC-ATF SEC FDAS shall be designed to conform to the following overall 
         <td>F.1.5</td>
         <td>Form Factor</td>
         <td>Standard 19" wide rack mount</td>
-        <td>I</td>
+        <td><a href="#QuartzDatasheet">I</a></td>
     </tr>
     <tr>
         <td>F.1.6</td>
         <td>Max Width</td>
         <td>≤ 3 standard racks (total)</td>
-        <td>I</td>
+        <td><a href="#QuartzDatasheet">I</a></td>
     </tr>
         <tr>
         <td>F.1.7</td>
         <td>Max Height</td>
         <td>≤ 44U rack height (each)</td>
-        <td>I</td>
+        <td><a href="image/Rack-Layout.svg">I</a></td>
     </tr>
     <tr>
         <td rowspan="4">F.1.8</td>
@@ -81,7 +81,7 @@ The NASA GRC-ATF SEC FDAS shall be designed to conform to the following overall 
         </tr>
         <tr>
             <td>Pin-out per NASA SPEC (tbd)</td>
-            <td>I</td>
+            <td><a href="#QuartzDatasheet">I</a></td>
         </tr>
     <tr>
         <td>F.1.9</td>
@@ -141,7 +141,7 @@ The NASA GRC-ATF SEC FDAS Digitizing Electronics shall be design to digitize ana
         <td>F.2.4</td>
         <td>Input Type</td>
         <td>Direct Voltage Input, Pre-conditioned signals</td>
-        <td>I</td>
+        <td><a href="#QuartzDatasheet">I</a></td>
     <tr>
     <tr>
         <td>F.2.5</td>
@@ -183,7 +183,7 @@ The NASA GRC-ATF SEC FDAS Digitizing Electronics shall be design to digitize ana
         <td>F.2.11</td>
         <td>Input Impedance</td>
         <td>≥ 100 kΩ</td>
-        <td>I</td>
+        <td><a href="#QuartzDatasheet">I</a></td>
     </tr>
     <tr>
         <td>F.2.12</td>
@@ -484,6 +484,7 @@ The NASA GRC-ATF SEC FDAS shall be designed to export UFF58 recorded data in acc
 [D.4.8 - Data Export Procedure](D-4-08_PROC_-_Export_Data_from_the_System.md)
 
 ## F.9 Secure Web-Based Data Export
+
 <table border="1" style="border-collapse: collapse; width: 100%;">
     <tr><th>ID</th><th>Requirement</th><th>Verify</th></tr>
     <tr>
@@ -507,3 +508,9 @@ The NASA GRC-ATF SEC FDAS shall be designed to export UFF58 recorded data in acc
         </tr>
 
 [D.4.8 - Data Export Procedure](D-4-08_PROC_-_Export_Data_from_the_System.md)
+
+## References
+
+- Quartz [DAQ-250-24](https://github.com/osprey-dcs/quartz-daq-250-24/blob/master/documentation/quartz-daq-250-24-datasheet.md) datasheet
+
+<a name="QuartzDatasheet"></a>

@@ -160,7 +160,7 @@ Each of these two PCBs (Marble and Quartz) are designed to be integrated into a 
 Reference links:
 
 *   The Berkeley Lab Marble PCB - https://github.com/BerkeleyLab/Marble
-*   The Osprey Quartz ADC PCB - https://github.com/osprey-dcs/quartz-dev
+*   The Osprey Quartz ADC PCB - https://github.com/osprey-dcs/Quartz
 *   The Osprey DAQ-32-250-24 - https://github.com/osprey-dcs/quartz-daq-250-24
 
 * * *
