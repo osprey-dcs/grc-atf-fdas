@@ -6848,7 +6848,7 @@ _Note - Multi-factor Authentication (MFA), Data-at-Rest (DAR), and Data-In-Trans
 
 The overall system should be fully checked-out and verified prior to use.
 
-The overall readiness of the system can be established using the Functional System Checkout procedure. Ref: [D.4.1 - Functional Checkout](D-4-01_PROC_-_Funcitonal_Checkout.md).
+The overall readiness of the system can be established using the Functional System Checkout procedure. Ref: [D.4.1 - Functional Checkout](D-4-01_PROC_-_Functional_Checkout.md).
 
 ## **9 - Software Assurance**
 
