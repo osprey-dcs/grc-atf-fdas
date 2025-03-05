@@ -573,7 +573,7 @@ The network is implemented over fiber between the rack groups. The network is en
 ##### 3.4.4.1 - Network Design Diagram
 <figure style="text-align: center;">
     <div style="background-color: white; display: inline-block; padding: 10px;">
-        <img src="image/Network_Design.png" alt="Network Design Diagram">
+        <img src="image/Network_Design.svg" alt="Network Design Diagram">
     </div>
     <figcaption>Figure 4 - Network Design Diagram</figcaption>
 </figure>
