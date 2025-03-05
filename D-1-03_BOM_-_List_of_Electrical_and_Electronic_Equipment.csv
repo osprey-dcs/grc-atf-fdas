@@ -8,4 +8,7 @@ E6,2,RUCKUS,10G-SFPP-LR-SA,"10GBASE-LR, SFP+ optic (LC), for up to 10km over SMF
 E7,2,RUCKUS,ICX7650-4X10GF,ICX 7650 4PT 1/10GBE SFP+ Module,,https://www.ruckusnetworks.com/products/ethernet-switches/icx7550/
 E8,1,RUCKUS,10G-SFPP-TX-LP-A,10G-BASE-TX RJ-45 up to 30M over CAT 6a/7 cable TAA Applicable Low Power,,https://www.ruckusnetworks.com/products/optical-transceivers/
 E9,32,Osprey,DAQ-32-250-24,Quartz ADC,,https://github.com/osprey-dcs/quartz-daq-250-24
-E10,1,ESE,ES-295/GPS/NTP6,IRIG/NTP Server,,https://www.ese-web.com/295gn.htm
+E10,1,Safran,A-2402-013,"SecureSync 2402-013; 2 card slots, AC Power, Std
+OCXO, GNSS",,https://safran-navigation-timing.com/product/securesync-time-and-frequency-reference-system/
+E11,1,Safran,1204-05,"SecureSync Option Card, IRIG In/Output 3x BNC
+(Installed at factory)",,https://safran-navigation-timing.com/product/securesync-irig-i-o-option-card/
