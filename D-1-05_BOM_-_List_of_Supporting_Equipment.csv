@@ -1,2 +1,4 @@
 BOM Item,Quantity,Manufacturer,Part Number,Description
-P1,1,,,"Calibration Cable Set (4 DB-37(M) connectors & a single BNC connector)"
+P1,1,,,Calibration Cable Set (4 DB-37(M) connectors & a single BNC connector)
+P2,1,Agilent,33220,Function / Arbitrary Waveform Generator
+P3,1,Agilent,34410A,Digital Multimeter 6.5 digit
