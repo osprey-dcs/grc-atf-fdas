@@ -209,7 +209,12 @@ Look at real-time min/max/average/std. deviation results of all channels while i
 
 ***
 
-### EEPROM Programed
-Using the EEPROM scripts program the EEPROM of the quartz with board revision and Serial Number.
+### EEPROM Programmed
+
+According to the [Quartz EEPROM](https://github.com/osprey-dcs/quartz-daq-250-24/blob/master/documentation/chassis-setup.md#quartz-eeprom) programming guide,
+checkout the branch/revision appropriate to the PCB model to be programmed,
+and edit `createEEPROMs.sh` with the appropriate serial numbers.
+
+For the Quartz version 1 PCBs delivered, use the `quartz-1.x` branch.
 
 <div align="center"><b>Record in Testing Log when complete</b></div>
