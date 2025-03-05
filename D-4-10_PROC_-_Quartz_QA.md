@@ -29,7 +29,23 @@ Next the Board will be powered up in various ways to protect other testing hardw
 ***
 
 ### Looking for Shorts to GND
-Using the multimeter check that all voltage test points have a resistance to board ground greater than 1kΩ.
+Using the multimeter check that all voltage
+[test points](https://github.com/osprey-dcs/Quartz/blob/quartz-1.x/Documentation/Quartz%20Test%20Points.pdf)
+have a resistance to board ground greater than 1kΩ.
+
+| Test Point Reference | SilkscreenedLabel | Nominal Voltage |
+| ---- | ---- | ---- |
+| TP 1 | P1_2P5V | +2.5V  |
+| TP 2 | P2_2P5V | +2.5V  |
+| TP 3 | +5V | +5V  |
+| TP 4 | +3.3V | +3.3V  |
+| TP 5 | +16V | +16V  |
+| TP 6 | +15V | +15V  |
+| TP 7 | -15V | -15V  |
+| TP 8 | -16V | -16V  |
+| TP 9 | GND | 0V  |
+| TP 10 | GND | 0V  |
+| TP 11 | +12V | +12V  |
 
 <div align="center"><b>Record in Testing Log when complete</b></div>
 <p></p>
