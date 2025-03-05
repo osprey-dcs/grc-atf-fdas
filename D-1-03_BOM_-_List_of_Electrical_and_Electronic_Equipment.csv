@@ -7,5 +7,5 @@ E5,1,RUCKUS,ICX7550-24-E2,"Control Room Switch:  24-port 10/100/1000 Mbps with 2
 E6,2,RUCKUS,10G-SFPP-LR-SA,"10GBASE-LR, SFP+ optic (LC), for up to 10km over SMF, standard temperature (0 C to 70 C), TAA compliant",,https://www.ruckusnetworks.com/products/optical-transceivers/
 E7,2,RUCKUS,ICX7650-4X10GF,ICX 7650 4PT 1/10GBE SFP+ Module,,https://www.ruckusnetworks.com/products/ethernet-switches/icx7550/
 E8,1,RUCKUS,10G-SFPP-TX-LP-A,10G-BASE-TX RJ-45 up to 30M over CAT 6a/7 cable TAA Applicable Low Power,,https://www.ruckusnetworks.com/products/optical-transceivers/
-E9,32,Osprey,DAQ-32-250-24,Quartz ADC,,https://docs.google.com/document/d/17fF_MWox-ifM2LzhPZZrqRA--Nl4hyob/edit
+E9,32,Osprey,DAQ-32-250-24,Quartz ADC,,https://github.com/osprey-dcs/quartz-daq-250-24
 E10,1,ESE,ES-295/GPS/NTP6,IRIG/NTP Server,,https://www.ese-web.com/295gn.htm
