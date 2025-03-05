@@ -364,7 +364,9 @@ org.phoebus.applications.alarm.logging.ui/service_uri=http://192.168.83.101:8080
 
 ## Chapter 6 - Quartz IOC
 
-See [`atf-acq-ioc` README](https://github.com/osprey-dcs/atf-acq-ioc/blob/main/README.md).
+See [`atf-acq-ioc` README](https://github.com/osprey-dcs/atf-acq-ioc/blob/main/README.md)
+as well as the Quartz [EPICS IOC Setup](https://github.com/osprey-dcs/quartz-daq-250-24/blob/master/documentation/ioc-setup.md)
+guide.
 
 Install location on DAQS: `/opt/atf-acq-ioc`
 
@@ -406,3 +408,23 @@ See ATF Previewer [README](https://github.com/osprey-dcs/atf-previewer/blob/main
 
 ## Chapter 12 - Quartz User Configuration Loader
 See Quartz Config Loader [README](https://github.com/osprey-dcs/quartz-config-loader/blob/main/README.md)
+
+## Chapter 13 - Quartz firmware
+
+Firmware from three locations must be present on each Marble FPGA carrier board
+in order to start up and operator the Quartz ADC FMC daughter card.
+
+The MMC (Management Micro-Controller) and bootloader firmware is loaded as part
+of the new board
+[bring-up](https://github.com/osprey-dcs/quartz-daq-250-24/blob/master/documentation/marble-bring-up-procedure.pdf)
+procedure, and will not normally be repeated.
+When the physical Marble flash write protection switch (SW1) is engaged,
+remote update of these firmwares is not possible.
+
+The application firmware may be updated remotely, through the bootloader firmware,
+using the [alluvium](https://github.com/osprey-dcs/alluvium) tool.
+
+Full Application firmware source is [published](https://github.com/osprey-dcs/Quartz-firmware)
+as well as pre-built [binaries](https://github.com/osprey-dcs/quartz-daq-250-24/blob/master/firmware).
+
+See also the Quartz [System Setup](https://github.com/osprey-dcs/quartz-daq-250-24/blob/master/documentation/system-setup.md) guide.
