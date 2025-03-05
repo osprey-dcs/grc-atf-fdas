@@ -44,6 +44,6 @@ If requested.
     - __Do not disconnect__ USB storage until notified that it is safe to do so,
       or until the device has disappeared from the `Disks & Devices` menu.
 
-![Disks & Devices Present](img/disks-present.png)
+![Disks & Devices Present](image/disks-present.png)
 
-![Disks & Devices Empty](img/disk-device.png)
+![Disks & Devices Empty](image/disk-device.png)
