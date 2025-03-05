@@ -1,11 +1,11 @@
 # FDAS System Functional Checkout
 
 The purpose of this procedure is to bring the FDAS system
-to a known functional state.
+into a known functional state.
 
 ## Prerequisites
 
-- Availablity of a CCCR configuring the channels to be verified to a voltage scale.  (no EGU, ESLO=1.0, ESLO=0.0)
+- Availability of a CCCR file configuring the channels to be verified to a voltage scale.  (no EGU, ESLO=1.0, ESLO=0.0)
 - Locate function generator (eg. Agilent 33220 Waveform generator)
 - Locate test cable set as described in [D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md).
 
@@ -18,31 +18,53 @@ Configuring function generator for AC response test
     - May exclude settings known not to effect output, eg. network address
     - May use setting save/restore feature
   1. Ensure output is disabled
-  1. Select square wave
+  1. Select sine wave
   1. Set offset to zero volts
-  1. Set 50% duty cycle
-  1. Set amplitude +-10 V (20Vpp)
- 1. Set frequency to 100 KHz
- 1. Ensure that sampling is enabled
+  1. Set amplitude +-10 V (20 Vpp)
+  1. Set frequency to 9 KHz
+  1. Set output to high impedence (HighZ)
 
 Note: Running [D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)
       will reconfigure the function generator.
-      It is recommended to reset and setup once, then save settings once,
-      and finally restore settings after each calibration cycle.
+      It is recommended to reset and setup, then save settings once,
+      and thereafter restore settings following each calibration run.
 
-## Expected Shape
+## Expected Response
 
-Figure 1. Chassis Scope screen showing expected response to 100KHz square wave.
+Figure 1. Chassis Scope screen showing expected response to 9 KHz sine wave.
 
-![Expected response](image/100kHz_squarewave_250kHzsampleing_FFT.gif)
+![Expected response](image/quartz-250ksps-9khz-sine-20Vpp-full.png)
 
-When interpreting the measured response,
-the only significant peak should be at 100KHz.
-All harmonics are above the cutoff of the anti-aliasing filter,
-and should be attenuated close to the noise level.
+Figure 2. Chassis Scope zoomed in in both time and frequency.
 
-See Quartz [functional test](https://github.com/osprey-dcs/quartz-daq-250-24/blob/master/documentation/functional-testing.md#alias-rejection-testing)
-report fo related test results.
+![Expected response](image/quartz-250ksps-9khz-sine-20Vpp-zoom.png)
+
+Essential frequency (FFT) response characteristics.
+
+- Primary peak at 9 KHz
+    - Amplitude of 5 V
+    - Sharp peak <= 3 frequency points
+- No other peaks above -80 dB relative (0.0005 V)
+
+The important relationship is the relative size of the peak at 9 KHz to all other peaks,
+which should be at least -80 dB less ($10^\frac{-80}{20} = \frac{1}{10000} = 0.0001$).
+
+By default, the
+[Chassis Scope](D-4-06_PROC_-_Monitoring_a_Data-Channel_in_Real_Time.md)
+screen shows FFT on a log/log plot with base 10.
+
+To simplify interpretation, adjust the FFT Plot scale so that
+only peaks above the -80 dB threshold will be visible.
+Leave the horizontal scale on auto.
+
+- Change vertical scale to 1e-6 -> 10
+- Uncheck auto-scale
+
+Right click on the plot area and select `Configure Plot` from the menu which appears.
+
+Figure 3. Phoebus plot configuration dialog
+
+![Plot config](image/Phoebus_plot_config.png)
 
 ## Process
 
@@ -1141,3 +1163,8 @@ report fo related test results.
     - Observe channels according to [D.4.6](D-4-06_PROC_-_Monitoring_a_Data-Channel_in_Real_Time.md).
 1. View this recording according to [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md).
 1. Export this recording according to [D.4.8](D-4-08_PROC_-_Export_Data_from_the_System.md).
+
+## References
+
+- Quartz [functional test](https://github.com/osprey-dcs/quartz-daq-250-24/blob/master/documentation/functional-testing.md#alias-rejection-testing)
+report.
