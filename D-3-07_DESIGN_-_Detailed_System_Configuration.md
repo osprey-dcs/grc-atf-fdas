@@ -74,12 +74,45 @@ The following assumes Debian 12
 * copy settings.ini file (for archiver url/etc)
 * change desktop and add user admin for service
 * ``apt-get install x2go-server``
-* Apply network config from John
+* ``apt-get install tcpdump``
+* Edit /etc/systemd/network/10-DISXeth0.link (adjust MAC address for DISP2):
+```
+[Match]
+MACAddress=7C:C2:55:4C:84:E6
+Type=ether
+
+[Link]
+Description=DISPLAY 1 EPICS Interface
+MACAddressPolicy=persistent
+Name=DIS1eth0
+NamePolicy=keep
+```
+* Edit /etc/systemd/network/10-DISXeth0.network (adjust MAC address and IP for DISP2):
+```
+[Match]
+Name=DIS1eth0
+Type=ether
+
+[Network]
+Description=DISPLAY 1 EPICS Interface
+NTP=192.168.83.102
+
+LinkLocalAddressing=no
+LLDP=no
+EmitLLDP=no
+IPv6AcceptRA=no
+IPv6SendRA=no
+
+[Address]
+Address=192.168.83.103/24
+```
 * Change /etc/hosts and include all 83.xxx IPs and hosts
 * ``sudo systemctl enable systemd-networkd``
 * update initramfs
+``sudo update-initramfs -u``
 * remove pro ads: sudo rm /etc/apt/apt.conf.d/20apt-esm-hook.conf
 * change /etc/default/grub: add “GRUB_RECORDFAIL_TIMEOUT=3” and do update-grub
+* Reboot the workstation
 
 ## Chapter 2 - Initial Setup and Network Config
 ### DAQS
