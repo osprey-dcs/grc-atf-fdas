@@ -16,9 +16,25 @@ Refer to the Debian [Installation Guide](https://www.debian.org/releases/stable/
 and other [Debian project documentation](https://www.debian.org/doc/)
 for the OS version being installed.
 
-The following assumes Debian 12
+The following assumes Debian 12.
 
-* Connect the IDRAC network interface, start the virtual console, mount Debian 12 ISO using the virtual media button, and boot from the virtual cd
+Begin the installation process by either:
+
+1. Connecting a physical monitor, keyboard, and mouse.
+  Then attach a USB drive with the Debian installer.
+  See [Preparing Files for USB Memory Stick Booting](https://www.debian.org/releases/stable/amd64/ch04s03.en.html)
+  in the Debian Installation Guide.
+1. Alternatively, connecting to the
+  [Baseboard Management Controller](https://en.wikipedia.org/?title=Baseboard_Management_Controller)
+  (Dell [iDRAC](https://www.dell.com/en-us/lp/dt/open-manage-idrac))
+  for remote access to the integrated KVM.
+  Start the virtual console, mount Debian 12 ISO using the virtual media button, and boot from the virtual cd
+
+Access to the BMC is a convenience, not a necessary.
+As delivered, the dedicated BMC network interface is not connected.
+
+In either case, then proceed to:
+
 * Select Advanced Options -> Graphical Expert Install
 
 ![img1](image/D-3-7_Ch1_1.png)
