@@ -596,6 +596,8 @@ And a second (83) for all other traffic.
 Only the DAQ server is logically present on both VLANs.
 There is no IP routing between VLANs.
 
+Details of network switch configuration may be found in [D.3.7 Chapter 2](D-3-07_DESIGN_-_Detailed_System_Configuration.md#chapter-2---initial-setup-and-network-config) sections CRMSW and DAQSW.
+
 ### 3.5 - The I/O Device Layer Hardware Design
 
 #### 3.5.1 - The I/O Device Layer Design
