@@ -115,6 +115,437 @@ Address=192.168.83.103/24
 * Reboot the workstation
 
 ## Chapter 2 - Initial Setup and Network Config
+
+### CRMSW
+
+Control RooM network SWitch.
+
+Access the switch management console and issue the following commands.
+Substitute `PASSWORDOMITTED` for values in `D.3.8`.
+
+```
+enable
+config t
+hostname CRMSW
+jitc enable
+no web-management http
+enable password-min-length 16
+enable user password-masking
+enable user disable-on-login-failure 3 login-recovery-time in-mins 5
+console timeout 10
+ip ssh timeout 60
+ip ssh idle-time 10
+no telnet server
+jumbo
+!
+no spanning-tree
+no cdp run
+no fdp run
+no lldp run
+!
+logging facility local5
+logging buffered 500
+!
+crypto key generate rsa modulus 2048
+
+clock summer-time
+clock timezone US eastern
+exit
+clock set
+!
+config t
+banner exec ^
+****************************        WARNING!      ****************************
+* You are accessing a U.S. Government (USG) Information System (IS) that is  *
+* provided for USG-authorized use only.                                      *
+* By using this IS (which includes any device attached to this IS), you      *
+* consent to the following conditions:                                       *
+*                                                                            *
+* -The USG routinely intercepts and monitors comunications on this IS for    *
+* purposes including, but not limited to, penetration testing, COMSEC        *
+* monitoring, network operations and defense, personnel misconduct (PM), law *
+* enforcement (LE), and counterintelligence (CI) investigations.             *
+*                                                                            *
+* -At any time, the USG may inspect and seize data stored on this IS.        *
+*                                                                            *
+* -Communications using, or data stored on, this IS are not private, are     *
+* subject to routine monitoring, interception, and search, and may be        *
+* disclosed or used for any USG-authorized purpose.                          *
+*                                                                            *
+* -This IS includes security measures (e.g., authentication and access       *
+* controls) to protect USG interests--not for your personal benefit or       *
+* privacy.                                                                   *
+*                                                                            *
+* -Notwithstanding the above, using this IS does not constitute content to   *
+* PM, LE or CI investagative searching or monitoring of the content of       *
+* privileged communications, or work product, related to personal            *
+* representation or services by attorneys, psychotherapists, or clergy, and  *
+* their assistants. Such communications and work product are private and     *
+* confidential. See User Agreement for Details.                              *
+*                                                                            *
+******************************************************************************
+^
+banner incoming ^
+****************************        WARNING!      ****************************
+* You are accessing a U.S. Government (USG) Information System (IS) that is  *
+* provided for USG-authorized use only.                                      *
+* By using this IS (which includes any device attached to this IS), you      *
+* consent to the following conditions:                                       *
+*                                                                            *
+* -The USG routinely intercepts and monitors comunications on this IS for    *
+* purposes including, but not limited to, penetration testing, COMSEC        *
+* monitoring, network operations and defense, personnel misconduct (PM), law *
+* enforcement (LE), and counterintelligence (CI) investigations.             *
+*                                                                            *
+* -At any time, the USG may inspect and seize data stored on this IS.        *
+*                                                                            *
+* -Communications using, or data stored on, this IS are not private, are     *
+* subject to routine monitoring, interception, and search, and may be        *
+* disclosed or used for any USG-authorized purpose.                          *
+*                                                                            *
+* -This IS includes security measures (e.g., authentication and access       *
+* controls) to protect USG interests--not for your personal benefit or       *
+* privacy.                                                                   *
+*                                                                            *
+* -Notwithstanding the above, using this IS does not constitute content to   *
+* PM, LE or CI investagative searching or monitoring of the content of       *
+* privileged communications, or work product, related to personal            *
+* representation or services by attorneys, psychotherapists, or clergy, and  *
+* their assistants. Such communications and work product are private and     *
+* confidential. See User Agreement for Details.                              *
+*                                                                            *
+******************************************************************************
+^
+banner motd ^
+****************************        WARNING!      ****************************
+* You are accessing a U.S. Government (USG) Information System (IS) that is  *
+* provided for USG-authorized use only.                                      *
+* By using this IS (which includes any device attached to this IS), you      *
+* consent to the following conditions:                                       *
+*                                                                            *
+* -The USG routinely intercepts and monitors comunications on this IS for    *
+* purposes including, but not limited to, penetration testing, COMSEC        *
+* monitoring, network operations and defense, personnel misconduct (PM), law *
+* enforcement (LE), and counterintelligence (CI) investigations.             *
+*                                                                            *
+* -At any time, the USG may inspect and seize data stored on this IS.        *
+*                                                                            *
+* -Communications using, or data stored on, this IS are not private, are     *
+* subject to routine monitoring, interception, and search, and may be        *
+* disclosed or used for any USG-authorized purpose.                          *
+*                                                                            *
+* -This IS includes security measures (e.g., authentication and access       *
+* controls) to protect USG interests--not for your personal benefit or       *
+* privacy.                                                                   *
+*                                                                            *
+* -Notwithstanding the above, using this IS does not constitute content to   *
+* PM, LE or CI investagative searching or monitoring of the content of       *
+* privileged communications, or work product, related to personal            *
+* representation or services by attorneys, psychotherapists, or clergy, and  *
+* their assistants. Such communications and work product are private and     *
+* confidential. See User Agreement for Details.                              *
+*                                                                            *
+******************************************************************************
+^
+!
+default-vlan-id 900
+!
+vlan 79 name Acquisition by port
+ tagged ethe 1/3/4
+ untagged ethe 1/1/19 to 1/1/21
+!
+vlan 83 name EPICS by port
+ tagged ethe 1/3/4
+ untagged ethe 1/1/1 to 1/1/3 ethe 1/1/22 to 1/1/24
+ management-vlan
+!
+vlan 999 name DISABLED_VLAN by port
+ untagged ethe 1/1/4 to 1/1/18 ethe 1/2/1 to 1/2/2 ethe 1/3/1 to 1/3/3
+!
+interface ethe 1/1/1
+ port-name LINK_to_MISC_Server_Port_MISCeth0
+!
+interface ethe 1/1/2
+ port-name LINK_to_DIS1_Workstation_Port_DIS1eth0
+!
+interface ethe 1/1/3
+ port-name LINK_to_DIS2_Workstation_Port_DIS2eth0
+!
+interface ethe 1/1/4 to 1/1/18
+ port-name DISABLED-1G-Copper-Port
+disable
+!
+interface ethe 1/1/19 to 1/1/21
+ port-name testing_VLAN_79_disable_when_complete
+!
+interface ethe 1/1/22 to 1/1/24
+ port-name testing_VLAN_83_disable_when_complete
+!
+interface ethe 1/2/1 to 1/2/2
+ port-name DISABLED-40G-Stacking-Port
+disable
+!
+interface ethe 1/3/1 to 1/3/3
+ port-name DISABLED-10G-SFP-Port
+disable
+!
+interface ethe 1/3/4
+ port-name LINK_to_DAQSW_ethernet_1/3/4
+!
+exit
+!
+ip address 192.168.83.201 255.255.255.0
+!
+username na.grcadmin privilege 0 password
+PASSWORDOMITTED
+!
+enable super-user-password
+PASSWORDOMITTED
+!
+enable aaa console
+aaa authentication enable default local
+aaa authentication login default local
+aaa authentication login privilege-mode
+aaa authentication web-server default local
+aaa authentication snmp-server default local
+web-management https
+!
+ntp
+disable serve
+server 192.168.83.102
+!
+exit
+crypto-ssl certificate generate
+
+snmp server
+!
+wr mem
+!
+reload
+
+show tech-support
+```
+
+Capture output of `show tech-support` to file and archive.
+
+### DAQSW
+
+Data AcQusition room network SWitch.
+
+Access the switch management console and issue the following commands.
+Substitute `PASSWORDOMITTED` for values in `D.3.8`.
+
+```
+enable
+config t
+
+hostname DAQSW
+jitc enable
+no web-management http
+enable password-min-length 16
+enable user password-masking
+enable user disable-on-login-failure 3 login-recovery-time in-mins 5
+console timeout 10
+ip ssh timeout 60
+ip ssh idle-time 10
+no telnet server
+jumbo
+!
+no spanning-tree
+no cdp run
+no fdp run
+no lldp run
+!
+logging facility local5
+logging buffered 500
+!
+crypto key generate rsa modulus 2048
+
+clock summer-time
+clock timezone US eastern
+exit
+clock set
+!
+config t
+banner exec ^
+****************************        WARNING!      ****************************
+* You are accessing a U.S. Government (USG) Information System (IS) that is  *
+* provided for USG-authorized use only.                                      *
+* By using this IS (which includes any device attached to this IS), you      *
+* consent to the following conditions:                                       *
+*                                                                            *
+* -The USG routinely intercepts and monitors comunications on this IS for    *
+* purposes including, but not limited to, penetration testing, COMSEC        *
+* monitoring, network operations and defense, personnel misconduct (PM), law *
+* enforcement (LE), and counterintelligence (CI) investigations.             *
+*                                                                            *
+* -At any time, the USG may inspect and seize data stored on this IS.        *
+*                                                                            *
+* -Communications using, or data stored on, this IS are not private, are     *
+* subject to routine monitoring, interception, and search, and may be        *
+* disclosed or used for any USG-authorized purpose.                          *
+*                                                                            *
+* -This IS includes security measures (e.g., authentication and access       *
+* controls) to protect USG interests--not for your personal benefit or       *
+* privacy.                                                                   *
+*                                                                            *
+* -Notwithstanding the above, using this IS does not constitute content to   *
+* PM, LE or CI investagative searching or monitoring of the content of       *
+* privileged communications, or work product, related to personal            *
+* representation or services by attorneys, psychotherapists, or clergy, and  *
+* their assistants. Such communications and work product are private and     *
+* confidential. See User Agreement for Details.                              *
+*                                                                            *
+******************************************************************************
+^
+banner incoming ^
+****************************        WARNING!      ****************************
+* You are accessing a U.S. Government (USG) Information System (IS) that is  *
+* provided for USG-authorized use only.                                      *
+* By using this IS (which includes any device attached to this IS), you      *
+* consent to the following conditions:                                       *
+*                                                                            *
+* -The USG routinely intercepts and monitors comunications on this IS for    *
+* purposes including, but not limited to, penetration testing, COMSEC        *
+* monitoring, network operations and defense, personnel misconduct (PM), law *
+* enforcement (LE), and counterintelligence (CI) investigations.             *
+*                                                                            *
+* -At any time, the USG may inspect and seize data stored on this IS.        *
+*                                                                            *
+* -Communications using, or data stored on, this IS are not private, are     *
+* subject to routine monitoring, interception, and search, and may be        *
+* disclosed or used for any USG-authorized purpose.                          *
+*                                                                            *
+* -This IS includes security measures (e.g., authentication and access       *
+* controls) to protect USG interests--not for your personal benefit or       *
+* privacy.                                                                   *
+*                                                                            *
+* -Notwithstanding the above, using this IS does not constitute content to   *
+* PM, LE or CI investagative searching or monitoring of the content of       *
+* privileged communications, or work product, related to personal            *
+* representation or services by attorneys, psychotherapists, or clergy, and  *
+* their assistants. Such communications and work product are private and     *
+* confidential. See User Agreement for Details.                              *
+*                                                                            *
+******************************************************************************
+^
+banner motd ^
+****************************        WARNING!      ****************************
+* You are accessing a U.S. Government (USG) Information System (IS) that is  *
+* provided for USG-authorized use only.                                      *
+* By using this IS (which includes any device attached to this IS), you      *
+* consent to the following conditions:                                       *
+*                                                                            *
+* -The USG routinely intercepts and monitors comunications on this IS for    *
+* purposes including, but not limited to, penetration testing, COMSEC        *
+* monitoring, network operations and defense, personnel misconduct (PM), law *
+* enforcement (LE), and counterintelligence (CI) investigations.             *
+*                                                                            *
+* -At any time, the USG may inspect and seize data stored on this IS.        *
+*                                                                            *
+* -Communications using, or data stored on, this IS are not private, are     *
+* subject to routine monitoring, interception, and search, and may be        *
+* disclosed or used for any USG-authorized purpose.                          *
+*                                                                            *
+* -This IS includes security measures (e.g., authentication and access       *
+* controls) to protect USG interests--not for your personal benefit or       *
+* privacy.                                                                   *
+*                                                                            *
+* -Notwithstanding the above, using this IS does not constitute content to   *
+* PM, LE or CI investagative searching or monitoring of the content of       *
+* privileged communications, or work product, related to personal            *
+* representation or services by attorneys, psychotherapists, or clergy, and  *
+* their assistants. Such communications and work product are private and     *
+* confidential. See User Agreement for Details.                              *
+*                                                                            *
+******************************************************************************
+^
+!
+default-vlan-id 900
+!
+vlan 79 name Acquisition by port
+ tagged ethe 1/3/1 ethe 1/3/4
+ untagged ethe 1/1/1 to 1/1/40 ethe 1/1/43 to 1/1/45
+!
+vlan 83 name EPICS by port
+ tagged ethe 1/3/1 ethe 1/3/4
+ untagged ethe 1/1/41 ethe 1/1/46 to 1/1/48
+ management-vlan
+!
+vlan 999 name DISABLED_VLAN by port
+ untagged eth 1/1/42 ethe 1/2/1 to 1/2/2 ethe 1/3/2 to 1/3/3
+!
+interface ethe 1/1/1 to 1/1/32
+ port-name LINK_to_DAQ_Chassis
+!
+interface ethe 1/1/33 to 1/1/40
+ port-name RESERVED_for_DAQ_Chassis
+disable
+!
+interface ethe 1/1/41
+ port-name LINK_to_NTP_Server_IRIG_Decoder
+!
+interface ethe 1/1/42
+ port-name DISABLED-1G-Copper-Port
+disable
+!
+interface ethe 1/1/43 to 1/1/45
+ port-name testing_VLAN_79_disable_when_complete
+!
+interface ethe 1/1/46 to 1/1/48
+ port-name testing_VLAN_83_disable_when_complete
+!
+interface ethe 1/2/1 to 1/2/2
+ port-name DISABLED-40G-Stacking-Port
+disable
+!
+interface ethe 1/3/1
+ port-name LINK_to_DAQ_Server_Port_DAQeth0
+!
+interface ethe 1/3/2 to 1/3/3
+ port-name DISABLED-10G-SFP-Port
+disable
+!
+interface ethe 1/3/4
+ port-name LINK_to_CRMSW_ethernet_1/3/4
+!
+exit
+!
+ip address 192.168.83.200 255.255.255.0
+!
+username na.grcadmin privilege 0 password
+PASSWORDOMITTED
+!
+enable super-user-password
+PASSWORDOMITTED
+!
+enable aaa console
+aaa authentication enable default local
+aaa authentication login default local
+aaa authentication login privilege-mode
+aaa authentication web-server default local
+aaa authentication snmp-server default local
+web-management https
+!
+ntp
+disable serve
+server 192.168.83.102
+!
+exit
+crypto-ssl certificate generate
+
+snmp server
+!
+wr mem
+!
+reload
+
+show tech-support
+```
+
+Capture output of `show tech-support` to file and archive.
+
+
 ### DAQS
 #### Initial Setup
 * Login as root

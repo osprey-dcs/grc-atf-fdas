@@ -588,6 +588,14 @@ The network is implemented over fiber between the rack groups. The network is en
     <figcaption>Figure 4 - Network Design Diagram</figcaption>
 </figure>
 
+##### 3.4.4.2 - Logical Network Topology
+
+Two VLANs are configured (as two IP subnets).
+One VLAN (79) for traffic between the DAQS and the 32x Quartz digitizer chassis.
+And a second (83) for all other traffic.
+Only the DAQ server is logically present on both VLANs.
+There is no IP routing between VLANs.
+
 ### 3.5 - The I/O Device Layer Hardware Design
 
 #### 3.5.1 - The I/O Device Layer Design
