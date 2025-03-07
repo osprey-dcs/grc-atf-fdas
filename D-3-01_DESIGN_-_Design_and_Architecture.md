@@ -6852,7 +6852,26 @@ The overall readiness of the system can be established using the Functional Syst
 
 ## **9 - Software Assurance**
 
-...
+Software assurance of the delivered system is achieved through the development and execution of a comprehensive "Requirements Traceability Matrix" document that has been included in the system documentation as system document D.5.1.
+
+**Development of the Requirements Traceability Matrix:**
+
+Each functional requirement of the system [1] has been included in the Requirements Traceability Matrix (D.5.1). For each functional requirement, one or more of four verification methodologies have been selected and verification artifacts have been developed and/or identified as needed for each verification of each requirement. There are four types of verification methods. They are:
+
+1. **Verification by Inspection** - The acquirer performs an inspection of the on-site as-delivered equipment or items to assure that the requirement is met, photos shall be provided for any items that can not be inspected after delivery and installation at the acquirer's site. If the inspection can be performed after installation, no artifact is required.
+2. **Verification by Analysis** - the designer has developed an analysis that shows how the requirement is calculated to be met through two or more related facts and/or features of the system. D.5.1 will include a link to the analysis artifact.
+3. **Verification by Demonstration** - The provider provides a demonstration at the acquirer's installation site with the acquirer as witness, acquirer signature is all that is required to indicate a successful test, additional artifacts required.
+4. **Verification by Test** - a test is performed at the acquirer's installation site with the acquirer as witness, the successful as-run procedure(s) functions as the required Test artifact, the acquirer provides a signature on the as-run procedure indicating that the test was performed successfully without deviation or waiver,
+
+In all cases, the acquirer's sign-off of each requirement on an as-run copy of the D.5.1 document is sufficient for verification assurance.
+
+**Execution of the Requirements Traceability Matrix:**
+
+With on-site support from the provider as needed, the acquirer of the system is expected to lead the execution of a printed copy of the Requirements Traceability Matrix (D.5.1).
+
+**Post-Verification Software Assurance**
+
+By adhering to the NASA GRC-ATF Common DAC Architecture Specification v1.1 [1] and the NASA GRC-ATF Common DAC Documentation Requirements v1.1 [2] and after successful completion of the Requirements Traceability Matrix, the system is fully qualified for official use and it becomes the acquirer's responsibility to operate and maintain the system with a Software Assurance program of its own design.
 
 ## **10 - Instrument Calibration**
 
