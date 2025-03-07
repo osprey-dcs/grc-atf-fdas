@@ -18,6 +18,7 @@ Documents related to GRC-ATF-FDAS.
 - [D.3.6](D-3-06_DESIGN_-_Network_Topology_Diagram.pdf) DESIGN: Network Topology Diagram
 - [D.3.7](D-3-07_DESIGN_-_Detailed_System_Configuration.md) DESIGN: Detailed System Configuration
 - [D.3.8](D-3-08_DESIGN_-_Required_and_Recommended_Maintenance.md) DESIGN: Required and Recommended Maintenance
+- [D.3.9](D-3-09_DESIGN_-_Digitizer_Internal_Component_Configuration_Table.csv) DESIGN: Digitizer Internal Component Configuration Table
 - [D.4.1](D-4-01_PROC_-_Functional_Checkout.md): PROC: Functional Checkout
 - [D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md) PROC: Measurement Device Calibration
 - [D.4.3](D-4-03_PROC_-_Start-up_and_Shut-down.md) PROC: Start-up and Shut-down
