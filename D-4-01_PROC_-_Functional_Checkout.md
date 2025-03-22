@@ -1163,6 +1163,8 @@ Figure 3. Phoebus plot configuration dialog
     - Observe channels according to [D.4.6](D-4-06_PROC_-_Monitoring_a_Data-Channel_in_Real_Time.md).
 1. View this recording according to [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md).
 1. Export this recording according to [D.4.8](D-4-08_PROC_-_Export_Data_from_the_System.md).
+    - [ ] Export as UFF58b
+    - [ ] Export as CSV
 
 ## References
 
