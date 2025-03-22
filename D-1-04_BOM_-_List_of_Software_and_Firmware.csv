@@ -21,7 +21,7 @@ S19,1,Osprey,PSCDRV - Marble Board Data Stream,atf-20240529,BSD-3,https://github
 S20,1,Osprey,FEED - Marble Board Configuration,atf-20240715,BSD-3,https://github.com/osprey-dcs/feed-core
 S21,1,Osprey,Acquisition Orchestrator,atf-20240531,BSD-3,https://github.com/osprey-dcs/atf-engine
 S22,1,Osprey,Quartz User Configuration Loader,atf-20240531,BSD-3,https://github.com/osprey-dcs/quartz-config-loader
-S23,2,Osprey,DAQ Data Viewer/Exporter,atf-20240828,GPL-3,https://github.com/osprey-dcs/atf-previewer
+S23,2,Osprey,DAQ Data Viewer/Exporter,atf-20250322,GPL-3,https://github.com/osprey-dcs/atf-previewer
 S24,32,Osprey,Quartz application firmware,20241121,BSD-3,https://github.com/osprey-dcs/Quartz-firmware
 S25,32,Osprey,Quartz IOC,atf-20241018,BSD-3,https://github.com/osprey-dcs/atf-acq-ioc
 S26,2,Osprey,System Monitoring IOCs,atf-20240718,BSD-3,https://github.com/osprey-dcs/atf-sysmon
