@@ -13,3 +13,7 @@ all: image/D-3-2_System_Block_Diagram.png
 
 %.png: %.dia Makefile
 	$(DIA) --export=$@ $<
+
+cccr/D-4-01-all-channels.csv: cccr/D-4-01-generate.py
+	$(PYTHON) $< cccr
+all: cccr/D-4-01-all-channels.csv
