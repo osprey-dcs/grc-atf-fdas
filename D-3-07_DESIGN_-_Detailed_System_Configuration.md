@@ -908,3 +908,9 @@ Full Application firmware source is [published](https://github.com/osprey-dcs/Qu
 as well as pre-built [binaries](https://github.com/osprey-dcs/quartz-daq-250-24/blob/master/firmware).
 
 See also the Quartz [System Setup](https://github.com/osprey-dcs/quartz-daq-250-24/blob/master/documentation/system-setup.md) guide.
+
+## Chapter 14 - Virtual Control Panel files
+
+The contents of the [grc-atf-fdas-opi](https://github.com/osprey-dcs/grc-atf-fdas-opi)
+are published as `/opi` on the workstations.
+`/opi` is mounted via NFS from the MISCS server.
