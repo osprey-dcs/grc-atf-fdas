@@ -25,7 +25,7 @@ S23,2,Osprey,DAQ Data Viewer/Exporter,atf-20250322,GPL-3,https://github.com/ospr
 S24,32,Osprey,Quartz application firmware,20241121,BSD-3,https://github.com/osprey-dcs/Quartz-firmware
 S25,32,Osprey,Quartz IOC,atf-20241018,BSD-3,https://github.com/osprey-dcs/atf-acq-ioc
 S26,2,Osprey,System Monitoring IOCs,atf-20240718,BSD-3,https://github.com/osprey-dcs/atf-sysmon
-S27,1,Osprey,Quartz Calibration,atf-20240717,BSD-3,https://github.com/osprey-dcs/quartz-calib
+S27,1,Osprey,Quartz Calibration,atf-20250323,BSD-3,https://github.com/osprey-dcs/quartz-calib
 S28,2,CS-Studio/Phoebus,Client_Phoebus,4.7.3,EPL 1.0,https://github.com/ControlSystemStudio/phoebus
 S29,2,CS-Studio/Phoebus,Client_ArchiveAppliance,0.0.10,EPL 1.0,https://github.com/ControlSystemStudio/epicsarchiverap_pbrawclient
 S30,2,CS-Studio/Phoebus,Client_AlarmServer,4.7.3,EPL 1.0,https://github.com/ControlSystemStudio/phoebus/tree/master/app/alarm
@@ -39,3 +39,4 @@ S37,1,Elastic,Elastic Search,8.2.3,Elastic License 2.0,https://www.elastic.co
 S38,32,LBNL,Quartz bootloader firmware,b8ea50264fe8ccb7195b3ff14c909a2c56b085a0,BSD-3,https://github.com/BerkeleyLab/Bedrock
 S39,32,LBNL,Quartz MMC firmware,afa3f75e85c57ed3164cbda3be0691214679a16c,BSD-3,https://github.com/BerkeleyLab/Marble-MMC
 S40,1,Osprey,Marble Flash Programmer,v1.0,GPL-3,https://github.com/osprey-dcs/alluvium
+S41,2,Osprey,SEC virtual control panels,atf-20250323,BSD-3,https://github.com/osprey-dcs/grc-atf-fdas-opi
