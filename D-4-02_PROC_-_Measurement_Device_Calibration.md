@@ -8,9 +8,15 @@ Previous completion of [Inspecting the Current State and Health](D-4-09_PROC_-_I
 This procedure is to be followed when it is deemed necessary to establish a new set of calibration data for the Quartz ADC boards. 
 
 ## 2 - Summary
-In this procedure, one person (the operator) will be responsible for all tasks described. The operator will connect the calibration source (function generator and precision DVM) to the Quartz ADC chassis (up to two at a time) and run a calibration script via the command-line interface. This will be repeated for each ADC chassis as required.
+
+In this procedure, one person (the operator) will be responsible for all tasks described.
+The operator will connect the calibration source (function generator and precision DVM) to the Quartz ADC chassis (up to two at a time).
+This will be repeated for each ADC chassis as required.
 
 ## 3 - Preparing for Calibration: Hardware
+
+To prepare for a session to calibration one or more chassis:
+
 - [3.1] Locate the calibration cable set [D.1.5 P1](D-1-05_BOM_-_List_of_Supporting_Equipment.csv) (see Figures 1a-c). This assembly distributes the calibration voltage to (up to) two Quartz ADC chassis. On one side there are qty 4 DB-37(M) connectors for attaching to the ADC chassis, and on the other side there is a single BNC connector for attaching the excitation voltage source.  
 
 <figure style="text-align: center;">
@@ -82,7 +88,8 @@ Connect to ports 47 and 48 of the network switch.
 
 ## 5 - Perform Calibration(s)
 
-The following procedure will be executed for each chassis to be calibrated.
+The following procedure will be executed multiple times.
+Once for each chassis to be calibrated in one session.
 
 **NOTE:** Even though the setup procedures above connects (up to) two Quartz ADC chassis at a time, the calibration procedure only performs one at a time.
 
@@ -98,8 +105,8 @@ The following procedure will be executed for each chassis to be calibrated.
     - The newly measured calibration values are present only in the `New Calib.` columns as a candidate.
     - A "raw" calibration run file is produced under `/data/calib/`.
 1. Inspect the `New Calib.` columns in the results table.
-1. If the results are acceptable (including any known bad channels) the click `Commit All`.
-    - This will write the candidate values in the `New Calib` columns **to the live system**.
+1. __If the results are acceptable (including any known bad channels) then click `Commit All`.__
+    - This will write the candidate values in the `New Calib` columns to the live system.
     - A calibration report file is produced under `/data/calib/`.
 
 **NOTE** A final calibration report file has the form `/data/calib/cal-YYYYMMDD/YYYY-MM-DD_HH-MM-SS_cal_{chassis_id}_bipolar_calc.csv`
