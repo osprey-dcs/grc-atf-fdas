@@ -77,3 +77,29 @@ Quartz chassis Front and Rear panels.
 ![Quartz front panel](image/quartz-front.jpg)
 
 ![Quartz rear panel](image/quartz-rear.jpg)
+
+## Start/Completion Validation
+
+<br/>
+
+Performed By: ______________________
+
+<br/>
+
+Date Initiated: ______________________
+
+<br/>
+
+Date Completed: ______________________
+
+<br/>
+
+- [ ] Check to indicate that this procedure was performed with no deviations or waivers
+
+<br/>
+
+QA Verification by: ______________________
+
+<br/>
+
+QA Verification Date: ______________________

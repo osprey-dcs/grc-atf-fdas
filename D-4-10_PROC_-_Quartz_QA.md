@@ -218,3 +218,29 @@ and edit `createEEPROMs.sh` with the appropriate serial numbers.
 For the Quartz version 1 PCBs delivered, use the `quartz-1.x` branch.
 
 <div align="center"><b>Record in Testing Log when complete</b></div>
+
+## Start/Completion Validation
+
+<br/>
+
+Performed By: ______________________
+
+<br/>
+
+Date Initiated: ______________________
+
+<br/>
+
+Date Completed: ______________________
+
+<br/>
+
+- [ ] Check to indicate that this procedure was performed with no deviations or waivers
+
+<br/>
+
+QA Verification by: ______________________
+
+<br/>
+
+QA Verification Date: ______________________

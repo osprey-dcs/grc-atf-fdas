@@ -39,3 +39,29 @@ Only chassis which are currently selected as `In Use` need to be online.
 
 ## Real-Time Monitoring
 The operator interface for realtime/immediate monitoring of FDAS is the Phoebus GUI via virtual control panels and the Alarm Manager client.
+
+## Start/Completion Validation
+
+<br/>
+
+Performed By: ______________________
+
+<br/>
+
+Date Initiated: ______________________
+
+<br/>
+
+Date Completed: ______________________
+
+<br/>
+
+- [ ] Check to indicate that this procedure was performed with no deviations or waivers
+
+<br/>
+
+QA Verification by: ______________________
+
+<br/>
+
+QA Verification Date: ______________________

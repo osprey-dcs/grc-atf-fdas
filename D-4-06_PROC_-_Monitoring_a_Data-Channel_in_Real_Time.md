@@ -15,3 +15,29 @@ Previous completion of [Inspecting the Current State and Health](D-4-09_PROC_-_I
     1. Click on `Enable` by the `FFT Enable` control below this plot
 
 ![Chassis Scope](image/chassis-scope.png)
+
+## Start/Completion Validation
+
+<br/>
+
+Performed By: ______________________
+
+<br/>
+
+Date Initiated: ______________________
+
+<br/>
+
+Date Completed: ______________________
+
+<br/>
+
+- [ ] Check to indicate that this procedure was performed with no deviations or waivers
+
+<br/>
+
+QA Verification by: ______________________
+
+<br/>
+
+QA Verification Date: ______________________

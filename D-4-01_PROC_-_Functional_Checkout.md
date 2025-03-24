@@ -1170,3 +1170,29 @@ Figure 3. Phoebus plot configuration dialog
 
 - Quartz [functional test](https://github.com/osprey-dcs/quartz-daq-250-24/blob/master/documentation/functional-testing.md#alias-rejection-testing)
 report.
+
+## Start/Completion Validation
+
+<br/>
+
+Performed By: ______________________
+
+<br/>
+
+Date Initiated: ______________________
+
+<br/>
+
+Date Completed: ______________________
+
+<br/>
+
+- [ ] Check to indicate that this procedure was performed with no deviations or waivers
+
+<br/>
+
+QA Verification by: ______________________
+
+<br/>
+
+QA Verification Date: ______________________
