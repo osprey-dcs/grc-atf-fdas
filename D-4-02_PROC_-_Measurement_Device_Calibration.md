@@ -1,5 +1,9 @@
 # NASA GRC-ATF FDAS D.4.2 - Measurement Device Calibration Procedure
 
+## Prerequisites
+
+Previous completion of [Inspecting the Current State and Health](D-4-09_PROC_-_Inspecting_the_Current_State_and_Health.md).
+
 ## 1 - Introduction
 This procedure is to be followed when it is deemed necessary to establish a new set of calibration data for the Quartz ADC boards. 
 
@@ -73,28 +77,43 @@ In this procedure, one person (the operator) will be responsible for all tasks d
 Connect to ports 47 and 48 of the network switch.
 
 ## 4 - Preparing for Calibration: Software
-- [4.1] Log on to the DAQ Server.
-  Either connect local keyboard and monitor as shown, or remote via SSH to `192.168.83.100`.
 
-<figure style="text-align: center;">
-    <div style="background-color: white; display: inline-block; padding: 10px;">
-        <img src="image/operator_terminal.JPG" alt="Operator Terminal">
-    </div>
-    <figcaption>Figure 5 - Operator Terminal</figcaption>
-</figure>
+- Open the `Quartz chassis calibration control` OPI (`Main` -> `ADC Calibration`).  See [below](#CalibControl)
 
 ## 5 - Perform Calibration(s)
-- [5.1] The following procedure will be executed for each set of chassis to be calibrated. **NOTE:** Even though the setup procedures above connects (up to) two Quartz ADC chassis at a time, the calibration procedure only performs one at a time. 
-- [5.2] Verify the calibration cable set is connected properly to the chassis to be calibrated. If not, move a pair of DB-37 connectors to the chassis to be calibrated.
-- [5.3] On the terminal, enter `quartz_calib {nn} {y|n}`
 
-Where nn is the chassis number (two digits) and **y|n** designates if the script will push the calibration constants directly to EPICS. Set `y` for a real calibration, or `n` for a "practice" run (e.g. for a real calibration of chassis 17).
+The following procedure will be executed for each chassis to be calibrated.
 
-```
-quartz_calib 17 y
-```
+**NOTE:** Even though the setup procedures above connects (up to) two Quartz ADC chassis at a time, the calibration procedure only performs one at a time.
 
-- [5.4] Monitor the terminal as the calibration procedure is carried out and verify it completes in full. If the "Push calibration constants direct to EPICS" option was chosen above, also verify on the OPI that the current calibration date and time are valid and reasonable (matching the current date and time).  
+1. Verify the calibration cable set is connected properly to the chassis to be calibrated.
+    - If not, move a pair of DB-37 connectors to the chassis to be calibrated.
+1. From `Quartz chassis calibration control` select the chassis number to be calibrated.
+1. Enter operator's name into the `Calib. Oper.` field.
+1. Click `Calibration All` to begin the calibration process
+    - The `Process Status` will change to `Run` until the process has completed.
+    - If the process completes with an `Error` status, refer to troubleshooting checklist and repeat.
+        - If unable to resolve then contacting support.
+    - `Done` status indicates successful completion of the process.
+    - The newly measured calibration values are present only in the `New Calib.` columns as a candidate.
+    - A "raw" calibration run file is produced under `/data/calib/`.
+1. Inspect the `New Calib.` columns in the results table.
+1. If the results are acceptable (including any known bad channels) the click `Commit All`.
+    - This will write the candidate values in the `New Calib` columns **to the live system**.
+    - A calibration report file is produced under `/data/calib/`.
+
+**NOTE** A final calibration report file has the form `/data/calib/cal-YYYYMMDD/YYYY-MM-DD_HH-MM-SS_cal_{chassis_id}_bipolar_calc.csv`
+
+## 6 - Inspecting Calibration
+
+The following procedure may be executed for each channel to be verified.
+
+The current live calibration for a channel may be inspected through the `Chassis Scope` OPI (`Main` -> `Chassis Scope`)
+by selecting a chassis and channel, then scrolling to the bottom of that page.
+
+For a valid calibration the date is shown with no border.
+
+A red border indicates an invalid calibration.
 
 <figure style="text-align: center;">
     <div style="background-color: white; display: inline-block; padding: 10px;">
@@ -110,21 +129,33 @@ quartz_calib 17 y
     <figcaption>Figure 6b -Invalid Calibration</figcaption>
 </figure>
 
-- [5.5] Verify two calibration files were created with a name of the form:  
-`{calib_date}_{file_time}_cal_{chassis_id}_bipolar_raw.csv`  
-and  
-`{calib_date}_{file_time}_cal_{chassis_id}_bipolar_calc.csv` 
-- [5.6] Repeat steps 5.2 through 5.5 above for each chassis needing calibration.
-- [5.7] **If it appears the calibration procedure has failed** (as noted by a message on the console, incorrect time-stamp on the OPI, or missing data files):
-- [5.7.1] Verify:
-  1. The waveform generator and DVM are both powered on
-  2. The connections to the Quartz chassis being calibrated are correct and secure  
-- [5.7.2] If either of the above checks appear to be misconfigured, correct and retry the calibration.
-- [5.7.3] If the above checks did not reveal anything anomalous, **stop the calibration process** and contact a control system SME for further analysis.
-
-## 6 - Archive calibration data
-- [6.1] At the end of the calibration runs, copy the calibration data to the archive location as required by ATF SEC.
-
 ## 7 - Cleanup
-- [7.1] Upon the conclusion of the calibration session, disconnect the calibration cable set (being sure to leave the BNC tee connected to the function generator (along with the long BNC cable) and the connection to the DVM intact.)
-- [7.2] Log off of the terminal and exit the DAQ room, being sure to return the calibration cable set to the location where it is stored.
+
+Upon the conclusion of the calibration session.
+
+1. Disable the output, or turn off, the function generator.
+1. Disconnect and store the calibration cable set.
+1. Connect signal cables as desired
+
+## Troubleshooting
+
+If the calibration `Process Status` shows `Fail`, then:
+
+1. Check that the test signal cable set is connect to the selected chassis
+1. Ensure that `ADC Acquire` shows `Enabled` (refer to [D.4.9](D-4-09_PROC_-_Inspecting_the_Current_State_and_Health.md))
+1. Check that the DMM is:
+    1. Powered on
+    1. Connected to network switch
+    1. Has the IP address shown in the `Network configuration` section above
+1. Check the AFG
+    1. Powered on
+    1. Connected to network switch
+    1. Has the IP address shown in the `Network configuration` section above
+
+## References
+
+<a name="CalibControl"></a>
+
+Quartz chassis calibration control
+
+![Quartz chassis calibration control](image/calibrationIoc.png)
