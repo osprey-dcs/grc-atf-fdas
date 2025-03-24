@@ -31,6 +31,9 @@ def main(args=None):
     # One with all channels in USE
     emit_cccr(set(range(1,1025)), outdir / 'D-4-01-all-channels.csv')
 
+    # One with all channels in USE
+    emit_cccr(set(range(1,257)), outdir / 'D-4-01-256-channels.csv')
+
     # Files with all channels for one chassis in USE
     for chas in range(1,33):
         sigbase = (chas-1)*32 + 1

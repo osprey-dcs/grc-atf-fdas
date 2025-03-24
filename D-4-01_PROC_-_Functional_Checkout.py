@@ -71,29 +71,74 @@ Figure 3. Phoebus plot configuration dialog
 
 ## Process
 
-1. If applicable, run through the "System Power Up" section of [D.4.3](D-4-03_PROC_-_Start-up_and_Shut-down.md).
+1. Run through the "System Power Down" section of [D.4.3](D-4-03_PROC_-_Start-up_and_Shut-down.md).
+1. Run through the "System Power Up" section of [D.4.3](D-4-03_PROC_-_Start-up_and_Shut-down.md).
 1. Run [D.4.9](D-4-09_PROC_-_Inspecting_the_Current_State_and_Health.md.) Inspecting the Current State and Health of the system
-1. Set sample rate to 250Ksps and enable acquisition.  (see [D.4.6](D-4-06_PROC_-_Monitoring_a_Data-Channel_in_Real_Time.md))
+1. Set sample rate to 50Ksps and enable acquisition.  (see [D.4.6](D-4-06_PROC_-_Monitoring_a_Data-Channel_in_Real_Time.md))
 """.rstrip())
 
 for chas in range(1, 33):
     print(f'''\
 1. Chassis {chas}.  Connect signal generator.
-    - [ ] Successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)).
+    1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
+    1. Load CCCR [`D-4-01-chassis-{chas:02d}.csv`](cccr/D-4-01-chassis-{chas:02d}.csv)
+    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
+    1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
 '''.rstrip())
     for chan in range(1, 33):
         sig = (chas-1)*32 + chan
         print(f'''\
-    - [ ] Channel {chan}, signal {sig}.  Verify AC response
+        - [ ] Channel {chan}, signal {sig}.  Verify that the AC response conform to the Expected Response as listed above.
 '''.rstrip())
 
 print('''\
-1. Make a test recording, at least 10 seconds, according to [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md).
-    - Observe channels according to [D.4.6](D-4-06_PROC_-_Monitoring_a_Data-Channel_in_Real_Time.md).
-1. View this recording according to [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md).
+1. Load CCCR [`D-4-01-all-channels.csv`](cccr/D-4-01-all-channels.csv)
+'''.rstrip())
+
+for rate in ('1', '5', '25', '50'):
+    print(f'''\
+1. __Collect and verify recording for 15 to 16 minutes at {rate}Ksps__
+    1. Set sample rate to {rate}Ksps and enable acquisition.  (see [D.4.6](D-4-06_PROC_-_Monitoring_a_Data-Channel_in_Real_Time.md))
+    1. Record for 15 to 16 minutes  (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
+    1. Inspect this recording according to [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md).
+    1. [_] Ensure data is complete for the entire 15 to 16 range
+'''.rstrip())
+
+print('''\
+1. Power off chassis 9 through 32
+1. Set sample rate to 250Ksps and enable acquisition.  (see [D.4.6](D-4-06_PROC_-_Monitoring_a_Data-Channel_in_Real_Time.md))
+'''.rstrip())
+
+for chas in range(1, 9):
+    print(f'''\
+1. Chassis {chas}.  Connect signal generator.
+    1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
+    1. Load CCCR [`D-4-01-chassis-{chas:02d}.csv`](cccr/D-4-01-chassis-{chas:02d}.csv)
+    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
+    1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
+'''.rstrip())
+    for chan in range(1, 33):
+        sig = (chas-1)*32 + chan
+        print(f'''\
+        - [ ] Channel {chan}, signal {sig}.  Verify that the AC response conform to the Expected Response as listed above.
+'''.rstrip())
+
+
+print('''\
+1. Load CCCR [`D-4-01-256-channels.csv`](cccr/D-4-01-256-channels.csv)
+1. Collect recording for 15 minutes at 250Ksps
+    1. Set sample rate to 250Ksps and enable acquisition.  (see [D.4.6](D-4-06_PROC_-_Monitoring_a_Data-Channel_in_Real_Time.md))
+    1. Record for 15 to 16 minutes  (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
+    1. Inspect this recording according to [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md).
+    1. [_] Data is complete for entire time range
 1. Export this recording according to [D.4.8](D-4-08_PROC_-_Export_Data_from_the_System.md).
-    - [ ] Export as UFF58b
-    - [ ] Export as CSV
+    1. [_] Export as UFF58b
+    1. [_] Verify exported UFF58b file
+    1. [_] Export as CSV
+    1. [_] Verify exported CSV file
+1. If applicable, run through the "System Power Down" section of [D.4.3](D-4-03_PROC_-_Start-up_and_Shut-down.md).
 
 ## References
 
