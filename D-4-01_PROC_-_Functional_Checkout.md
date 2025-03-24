@@ -3,13 +3,13 @@
 The purpose of this procedure is to bring the FDAS system
 into a known functional state.
 
-## Prerequisites
+## 1. Prerequisites
 
 - Availability of a CCCR file configuring the channels to be verified to a voltage scale.  (no EGU, ESLO=1.0, ESLO=0.0)
 - Locate function generator (eg. Agilent 33220 Waveform generator)
 - Locate test cable set as described in [D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md).
 
-## Preparation
+## 2. Preparation
 
 Configuring function generator for AC response test
 
@@ -18,18 +18,18 @@ Configuring function generator for AC response test
     - May exclude settings known not to effect output, eg. network address
     - May use setting save/restore feature
   1. Ensure output is disabled
+  1. Set output to high impedance (HighZ)
   1. Select sine wave
   1. Set offset to zero volts
-  1. Set amplitude +-10 V (20 Vpp)
+  1. Set amplitude +-5 V (10 Vpp)
   1. Set frequency to 9 KHz
-  1. Set output to high impedence (HighZ)
 
 Note: Running [D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)
       will reconfigure the function generator.
       It is recommended to reset and setup, then save settings once,
       and thereafter restore settings following each calibration run.
 
-## Expected Response
+## 3. Expected Response
 
 Figure 1. Chassis Scope screen showing expected response to 9 KHz sine wave.
 
@@ -66,7 +66,7 @@ Figure 3. Phoebus plot configuration dialog
 
 ![Plot config](image/Phoebus_plot_config.png)
 
-## Process
+## 4. Process
 
 1. Run through the "System Power Down" section of [D.4.3](D-4-03_PROC_-_Start-up_and_Shut-down.md).
 1. Run through the "System Power Up" section of [D.4.3](D-4-03_PROC_-_Start-up_and_Shut-down.md).
@@ -74,8 +74,8 @@ Figure 3. Phoebus plot configuration dialog
 1. Set sample rate to 50Ksps and enable acquisition.  (see [D.4.6](D-4-06_PROC_-_Monitoring_a_Data-Channel_in_Real_Time.md))
 1. Chassis 1.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-01.csv`](cccr/D-4-01-chassis-01.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-01.csv`](cccr/D-4-01-chassis-01.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 1.  Verify that the AC response conform to the Expected Response as listed above.
@@ -112,8 +112,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 32.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 2.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-02.csv`](cccr/D-4-01-chassis-02.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-02.csv`](cccr/D-4-01-chassis-02.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 33.  Verify that the AC response conform to the Expected Response as listed above.
@@ -150,8 +150,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 64.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 3.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-03.csv`](cccr/D-4-01-chassis-03.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-03.csv`](cccr/D-4-01-chassis-03.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 65.  Verify that the AC response conform to the Expected Response as listed above.
@@ -188,8 +188,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 96.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 4.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-04.csv`](cccr/D-4-01-chassis-04.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-04.csv`](cccr/D-4-01-chassis-04.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 97.  Verify that the AC response conform to the Expected Response as listed above.
@@ -226,8 +226,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 128.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 5.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-05.csv`](cccr/D-4-01-chassis-05.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-05.csv`](cccr/D-4-01-chassis-05.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 129.  Verify that the AC response conform to the Expected Response as listed above.
@@ -264,8 +264,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 160.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 6.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-06.csv`](cccr/D-4-01-chassis-06.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-06.csv`](cccr/D-4-01-chassis-06.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 161.  Verify that the AC response conform to the Expected Response as listed above.
@@ -302,8 +302,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 192.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 7.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-07.csv`](cccr/D-4-01-chassis-07.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-07.csv`](cccr/D-4-01-chassis-07.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 193.  Verify that the AC response conform to the Expected Response as listed above.
@@ -340,8 +340,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 224.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 8.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-08.csv`](cccr/D-4-01-chassis-08.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-08.csv`](cccr/D-4-01-chassis-08.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 225.  Verify that the AC response conform to the Expected Response as listed above.
@@ -378,8 +378,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 256.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 9.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-09.csv`](cccr/D-4-01-chassis-09.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-09.csv`](cccr/D-4-01-chassis-09.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 257.  Verify that the AC response conform to the Expected Response as listed above.
@@ -416,8 +416,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 288.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 10.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-10.csv`](cccr/D-4-01-chassis-10.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-10.csv`](cccr/D-4-01-chassis-10.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 289.  Verify that the AC response conform to the Expected Response as listed above.
@@ -454,8 +454,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 320.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 11.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-11.csv`](cccr/D-4-01-chassis-11.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-11.csv`](cccr/D-4-01-chassis-11.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 321.  Verify that the AC response conform to the Expected Response as listed above.
@@ -492,8 +492,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 352.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 12.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-12.csv`](cccr/D-4-01-chassis-12.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-12.csv`](cccr/D-4-01-chassis-12.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 353.  Verify that the AC response conform to the Expected Response as listed above.
@@ -530,8 +530,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 384.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 13.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-13.csv`](cccr/D-4-01-chassis-13.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-13.csv`](cccr/D-4-01-chassis-13.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 385.  Verify that the AC response conform to the Expected Response as listed above.
@@ -568,8 +568,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 416.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 14.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-14.csv`](cccr/D-4-01-chassis-14.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-14.csv`](cccr/D-4-01-chassis-14.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 417.  Verify that the AC response conform to the Expected Response as listed above.
@@ -606,8 +606,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 448.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 15.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-15.csv`](cccr/D-4-01-chassis-15.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-15.csv`](cccr/D-4-01-chassis-15.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 449.  Verify that the AC response conform to the Expected Response as listed above.
@@ -644,8 +644,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 480.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 16.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-16.csv`](cccr/D-4-01-chassis-16.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-16.csv`](cccr/D-4-01-chassis-16.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 481.  Verify that the AC response conform to the Expected Response as listed above.
@@ -682,8 +682,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 512.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 17.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-17.csv`](cccr/D-4-01-chassis-17.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-17.csv`](cccr/D-4-01-chassis-17.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 513.  Verify that the AC response conform to the Expected Response as listed above.
@@ -720,8 +720,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 544.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 18.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-18.csv`](cccr/D-4-01-chassis-18.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-18.csv`](cccr/D-4-01-chassis-18.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 545.  Verify that the AC response conform to the Expected Response as listed above.
@@ -758,8 +758,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 576.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 19.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-19.csv`](cccr/D-4-01-chassis-19.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-19.csv`](cccr/D-4-01-chassis-19.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 577.  Verify that the AC response conform to the Expected Response as listed above.
@@ -796,8 +796,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 608.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 20.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-20.csv`](cccr/D-4-01-chassis-20.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-20.csv`](cccr/D-4-01-chassis-20.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 609.  Verify that the AC response conform to the Expected Response as listed above.
@@ -834,8 +834,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 640.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 21.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-21.csv`](cccr/D-4-01-chassis-21.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-21.csv`](cccr/D-4-01-chassis-21.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 641.  Verify that the AC response conform to the Expected Response as listed above.
@@ -872,8 +872,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 672.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 22.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-22.csv`](cccr/D-4-01-chassis-22.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-22.csv`](cccr/D-4-01-chassis-22.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 673.  Verify that the AC response conform to the Expected Response as listed above.
@@ -910,8 +910,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 704.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 23.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-23.csv`](cccr/D-4-01-chassis-23.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-23.csv`](cccr/D-4-01-chassis-23.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 705.  Verify that the AC response conform to the Expected Response as listed above.
@@ -948,8 +948,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 736.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 24.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-24.csv`](cccr/D-4-01-chassis-24.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-24.csv`](cccr/D-4-01-chassis-24.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 737.  Verify that the AC response conform to the Expected Response as listed above.
@@ -986,8 +986,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 768.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 25.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-25.csv`](cccr/D-4-01-chassis-25.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-25.csv`](cccr/D-4-01-chassis-25.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 769.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1024,8 +1024,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 800.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 26.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-26.csv`](cccr/D-4-01-chassis-26.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-26.csv`](cccr/D-4-01-chassis-26.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 801.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1062,8 +1062,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 832.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 27.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-27.csv`](cccr/D-4-01-chassis-27.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-27.csv`](cccr/D-4-01-chassis-27.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 833.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1100,8 +1100,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 864.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 28.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-28.csv`](cccr/D-4-01-chassis-28.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-28.csv`](cccr/D-4-01-chassis-28.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 865.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1138,8 +1138,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 896.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 29.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-29.csv`](cccr/D-4-01-chassis-29.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-29.csv`](cccr/D-4-01-chassis-29.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 897.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1176,8 +1176,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 928.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 30.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-30.csv`](cccr/D-4-01-chassis-30.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-30.csv`](cccr/D-4-01-chassis-30.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 929.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1214,8 +1214,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 960.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 31.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-31.csv`](cccr/D-4-01-chassis-31.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-31.csv`](cccr/D-4-01-chassis-31.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 961.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1252,8 +1252,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 992.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 32.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-32.csv`](cccr/D-4-01-chassis-32.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-32.csv`](cccr/D-4-01-chassis-32.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 993.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1288,7 +1288,7 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 30, signal 1022.  Verify that the AC response conform to the Expected Response as listed above.
         - [ ] Channel 31, signal 1023.  Verify that the AC response conform to the Expected Response as listed above.
         - [ ] Channel 32, signal 1024.  Verify that the AC response conform to the Expected Response as listed above.
-1. Load CCCR [`D-4-01-all-channels.csv`](cccr/D-4-01-all-channels.csv)
+1. Load CCCR [`D-4-01-all-channels.csv`](cccr/D-4-01-all-channels.csv)  (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
 1. __Collect and verify recording for 15 to 16 minutes at 1Ksps__
     1. Set sample rate to 1Ksps and enable acquisition.  (see [D.4.6](D-4-06_PROC_-_Monitoring_a_Data-Channel_in_Real_Time.md))
     1. Record for 15 to 16 minutes  (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
@@ -1313,8 +1313,8 @@ Figure 3. Phoebus plot configuration dialog
 1. Set sample rate to 250Ksps and enable acquisition.  (see [D.4.6](D-4-06_PROC_-_Monitoring_a_Data-Channel_in_Real_Time.md))
 1. Chassis 1.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-01.csv`](cccr/D-4-01-chassis-01.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-01.csv`](cccr/D-4-01-chassis-01.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see Preparation above)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 1.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1351,8 +1351,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 32.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 2.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-02.csv`](cccr/D-4-01-chassis-02.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-02.csv`](cccr/D-4-01-chassis-02.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see Preparation above)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 33.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1389,8 +1389,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 64.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 3.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-03.csv`](cccr/D-4-01-chassis-03.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-03.csv`](cccr/D-4-01-chassis-03.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see Preparation above)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 65.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1427,8 +1427,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 96.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 4.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-04.csv`](cccr/D-4-01-chassis-04.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-04.csv`](cccr/D-4-01-chassis-04.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see Preparation above)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 97.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1465,8 +1465,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 128.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 5.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-05.csv`](cccr/D-4-01-chassis-05.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-05.csv`](cccr/D-4-01-chassis-05.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see Preparation above)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 129.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1503,8 +1503,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 160.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 6.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-06.csv`](cccr/D-4-01-chassis-06.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-06.csv`](cccr/D-4-01-chassis-06.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see Preparation above)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 161.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1541,8 +1541,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 192.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 7.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-07.csv`](cccr/D-4-01-chassis-07.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-07.csv`](cccr/D-4-01-chassis-07.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see Preparation above)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 193.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1579,8 +1579,8 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 32, signal 224.  Verify that the AC response conform to the Expected Response as listed above.
 1. Chassis 8.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
-    1. Load CCCR [`D-4-01-chassis-08.csv`](cccr/D-4-01-chassis-08.csv)
-    1. Configure/restore function generator for 1KHz Sine (see Preparation above)
+    1. Load CCCR [`D-4-01-chassis-08.csv`](cccr/D-4-01-chassis-08.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
+    1. Configure/restore function generator for 9KHz Sine (see Preparation above)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
         - [ ] Channel 1, signal 225.  Verify that the AC response conform to the Expected Response as listed above.
@@ -1615,7 +1615,7 @@ Figure 3. Phoebus plot configuration dialog
         - [ ] Channel 30, signal 254.  Verify that the AC response conform to the Expected Response as listed above.
         - [ ] Channel 31, signal 255.  Verify that the AC response conform to the Expected Response as listed above.
         - [ ] Channel 32, signal 256.  Verify that the AC response conform to the Expected Response as listed above.
-1. Load CCCR [`D-4-01-256-channels.csv`](cccr/D-4-01-256-channels.csv)
+1. Load CCCR [`D-4-01-256-channels.csv`](cccr/D-4-01-256-channels.csv)  (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
 1. Collect recording for 15 minutes at 250Ksps
     1. Set sample rate to 250Ksps and enable acquisition.  (see [D.4.6](D-4-06_PROC_-_Monitoring_a_Data-Channel_in_Real_Time.md))
     1. Record for 15 to 16 minutes  (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
@@ -1626,14 +1626,15 @@ Figure 3. Phoebus plot configuration dialog
     1. [_] Verify exported UFF58b file
     1. [_] Export as CSV
     1. [_] Verify exported CSV file
+1. Execute Cleanup section of [D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md).
 1. If applicable, run through the "System Power Down" section of [D.4.3](D-4-03_PROC_-_Start-up_and_Shut-down.md).
 
-## References
+## 5. References
 
 - Quartz [functional test](https://github.com/osprey-dcs/quartz-daq-250-24/blob/master/documentation/functional-testing.md#alias-rejection-testing)
 report.
 
-## Start/Completion Validation
+## 6. Start/Completion Validation
 
 <br/>
 
