@@ -14,7 +14,9 @@ D.3.4,System Design: Detailed Software List,"A CSV table containing a detailed l
 D.3.5,System Design: System Interconnection Drawing,"An electrical drawing that comprehensively captures exactly how all connections to all components are made referencing cable IDs, HW Reference Designators (D.3.3). The Detailed System Interconnection Drawing shall make it possible to identify any miswirings of the system as well as to restore proper connectivity of any component to any other based entirely from the drawing."
 D.3.6,System Design: Network Topology Diagram,A simplified block diagram of the network devices in the sytem and their connections
 D.3.7,System Design: Detailed System Configuration,A document containing instructions on configuring necessary software
-D.3.8,System Design: System OT Security Information List,A document containing a dedicated section for each instance of each device listed in the System Detailed Hardware List (D.3.3).
+D.3.8,System Design: Required and Recommended Maintenance,
+D.3.9,System Design: Digitizer Internal Component Configuration Table,
+D.3.10,System Design: System OT Security Information List,A document containing a dedicated section for each instance of each device listed in the System Detailed Hardware List (D.3.3).
 D.4.1,System Operating Procedures: Functional Checkout Procedures,Step-by-step procedure detailing how to verify that all aspects of the system are functional and the system is ready for use by the user.
 D.4.2,System Operating Procedures: Measurement Device Calibration Procedure,"Step-by-step procedure detailing how to calibrate any analog input channels using a NIST tracible calibration reference / Step-by-step procedure detailing how to:
 * Enable/Disable specific channels
