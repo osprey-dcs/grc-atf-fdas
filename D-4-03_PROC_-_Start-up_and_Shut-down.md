@@ -56,6 +56,10 @@ Recovery from partial/total power outage.
     1. (Alternate) Open a web browser and navigate to `http://192.168.83.101:17665/mgmt/ui/reports.html`
     1. Click on `Reports` and select `Currently disconnected PVs`
     1. Notify support if result table has entries other than: "no data found"
+1. Open a terminal and run:
+    1. `ssh DAQ`
+    1. `sudo ethtool -L DAQeth0 tx 1 rx 32 combined 0`
+    1. `exit`
 1. Proceed to [Inspecting the Current State and Health](healthcheck.md) of the system.
 
 ## References

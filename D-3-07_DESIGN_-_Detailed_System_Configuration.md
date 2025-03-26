@@ -630,6 +630,14 @@ Description=Trunk interface for DAQ and EPICS vlans
 MACAddressPolicy=persistent
 Name=DAQeth0
 NamePolicy=keep
+
+RxChannels=32
+TxChannels=1
+CombinedChannels=0
+
+RxBufferSize=max
+RxJumboBufferSize=max
+UseAdaptiveRxCoalesce=yes
 EOF
 
 cat <<EOF | sudo tee -a /etc/systemd/network/20-DAQeth0.network
