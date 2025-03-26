@@ -10,10 +10,10 @@ Only chassis which are currently selected as `In Use` need to be online.
 1. If any/all cells show a purple border (PV disconnected)
     - Contact support before proceeding
 1. Set `ADC Acquire` to `Disable`
-1. If any `In Use` chassis `FW Active` show `None`
+1. If any `In Use` chassis `FW Active` column shows `None`
     1. Check chassis power and network connection
     1. Contact support before proceeding
-1. If any `In Use` chassis `FW Active` show `Gold`.
+1. If any `In Use` chassis `FW Active` column shows `Gold` then take the following action:
     1. From `Main`, open the `FPGA Boot Control` page.
     1. Click `Boot App` for the appropriate chassis.  (or toggle Auto boot to `Auto`)
     1. Active FW will toggle back to `None` and then to `Appl` within 30 seconds

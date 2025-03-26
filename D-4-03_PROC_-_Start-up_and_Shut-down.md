@@ -2,6 +2,8 @@
 
 Covers global system power down and up, as well as system recovery after individual chassis power cycle.
 
+FDAS equipment is located in racks within the Instrument room and Control room.
+
 ## Note on Computer Shutdown
 
 Each computer may be requested to shutdown gracefully by one of the following methods
@@ -16,12 +18,13 @@ Preparation for partial/total power outage.
 
 If possible, save open documents on Workstations.
 
-1. Switch off power to all 32x Quartz Chassis in the Instrument room
+1. Disable Acquisition if possible (from `Main` or `ADC Status` pages)
+1. Switch off power to all 32x Quartz Chassis in the __Instrument room__.
 1. Initiate a graceful shutdown of each computer by one of the means listed above.
-    1. DAQS server (Instrument room)
-    1. MISC server (Control room)
-    1. Workstation 1 (Control room)
-    1. Workstation 2 (Control room)
+    1. DAQS server (__Instrument room__)
+    1. MISC server (__Control room__)
+    1. Workstation 1 (__Control room__)
+    1. Workstation 2 (__Control room__)
 1. Wait for computers to complete normal shutdown.
     - Indicated by power LEDs turning off
     - If this takes more than 5 minutes, endeavor to contact support
@@ -33,7 +36,7 @@ If possible, save open documents on Workstations.
 
 Recovery from partial/total power outage.
 
-1. Verify power to:
+1. Verify AC power is available to:
    - Control room switch (visible from front)
    - Instrument room switch (visible from rear)
    - Instrument room Time Server
@@ -43,8 +46,8 @@ Recovery from partial/total power outage.
 1. Press and quickly release power buttons on computers
     - DAQS server
     - MISC server
-    - Workstation 1
-    - Workstation 2
+    - DISWS1, Workstation 1
+    - DISWS2, Workstation 2
 1. Switch on power to all Quartz Chassis
 1. Verify Workstation boot (repeat for each)
     1. Connect KVM console to Workstation 1 or 2
