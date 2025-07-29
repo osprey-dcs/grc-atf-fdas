@@ -32,6 +32,19 @@ If possible, save open documents on Workstations.
       press and hold power button until LEDs turn off.
       (__Caution__, may result in data loss)
 
+### Dell Server Power Indicators Discussion
+
+For data integrety, it is important to wait for the green LED in the power
+button to go out.
+
+It is desirable, but not necessary to wait for the blue indicator to turn off
+before removing power.
+
+During a controlled shutdown, the green LED under the power button goes out
+when the OS has shutdown.
+The blue indicator bar (left end of chassis) remains illuminated while the
+system firmware shuts down.
+
 ## System Power Up
 
 Recovery from partial/total power outage.
