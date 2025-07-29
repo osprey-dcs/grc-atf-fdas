@@ -25,15 +25,15 @@ S24,8,Osprey,Quartz application firmware,20250525,BSD-3,https://github.com/ospre
 S25,8,Osprey,Quartz IOC,atf-20250728,BSD-3,https://github.com/osprey-dcs/atf-acq-ioc
 S26,2,Osprey,System Monitoring IOCs,atf-20250728,BSD-3,https://github.com/osprey-dcs/atf-sysmon
 S27,1,Osprey,Quartz Calibration,atf-20250728,BSD-3,https://github.com/osprey-dcs/quartz-calib
-S28,1,CS-Studio/Phoebus,Client_Phoebus,4.7.3,EPL 1.0,https://github.com/ControlSystemStudio/phoebus
+S28,1,CS-Studio/Phoebus,Client_Phoebus,4.7.4,EPL 1.0,https://github.com/ControlSystemStudio/phoebus
 S29,1,CS-Studio/Phoebus,Client_ArchiveAppliance,0.0.10,EPL 1.0,https://github.com/ControlSystemStudio/epicsarchiverap_pbrawclient
-S30,1,CS-Studio/Phoebus,Client_AlarmServer,4.7.3,EPL 1.0,https://github.com/ControlSystemStudio/phoebus/tree/master/app/alarm
+S30,1,CS-Studio/Phoebus,Client_AlarmServer,4.7.4,EPL 1.0,https://github.com/ControlSystemStudio/phoebus/tree/master/app/alarm
 S31,1,CS-Studio/Phoebus,Client_ChannelFinder,4.7.3,EPL 1.0,https://github.com/ControlSystemStudio/phoebus/tree/master/app/channel
-S32,1,CS-Studio/Phoebus,save_restore,4.7.3,EPL 1.0,https://github.com/ControlSystemStudio/phoebus/tree/master/app/save-and-restore
+S32,1,CS-Studio/Phoebus,save_restore,4.7.4,EPL 1.0,https://github.com/ControlSystemStudio/phoebus/tree/master/app/save-and-restore
 S33,1,EPICS Collaboration,Archive Appliance Server,1.1.0,EPICS Open License,https://github.com/slacmshankar/epicsarchiverap
-S34,1,CS-Studio/Phoebus,Beast Alarm Server,4.7.3,EPL 1.0,https://github.com/ControlSystemStudio/phoebus/tree/master/services/alarm-server
-S35,1,EPICS Collaboration,Channel FinderServer,4.7.2,EPL 1.0,https://github.com/ChannelFinder/ChannelFinderService
-S36,1,EPICS Collaboration,Olog,f5022c44be5d7acbd663be81714e689601754c33,EPL 1.0,https://github.com/Olog/phoebus-olog
+S34,1,CS-Studio/Phoebus,Beast Alarm Server,4.7.4,EPL 1.0,https://github.com/ControlSystemStudio/phoebus/tree/master/services/alarm-server
+S35,1,EPICS Collaboration,Channel FinderServer,4.7.3,EPL 1.0,https://github.com/ChannelFinder/ChannelFinderService
+S36,1,EPICS Collaboration,Olog,5.0.2,EPL 1.0,https://github.com/Olog/phoebus-olog
 S37,1,Elastic,Elastic Search,8.2.3,Elastic License 2.0,https://www.elastic.co
 S38,8,LBNL,Quartz bootloader firmware,b8ea50264fe8ccb7195b3ff14c909a2c56b085a0,BSD-3,https://github.com/BerkeleyLab/Bedrock
 S39,8,LBNL,Quartz MMC firmware,afa3f75e85c57ed3164cbda3be0691214679a16c,BSD-3,https://github.com/BerkeleyLab/Marble-MMC
