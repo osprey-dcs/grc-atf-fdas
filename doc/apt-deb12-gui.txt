@@ -1,0 +1,3 @@
+dmidecode
+openjdk-17-jdk
+maven

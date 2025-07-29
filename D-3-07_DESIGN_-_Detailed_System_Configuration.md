@@ -3,10 +3,10 @@
 ## Overview and Conventions
 
 Where possible currently understand Debian Linux and
-EPICS collaboration conventions are followed (circa 2024).
+EPICS collaboration conventions are followed (circa 2025).
 System services and IOC instance run as `systemd` units.
-Network configuration is managed by `systemd-netword` (DAQM and MISC)
-or NetworkManager (DISWS1 and 2).
+Network configuration is managed by `/etc/network/interfaces` for DAQM,
+and NetworkManager for DISWS3.
 The [KDE](https://kde.org/) GUI environment is installed.
 
 ## Chapter 1 - OS Installation
@@ -68,67 +68,6 @@ In either case, then proceed to:
 * Continue with the default options until the installation is concluded:
 
 ![img9](image/D-3-7_Ch1_9.png)
-
-### DISWS, Kubuntu
-* Kubuntu LTS 24.04 default LVM atf/atf
-* Firefox —safe-mode -> settings-> general -> disable ‘Use recommended performance settings’ and ‘use hardware acceleration’
-* Follow DAQM for EPICS
-* ``sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target``
-* Disable lockscreen, and timeouts
-* Disable kde wallet subsystem
-* System Settings -> Power Management -> Energy Saving and disable all but button events handlings, change it to shutdown 
-* ``apt-get install edid-decode and read-edid`` (optional, KVM troubleshooting)
-* ``apt-get install pip``
-* ``pip install matplotlib p4p pyserial numpy``
-* add /home/atf/.local/bin to bashrc/PATH (to get pip stuff)
-* ``sudo apt-get install openjdk-17-jdk``
-* download phoebus latest tag, move and add link to /usr/local/epics/phoebus
-* copy logos and wallpaper (optional)
-* copy phoebus desktop shortcut, comment the “-f resource” argument and fix permissions
-* modify /usr/local/epics/phoebus/phoebus.sh -> comment OPT=“-server 4918” line add settings.ini and TOP at the beginning
-* ``sudo ln -s /usr/local/epics/phoebus/phoebus.sh /usr/local/bin/phoebus``
-* copy settings.ini file (for archiver url/etc)
-* change desktop and add user admin for service
-* ``apt-get install x2go-server``
-* ``apt-get install tcpdump``
-* Edit /etc/systemd/network/10-DISXeth0.link (adjust MAC address for DISP2):
-```
-[Match]
-MACAddress=7C:C2:55:4C:84:E6
-Type=ether
-
-[Link]
-Description=DISPLAY 1 EPICS Interface
-MACAddressPolicy=persistent
-Name=DIS1eth0
-NamePolicy=keep
-```
-* Edit /etc/systemd/network/10-DISXeth0.network (adjust MAC address and IP for DISP2):
-```
-[Match]
-Name=DIS1eth0
-Type=ether
-
-[Network]
-Description=DISPLAY 1 EPICS Interface
-NTP=192.168.83.102
-
-LinkLocalAddressing=no
-LLDP=no
-EmitLLDP=no
-IPv6AcceptRA=no
-IPv6SendRA=no
-
-[Address]
-Address=192.168.83.103/24
-```
-* Change /etc/hosts and include all 83.xxx IPs and hosts
-* ``sudo systemctl enable systemd-networkd``
-* update initramfs
-``sudo update-initramfs -u``
-* remove pro ads: sudo rm /etc/apt/apt.conf.d/20apt-esm-hook.conf
-* change /etc/default/grub: add “GRUB_RECORDFAIL_TIMEOUT=3” and do update-grub
-* Reboot the workstation
 
 ## Chapter 2 - Initial Setup and Network Config
 
@@ -312,6 +251,14 @@ show tech-support
 
 Capture output of `show tech-support` to file and archive.
 
+#### Later access via ssh
+
+```
+ssh \
+ -o 'KexAlgorithms +diffie-hellman-group14-sha1' \
+ -o 'HostKeyAlgorithms +ssh-rsa' \
+ na.grcadmin@192.168.83.205
+```
 
 ### DAQM
 #### Initial Setup
@@ -319,11 +266,11 @@ Capture output of `show tech-support` to file and archive.
 * Change the hostname with the following command:
 ``hostnamectl set-hostname DAQM``
 * Edit the /etc/hosts file and add the following entry:
-    * 192.168.83.100 DAQM
+    * 192.168.83.90 DAQM
 * Reboot the server to apply the changes
 * Login as root and verify the changes with the following command:
     * hostnamectl
-* Verify and as necessary edit /etc/apt/sources.list as follows:
+* Verify and if necessary edit /etc/apt/sources.list as follows:
 ```
 deb http://deb.debian.org/debian bookworm main non-free-firmware
 deb-src http://deb.debian.org/debian bookworm main non-free-firmware
@@ -335,135 +282,77 @@ deb http://deb.debian.org/debian bookworm-updates main non-free-firmware
 deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware
 ```
 
-* Connect an ethernet cable to a valid DHCP server with internet access to port eno12409np1 (NIC eth 2) and issue the following commands (alternatively, this can be done from a virtual media mounted with the mirror packages):
-    * ```dhclient eno12409np1```
-    * ```apt-get update```
-    * ```apt-get upgrade```
-    * ```apt-get install git vim vlan tcpdump```
-    * ```adduser atf```
-    * ```usermod -a -G sudo atf```
-    * ```apt-get install procserv```
-    * ```su atf```
+#### Install Additional Debian Packages
+
+Now install the [listed](doc/apt-deb12.txt) Debian packages.
+
+To do so the system must have access to a mirror of the Debian repository of packages.
+Either via a temporary internet connection, or from a local mirror.
+
+If a local wired ethernet network with DHCP and internet access is available,
+then connect it to the secondary NIC (eno12409np1).
+Edit `/etc/network/interfaces` to contain:
+
+```
+allow-hotplug eno12409np1
+iface eno12409np1 inet dhcp
+```
+
+Then run `sudo ifup eno12409np1`.
+
+
+```sh
+cat doc/apt-deb12.txt | xargs sudo apt install
+```
 
 #### Network Configuration
 
-Note that MAC addresses shown below are specific to the delivered computers,
-and will differ on any replacement computer.
+Configure the primary NIC (eno12399np0) for two tagged VLANs (79 and 83).
+The secondary NIC (eno12409np1) may remain configured as desired so long as no IP address
+conflict exists with networks `192.168.79.90/24` or `192.168.83.90/24`.
 
-```sh
-sudo apt-get install vlan tcpdump```
+Edit `/etc/network/interfaces` to contain:
 
-cat <<EOF | sudo tee -a /etc/systemd/network/00-Acquisition.netdev
-[NetDev]
-Name=Acquisition
-Kind=vlan
+```
+auto lo
+iface lo inet loopback
 
-[VLAN]
-Id=79
-EOF
+# The primary (10G) network interface
+allow-hotplug eno12399np0 eno12399np0.79 eno12399np0.83
 
-cat <<EOF | sudo tee -a /etc/systemd/network/00-EPICS.netdev
-[NetDev]
-Name=EPICS
-Kind=vlan
+iface eno12399np0 inet manual
+  up ethtool -L eno12399np0 rx 32 tx 2 combined 0 || true
+  up ethtool -G eno12399np0 rx 2047 || true
 
-[VLAN]
-Id=83
-EOF
+iface eno12399np0.79 inet static
+  address 192.168.79.90/24
 
-cat <<EOF | sudo tee -a /etc/systemd/network/10-DAQeth0.link
-[Match]
-MACAddress=04:32:01:c1:d1:60
-Type=ether
+iface eno12399np0.83 inet static
+  address 192.168.83.90/24
 
-[Link]
-Description=Trunk interface for DAQ and EPICS vlans
-MACAddressPolicy=persistent
-Name=DAQeth0
-NamePolicy=keep
-
-RxChannels=32
-TxChannels=1
-CombinedChannels=0
-
-RxBufferSize=max
-RxJumboBufferSize=max
-UseAdaptiveRxCoalesce=yes
-EOF
-
-cat <<EOF | sudo tee -a /etc/systemd/network/20-DAQeth0.network
-[Match]
-Name=DAQeth0
-Type=ether
-
-[Network]
-Description=The untagged interface
-
-VLAN=Acquisition
-VLAN=EPICS
-
-LinkLocalAddressing=no
-LLDP=no
-EmitLLDP=no
-IPv6AcceptRA=no
-IPv6SendRA=no
-EOF
-
-cat <<EOF | sudo tee -a /etc/systemd/network/30-Acquisition.network
-[Match]
-Name=Acquisition
-Type=vlan
-
-[Network]
-Description=Acquisition vlan config
-LinkLocalAddressing=no
-LLDP=no
-EmitLLDP=no
-IPv6AcceptRA=no
-IPv6SendRA=no
-
-[Address]
-Address=192.168.79.100/24
-EOF
-
-cat <<EOF | sudo tee -a /etc/systemd/network/30-EPICS.network
-[Match]
-Name=EPICS
-Type=vlan
-
-[Network]
-Description=EPICS vlan config
-NTP=192.168.83.102
-LinkLocalAddressing=no
-LLDP=no
-EmitLLDP=no
-IPv6AcceptRA=no
-IPv6SendRA=no
-
-[Address]
-Address=192.168.83.100/24
-EOF
-
-echo 8021q | sudo tee -a /etc/modules
-
-sudo systemctl enable systemd-networkd
-
-sudo update-initramfs -u
-
-sudo reboot
+# configure eno12409np1 as desired
 ```
 
-### MISCS
+Reboot to apply.
+
+### DISWS3
+
+Installation of the Debian 12 OS should follow the same process as for the DAQM system.
+
+__Also select the `KDE Plasma` Desktop Environment from Software Selection screen__
+
+![Software Selection](image/D-3-7_Ch1_8.png)
+
 #### Initial Setup
 * Login as root
 * Change the hostname with the following command:
-    * hostnamectl set-hostname MISCS
+    * hostnamectl set-hostname DISWS3
 * Edit the /etc/hosts file and add the following entry:
-    * 192.168.83.101 MISCS
+    * 192.168.83.91 DISWS3
 * Reboot the server to apply the changes
 * Login as root and verify the changes with the following command:
     * hostnamectl
-* Edit /etc/apt/sources.list as follows:
+* Verify or edit /etc/apt/sources.list to contain the following:
 
 ```
 deb http://deb.debian.org/debian bookworm main non-free-firmware
@@ -476,130 +365,83 @@ deb http://deb.debian.org/debian bookworm-updates main non-free-firmware
 deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware
 ```
 
-* Connect an ethernet cable to a valid DHCP server with internet access to port eno12409np1 (NIC eth 2) and issue the following commands (alternatively, this can be done from a virtual media mounted with the mirror packages) :
-* ```dhclient eno12409np1```
-* ```apt-get update```
-* ```apt-get upgrade```
-* ```apt-get install git vim vlan tcpdump```
-* ```adduser atf```
-* ```usermod -a -G sudo atf```
-* ```apt-get install procserv```
+#### Install Additional Debian Packages
+
+Now install the [basic](doc/apt-deb12.txt) Debian packages,
+as well as the [GUI](doc/apt-deb12-gui.txt) packages.
+
+To do so the system must have access to a mirror of the Debian repository of packages.
+Either via a temporary internet connection, or from a local mirror.
+
+If a local wired ethernet network with DHCP and internet access is available,
+then connect it to the secondary NIC (eno8403).
+Edit `/etc/network/interfaces` to contain:
+
+```
+allow-hotplug eno12409np1
+iface eno12409np1 inet dhcp
+```
+
+Then run `sudo ifup eno12409np1`.
+
+
+```sh
+cat doc/apt-deb12.txt | xargs sudo apt install
+cat doc/apt-deb12-gui.txt | xargs sudo apt install
+```
+
+Note: to see the effects without executing, replace `sudo` with `echo`.
+
+Also, perform the MongoDB service
+[Installation](https://github.com/osprey-dcs/epics-services-deployment/blob/main/README.md#mongodb-70)
+process.
 
 #### Network Configuration
 
-Note that MAC addresses shown below are specific to the delivered computers,
-and will differ on any replacement computer.
+Since DISWS3 has a monitor and keyboard attached, network configuration through the
+NetworkManager GUI is preferred.
+
+The reported configuration of the primary NIC (eno8303) must be as follows.
+The secondary NIC may be configured as desired provided that no IP address
+conflict exists with `192.168.83.91/24`.
 
 ```
-sudo apt-get install vlan tcpdump
-
-cat <<EOF | sudo tee -a /etc/systemd/network/10-MISCeth0.link
-[Match]
-MACAddress=6c:3c:8c:80:c3:3e
-Type=ether
-
-[Link]
-Description=MISC Server EPICS Interface
-MACAddressPolicy=persistent
-Name=MISCeth0
-NamePolicy=keep
-EOF
-
-cat <<EOF | sudo tee -a /etc/systemd/network/20-MISCeth0.network
-[Match]
-Name=MISCeth0
-Type=ether
-
-[Network]
-Description=MISC Server EPICS Interface
-NTP=192.168.83.102
-LinkLocalAddressing=no
-LLDP=no
-EmitLLDP=no
-IPv6AcceptRA=no
-IPv6SendRA=no
-
-[Address]
-Address=192.168.83.101/24
-EOF
-
-echo 8021q | sudo tee -a /etc/modules
-
-sudo systemctl enable systemd-networkd
-
-sudo update-initramfs -u
-
-sudo reboot
+$ nmcli
+eno8303: connected to Wired EPICS
+        "Broadcom and subsidiaries NetXtreme BCM5720"
+        ethernet (tg3), C0:47:0E:EA:78:97, hw, mtu 1500
+        inet4 192.168.83.91/24
+        route4 192.168.83.0/24 metric 100
+        inet6 fe80::fb33:fc58:9e0a:a6d5/64
+        route6 fe80::/64 metric 1024
+...
 ```
+
 
 ## Chapter 3 - EPICS base and modules installation
-* ```su atf```
-* ```cd ~```
-* ```git clone https://github.com/osprey-dcs/build-epics.git --branch atf-20240320 --recursive```
-* ```cd build-epics```
-* ```./prepare.sh```
-* ```. eactivate```
-* 
-    ```
-    sudo apt-get install build-essential autoconf automake libreadline-dev libncurses-dev libpcre3-dev libxml2-dev libjpeg-dev libxext-dev re2c libgraphicsmagick++1-dev libaec-dev libhdf5-dev libjpeg-dev libnetcdf-dev libtiff-dev libz3-dev python3-dev python-is-python3 libsnmp-dev python3-numpy python3-nose2 cython3 libfftw3-dev libevent-dev
-    ```
-* ```chmod -R a+w ../build-epics```
-* ```./build-epics.sh -j2```
-* ```tar -xvf epics-x86_64-20240304.tar.xz```
-* ```sudo mv epics-x86_64-20240304 /usr/local/```
-* ```cd /usr/local```
-* ```sudo ln -s epics-x86_64-20240304 epics```
-* ```cat <<EOF | sudo tee -a /etc/bash.bashrc```
-* 
-    ```
-    export PATH=\$PATH:/usr/local/epics/epics-base/bin/linux-x86_64
-    EOF
-    ```
+
+```sh
+su atf # discard privilege
+cd ~
+git clone https://github.com/osprey-dcs/build-epics.git --branch atf-20250716 --recursive
+cd build-epics
+./build-epics.sh -j10
+cd ..
+exit # revert to root
+mv build-epics /usr/local/epics-20250716
+ln -s epics-20250716 /usr/local/epics
+```
+
 ## Chapter 4 - EPICS Tools and Services
-### MISCS
+
+### DISWS3
 * Follow the guide available on osprey-dcs github about deploying EPICS services: https://github.com/osprey-dcs/epics-services-deployment
 
-## Chapter 5 - Phoebus Client
-* Make sure the host has openjdk-17 installed (sudo apt-get install openjdk-17-jdk)
-* Download Phoebus latest tag from https://github.com/ControlSystemStudio/phoebus/tags
-* Extract the tar.gz and move the project to /usr/local/epics/
-* Create a phoebus symlink to this version
-    * ```ln -s /usr/local/epics/phoebus-4.7.3 /usr/local/epics/phoebus```
-* Create a settings.ini file in /usr/local/epics/phoebus/ with the following:
+Copy the Phoebus [preferences file](doc/phoebus-settings.ini) as `/usr/local/phoebus/settings.ini`.
+
 ```
-#Default CA settings
-org.phoebus.pv.ca/addr_list=192.168.83.255
-org.phoebus.pv.ca/auto_addr_list=false
-org.phoebus.pv.ca/dbe_property_supported=true
-org.phoebus.pv.ca/variable_length=true
-
-#Archiver
-org.csstudio.trends.databrowser3/urls=pbraw\:192.168.83.101:17668/retrieval
-org.csstudio.trends.databrowser3/archives=pbraw\:192.168.83.101:17668/retrieval
-
-#Main OPI
-org.phoebus.ui/top_resources=/opi/atf-main.bob,Main
-
-#Channel Finder
-org.phoebus.channelfinder/serviceURL=http://192.168.83.101:7070/ChannelFinder
-
-#Logbook
-org.phoebus.logbook/logbook_factory=olog-es
-org.phoebus.olog.es.api/olog_url=http://192.168.83.101:9090/Olog
-org.phoebus.logbook.ui/save_credentials=true
-
-#Phoebus Save/Restore
-org.phoebus.applications.saveandrestore.client/jmasar.service.url=http://192.168.83.101:6060/save-restore
-org.phoebus.ui/save_credentials=true
-
-#Phoebus Alarm
-org.phoebus.applications.alarm/server=192.168.83.101:9092
-org.phoebus.applications.alarm/config_name=nasa_alarms
-org.phoebus.applications.alarm/config_names=nasa_alarms
-org.phoebus.applications.alarm.logging.ui/service_uri=http://192.168.83.101:8080
+sudo cp doc/phoebus-settings.ini /usr/local/phoebus/settings.ini
 ```
-* Modify /usr/local/epics/phoebus/phoebus.sh:
-    * comment OPT=“-server 4918” line and add OPT="-settings /usr/local/epics/phoebus/settings.ini" below it.
 
 ## Chapter 6 - Quartz IOC
 
@@ -610,21 +452,38 @@ guide.
 Install location on DAQM: `/opt/atf-acq-ioc`
 
 Follow general README, substitute dependencies as built according to Chapter 3.
+Copy systemd unit file `iocBoot/siocMDAS/ioc-adc@.service` into `/etc/systemd/system/`, then run:
 
-Install systemd unit file `ioc-adc@.service`, then start and enable instances
-`ioc-adc@01` through `ioc-adc@32`.
+```sh
+sudo systemctl daemon-reload
+for n in `seq 1 8`; do
+    sudo systemctl start ioc-adc@0$n.service ;
+    sudo systemctl enable ioc-adc@0$n.service ;
+done
+```
+
 
 ## Chapter 7 - System Monitoring IOCs
 
-Install location on DAQM and MISC: `/opt/atf-sysmon`
+Install location on DAQM and DISWS3: `/opt/atf-sysmon`
 
 See ATF System Monitor [README](https://github.com/osprey-dcs/atf-sysmon/blob/master/README.md).
 
 Follow general README, substitute dependencies as built according to Chapter 3.
 
-Install systemd unit file `atf-sysmon@.service`, then start and enable instance
-`atf-sysmon@daqs.service` and `atf-sysmon@misc.service` on the respective host
-(each instance on a seperate host).
+Copy systemd unit file `atf-sysmon@.service` into `/etc/systemd/system/`, then run:
+
+```sh
+sudo systemctl daemon-reload
+
+# only on DAQM
+sudo systemctl start atf-sysmon@iocdaqm.service
+sudo systemctl enable atf-sysmon@iocdaqm.service
+
+# only on DISWS3
+sudo systemctl start atf-sysmon@iocdisws3.service
+sudo systemctl enable atf-sysmon@iocdisws3.service
+```
 
 ## Chapter 8 - Sequencing Engine
 
@@ -637,7 +496,9 @@ Follow general README, substitute dependencies as built according to Chapter 3.
 Install systemd unit file `atf-engine.service`, then start and enable instance.
 
 ## Chapter 9 - Elastic Search
-See Elastic Search [README](https://github.com/elastic/elasticsearch/blob/main/README.asciidoc)
+Only on DISWS3
+See [Elastic Search](https://github.com/osprey-dcs/epics-services-deployment/blob/main/README.md#elasticsearch-82) in service deployment guide.
+Refer to Elastic Search OEM [README](https://github.com/elastic/elasticsearch/blob/main/README.asciidoc)
 
 ## Chapter 10 - Quartz Calibration
 See [Quartz Calibration Procedure](https://github.com/osprey-dcs/quartz-calib/blob/main/Quartz_Calibration_Procedure.md)
