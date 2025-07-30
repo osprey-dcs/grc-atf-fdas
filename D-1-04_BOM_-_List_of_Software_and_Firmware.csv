@@ -19,7 +19,7 @@ S18,2,EPICS Collaboration,Stream,2.8.24,EPICS Open License,https://github.com/pa
 S19,1,Osprey,PSCDRV - Marble Board Data Stream,atf-20250728,BSD-3,https://github.com/osprey-dcs/pscdrv
 S20,1,Osprey,FEED - Marble Board Configuration,atf-20241122,BSD-3,https://github.com/osprey-dcs/feed-core
 S21,1,Osprey,Acquisition Orchestrator,atf-20250728,BSD-3,https://github.com/osprey-dcs/atf-engine
-S22,1,Osprey,Quartz User Configuration Loader,atf-20250728,BSD-3,https://github.com/osprey-dcs/quartz-config-loader
+S22,1,Osprey,Quartz User Configuration Loader,atf-20250730,BSD-3,https://github.com/osprey-dcs/quartz-config-loader
 S23,2,Osprey,DAQ Data Viewer/Exporter,atf-20250728,GPL-3,https://github.com/osprey-dcs/atf-previewer
 S24,8,Osprey,Quartz application firmware,20250525,BSD-3,https://github.com/osprey-dcs/Quartz-firmware
 S25,8,Osprey,Quartz IOC,atf-20250728,BSD-3,https://github.com/osprey-dcs/atf-acq-ioc
