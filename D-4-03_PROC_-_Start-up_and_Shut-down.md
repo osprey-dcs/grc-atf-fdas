@@ -19,12 +19,10 @@ Preparation for partial/total power outage.
 If possible, save open documents on Workstations.
 
 1. Disable Acquisition if possible (from `Main` or `ADC Status` pages)
-1. Switch off power to all 32x Quartz Chassis in the __Instrument room__.
+1. Switch off power to all 8x Quartz Chassis.
 1. Initiate a graceful shutdown of each computer by one of the means listed above.
-    1. DAQS server (__Instrument room__)
-    1. MISC server (__Control room__)
-    1. Workstation 1 (__Control room__)
-    1. Workstation 2 (__Control room__)
+    1. DAQM server
+    1. DISWS3 server
 1. Wait for computers to complete normal shutdown.
     - Indicated by power LEDs turning off
     - If this takes more than 5 minutes, endeavor to contact support
@@ -35,14 +33,14 @@ If possible, save open documents on Workstations.
 ### Dell Server Power Indicators Discussion
 
 For data integrety, it is important to wait for the green LED in the power
-button to go out.
+button to go out before removing power.
 
-It is desirable, but not necessary to wait for the blue indicator to turn off
+It is desirable, but not necessary to wait for the blue indicator bar to turn off
 before removing power.
 
 During a controlled shutdown, the green LED under the power button goes out
 when the OS has shutdown.
-The blue indicator bar (left end of chassis) remains illuminated while the
+The blue indicator (left end of chassis) remains illuminated while the
 system firmware shuts down.
 
 ## System Power Up
@@ -54,13 +52,10 @@ Recovery from partial/total power outage.
    - Instrument room switch (visible from rear)
    - Instrument room Time Server
 1. Wait for Time Server lock
-   - GPS Status should show: `IN: GPS` and `GPS: LOCK`
-   - Current UTC time incrementing
+   - Alert indicator stops blinking (Orange exclamation mark)
 1. Press and quickly release power buttons on computers
     - DAQS server
-    - MISC server
-    - DISWS1, Workstation 1
-    - DISWS2, Workstation 2
+    - DISWS3 server
 1. Switch on power to all Quartz Chassis
 1. Verify Workstation boot (repeat for each)
     1. Connect KVM console to Workstation 1 or 2
@@ -72,22 +67,19 @@ Recovery from partial/total power outage.
     1. (Alternate) Open a web browser and navigate to `http://192.168.83.101:17665/mgmt/ui/reports.html`
     1. Click on `Reports` and select `Currently disconnected PVs`
     1. Notify support if result table has entries other than: "no data found"
-1. Verify that the `/data` and `/export` network shared drives are accessible on both Workstations.
-1. Open a terminal and run:
-    1. `ssh DAQ`
-    1. `sudo ethtool -L DAQeth0 tx 1 rx 32 combined 0`
-    1. `exit`
+1. Verify that the `/data` network shared drive is accessible on DISWS3.
 1. Proceed to [Inspecting the Current State and Health](healthcheck.md) of the system.
+
+## Troubleshooting
+
+If the Time Server Alert does not clear, then check the antenna connection, and status.
+The Time Server will report antenna "Open" if not connected, or "Ok" if connected.
 
 ## References
 
-Location of DAQS server power button location.
+Location of DAQM and DISWS3 server power button location.
 
 ![DAQ Server Power Button](image/daqs-power.jpg)
-
-Location of power buttons for MISC and Workstations.
-
-![Computer room Power Buttons](image/cr-power.jpg)
 
 Time Server front panel.
 

@@ -23,7 +23,7 @@ Configuring function generator for AC response test
   1. Ensure output is disabled
   1. Set output to high impedance (HighZ)
   1. Select sine wave
-  1. Set offset to zero volts
+  1. Set offset to one volts (1 V)
   1. Set amplitude +-5 V (10 Vpp)
   1. Set frequency to 9 KHz
 
@@ -69,6 +69,11 @@ Figure 3. Phoebus plot configuration dialog
 
 ![Plot config](image/Phoebus_plot_config.png)
 
+When verifying function of the AC/DC switching relay by introducing a DC offset,
+the offset will be present on the relay is in the DC position,
+and absent (zero) when in the AC position.
+
+
 ## 4. Process
 
 1. Run through the "System Power Down" section of [D.4.3](D-4-03_PROC_-_Start-up_and_Shut-down.md).
@@ -77,12 +82,17 @@ Figure 3. Phoebus plot configuration dialog
 1. Set sample rate to 50Ksps and enable acquisition.  (see [D.4.6](D-4-06_PROC_-_Monitoring_a_Data-Channel_in_Real_Time.md))
 """.rstrip())
 
-for chas in range(1, 33):
+for chas in range(1, 9):
     print(f'''\
 1. Chassis {chas}.  Connect signal generator.
     1. [_] Ensure successful DC calibration ([D.4.2](D-4-02_PROC_-_Measurement_Device_Calibration.md)) of all 32 channels.
     1. Load CCCR [`D-4-01-chassis-{chas:02d}.csv`](cccr/D-4-01-chassis-{chas:02d}.csv) (see [D.4.4](D-4-04_PROC_-_Per_Test_User_Configuration_Procedure.md))
     1. Configure/restore function generator for 9KHz Sine (see the above section 2. Preparation)
+        - [ ] 1 V DC offset (channel statistics max. is 6 V, min. is -4 V)
+    1. Toggle channel to AC coupling
+        - [ ] 0 V DC offset (channel statistics max. is 5 V, min. is -5 V)
+    1. Toggle channel to DC coupling
+        - [ ] 1 V DC offset (channel statistics max. is 6 V, min. is -4 V)
     1. Collect recording for 10 - 20 seconds (see [D.4.5](D-4-05_PROC_-_Making_a_Recording_Procedure.md))
     1. Open recording in Viewer (see [D.4.7](D-4-07_PROC_-_Review_Previously_Recorded_Data.md))
 '''.rstrip())

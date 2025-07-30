@@ -10,8 +10,9 @@ For each digitizer chassis, computer and switch:
     * Reinstall
 * Replace chassis fans every 6-7 years
 
-For each computer (DAQS, MISCS, DISWS1, DISWS2):
-* Check Redundant Array of Independent Disks (RAID) array status, monthly
+For each computer (DAQM, DISWS3):
+* Check Redundant Array of Independent Disks (RAID) array status monthly,
+  or after removal from storage.
 
 * Check disk usage for each partition (whether use is 90% or higher)
 ```

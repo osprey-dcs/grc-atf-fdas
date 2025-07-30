@@ -305,6 +305,12 @@ Then run `sudo ifup eno12409np1`.
 cat doc/apt-deb12.txt | xargs sudo apt install
 ```
 
+Additionally, if available, install a realtime Linux kernel (PREEMPT_RT).
+
+```sh
+sudo apt install linux-image-rt-amd64
+```
+
 #### Network Configuration
 
 Configure the primary NIC (eno12399np0) for two tagged VLANs (79 and 83).
@@ -334,6 +340,17 @@ iface eno12399np0.83 inet static
 ```
 
 Reboot to apply.
+
+After reboot, verify IP address, NIC firmware configuration, and usage of realtime kernel.
+
+```sh
+ip -4 addr
+
+ethtool -l eno12399np0
+ethtool -g eno12399np0
+
+uname -r | grep rt
+```
 
 ### DISWS3
 
